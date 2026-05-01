@@ -2841,34 +2841,6 @@
       clip-path: ellipse(55% 100% at 50% 100%);
     }
 
-    .preorder-section .hero-glow {
-      position: absolute;
-      top: -60px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 280px;
-      height: 280px;
-      background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .preorder-section .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      background: rgba(245, 158, 11, 0.15);
-      border: 1px solid rgba(245, 158, 11, 0.35);
-      color: var(--amber);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 700;
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.32rem 0.85rem;
-      border-radius: 20px;
-      margin-bottom: 1.1rem;
-    }
-
     .preorder-section .hero h1 {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 800;
@@ -2954,6 +2926,16 @@
       border-radius: 14px;
       overflow: hidden;
       box-shadow: 0 2px 12px rgba(15, 43, 91, 0.06);
+    }
+
+    .preorder-section .ready-to-buy {
+      padding: 0.8rem 1.1rem 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--amber-dark);
     }
 
     .preorder-section .card-head {
@@ -3046,13 +3028,6 @@
     .preorder-section .tile-badge.hot {
       background: var(--amber);
       color: var(--ink);
-    }
-
-    .preorder-section .tile-icon {
-      font-size: 2rem;
-      flex-shrink: 0;
-      width: 44px;
-      text-align: center;
     }
 
     .preorder-section .tile-info {
@@ -3628,21 +3603,6 @@
       margin-top: 1px;
     }
 
-    .preorder-section .progress-bar {
-      height: 3px;
-      background: var(--border);
-      position: sticky;
-      top: 72px;
-      z-index: 190;
-    }
-
-    .preorder-section .progress-fill {
-      height: 100%;
-      background: var(--amber);
-      transition: width 0.4s ease;
-      width: 0%;
-    }
-
     @media (max-width: 600px) {
       .preorder-section .size-pills,
       .preorder-section .detail-features {
@@ -3652,26 +3612,9 @@
   </style>
 
   <section class="preorder-section" id="form">
-    <div class="hero">
-      <div class="hero-glow"></div>
-      <div class="hero-eyebrow">🔥 Limited First Batch</div>
-      <h1>Reserve Your<br><em>Windshield Cover</em></h1>
-      <p class="hero-sub">Lock in your spot before stock arrives. No payment now — we confirm on WhatsApp and collect on delivery.</p>
-      <div class="hero-trust">
-        <div class="trust-pill"><span class="tp-icon">🚚</span> Free Delivery</div>
-        <div class="trust-pill"><span class="tp-icon">💳</span> Pay on Delivery</div>
-        <div class="trust-pill"><span class="tp-icon">✅</span> Fit Guarantee</div>
-      </div>
-    </div>
-
-    <div class="counter-strip">
-      🏷️ <span class="counter-num" id="counter">23</span> people have already reserved · spots filling fast
-    </div>
-
-    <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
-
     <div class="form-wrap" id="main-form">
       <div class="card" id="card-product">
+        <div class="ready-to-buy">Ready To Buy</div>
         <div class="card-head">
           <div class="card-step" id="step1-num">1</div>
           <div class="card-title">Pick Your Cover Type</div>
@@ -3679,8 +3622,7 @@
         <div class="card-body">
           <div class="product-tiles">
             <div class="product-tile" data-product="umbrella" data-price="1299" onclick="selectProduct(this)">
-              <div class="tile-badge">🇺🇸 US Favourite</div>
-              <div class="tile-icon">☂️</div>
+              <div class="tile-badge">US Favourite</div>
               <div class="tile-info">
                 <div class="tile-name">Umbrella Sunshade</div>
                 <div class="tile-desc">One-click open · Suction mount · 10-sec setup</div>
@@ -3690,8 +3632,7 @@
             </div>
 
             <div class="product-tile" data-product="inside" data-price="899" onclick="selectProduct(this)">
-              <div class="tile-badge hot">⭐ Most Popular</div>
-              <div class="tile-icon">☀️</div>
+              <div class="tile-badge hot">Most Popular</div>
               <div class="tile-info">
                 <div class="tile-name">Foldable Panel Sunshade</div>
                 <div class="tile-desc">Multi-layer · Folds flat · Heavy-duty thermal block</div>
@@ -3701,7 +3642,6 @@
             </div>
 
             <div class="product-tile" data-product="outside" data-price="499" onclick="selectProduct(this)">
-              <div class="tile-icon">🚗</div>
               <div class="tile-info">
                 <div class="tile-name">Exterior Cover</div>
                 <div class="tile-desc">Door-jam fit · Anti-theft flaps · Full coverage</div>
@@ -3903,14 +3843,6 @@
     let state = { product: null, size: null };
     let formUnlocked = false;
 
-    let count = 23;
-    setInterval(() => {
-      if (Math.random() < 0.3) {
-        count++;
-        document.getElementById('counter').textContent = count;
-      }
-    }, 8000);
-
     function renderStars(rating) {
       const full = Math.floor(rating);
       const half = rating - full >= 0.3 ? 1 : 0;
@@ -4015,11 +3947,7 @@
     }
 
     function updateProgress() {
-      let pct = 0;
-      if (state.product) pct = 30;
-      if (state.size) pct = 60;
-      if (formUnlocked) pct = 75;
-      document.getElementById('progress').style.width = pct + '%';
+      // Progress bar removed by request.
     }
 
     function preorderScrollTo(id) {
@@ -4084,7 +4012,6 @@
       document.getElementById('main-form').style.display = 'none';
       document.getElementById('success-screen').style.display = 'block';
       document.getElementById('sticky-cta').style.display = 'none';
-      document.getElementById('progress').style.width = '100%';
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
       setTimeout(() => {

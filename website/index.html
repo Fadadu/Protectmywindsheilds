@@ -3966,7 +3966,7 @@
       return ok;
     }
 
-    function handleReserve() {
+    async function handleReserve() {
       if (!formUnlocked) return;
       if (!validate()) {
         preorderScrollTo('card-details');
@@ -3979,6 +3979,17 @@
       const email = document.getElementById('f-email').value.trim();
       const area = document.getElementById('f-area').value.trim();
       const note = document.getElementById('f-note').value.trim();
+
+      const formData = {
+        name,
+        phone,
+        email,
+        area,
+        product: p.name,
+        carSize: sizeLabels[state.size],
+        note,
+        total: '₹' + p.price.toLocaleString('en-IN')
+      };
 
       const rows = [
         { l: 'Name', v: name },
@@ -4005,14 +4016,33 @@
       );
       document.getElementById('success-wa').href = `https://wa.me/91XXXXXXXXXX?text=${msg}`;
 
+      // Update success message
+      document.querySelector('.success-title').textContent = "Order Received!";
+      document.querySelector('.success-sub').textContent = "We will message you shortly, your order is received.";
+
       document.getElementById('main-form').style.display = 'none';
       document.getElementById('success-screen').style.display = 'block';
       document.getElementById('sticky-cta').style.display = 'none';
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
+      // Send to Formspree
+      try {
+        await fetch('https://formspree.io/f/xlgzeege', {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+      } catch (err) {
+        console.error('Formspree error:', err);
+      }
+
+      // Optional: Still redirect to WhatsApp after a delay
       setTimeout(() => {
         window.location.href = `https://wa.me/91XXXXXXXXXX?text=${msg}`;
-      }, 1800);
+      }, 3000);
     }
   </script>
 
@@ -4296,7 +4326,7 @@
     }
 
     // --- Checkout Handler ---
-    function handleCheckout() {
+    async function handleCheckout() {
       const name = document.getElementById('configName').value;
       const phone = document.getElementById('configPhone').value;
 
@@ -4320,17 +4350,49 @@
       const totalPrice = basePrice + addonsTotal;
       const configStr = `${configData[currentShade].title} for ${carNames[currentCar]}`;
       
+      const formData = {
+        name,
+        phone,
+        product: configStr,
+        addons: addonsSelected.join(', '),
+        total: '₹' + totalPrice.toLocaleString('en-IN')
+      };
+
+      // Update UI
       document.getElementById('successConfig').innerText = configStr;
       document.getElementById('configSuccess').style.display = 'block';
+      
+      // Update message text
+      const successTitle = document.querySelector('#configSuccess h3');
+      if (successTitle) successTitle.textContent = "Order Received!";
+      const successSub = document.querySelector('#configSuccess p');
+      if (successSub) successSub.textContent = "We will message you shortly, your order is received.";
 
       const btn = document.getElementById('preorderBtn');
       btn.innerText = '✓ Spot Secured!';
       btn.disabled = true;
 
+      // Send to Formspree
+      try {
+        await fetch('https://formspree.io/f/xlgzeege', {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+      } catch (err) {
+        console.error('Formspree error:', err);
+      }
+
       // WhatsApp message
       const addonsText = addonsSelected.length > 0 ? ` Selected add-ons: ${addonsSelected.join(', ')}.` : '';
       const msg = `Hi, I'm ${name}. I just pre-ordered the ${configStr} (Total: ₹${totalPrice.toLocaleString('en-IN')}).${addonsText} My phone is ${phone}. Please confirm my spot!`;
-      window.open(`https://wa.me/910000000000?text=${encodeURIComponent(msg)}`, '_blank');
+      
+      setTimeout(() => {
+        window.open(`https://wa.me/910000000000?text=${encodeURIComponent(msg)}`, '_blank');
+      }, 2000);
     }
 
     function toggleMenu() {

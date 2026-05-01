@@ -2806,6 +2806,1293 @@
 
 
 
+  <style>
+    .preorder-section {
+      background: var(--off);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .preorder-section,
+    .preorder-section *,
+    .preorder-section *::before,
+    .preorder-section *::after {
+      box-sizing: border-box;
+    }
+
+    .preorder-section .hero {
+      background: linear-gradient(160deg, #0F2B5B 0%, #1e4080 100%);
+      padding: 2.5rem 1.25rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .preorder-section .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: var(--off);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .preorder-section .hero-glow {
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .preorder-section .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: var(--amber);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.32rem 0.85rem;
+      border-radius: 20px;
+      margin-bottom: 1.1rem;
+    }
+
+    .preorder-section .hero h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.7rem, 7vw, 2.6rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+
+    .preorder-section .hero h1 em {
+      font-style: normal;
+      color: var(--amber);
+    }
+
+    .preorder-section .hero-sub {
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.7;
+      max-width: 340px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .preorder-section .hero-trust {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+
+    .preorder-section .trust-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.76rem;
+      color: rgba(255, 255, 255, 0.65);
+      font-weight: 500;
+    }
+
+    .preorder-section .trust-pill .tp-icon {
+      font-size: 0.9rem;
+    }
+
+    .preorder-section .counter-strip {
+      background: var(--amber);
+      padding: 0.65rem 1.25rem;
+      text-align: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .preorder-section .counter-num {
+      background: var(--ink);
+      color: var(--amber);
+      padding: 0.1rem 0.5rem;
+      border-radius: 6px;
+      font-size: 0.88rem;
+    }
+
+    .preorder-section .form-wrap {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .preorder-section .card,
+    .preorder-section .product-detail-card,
+    .preorder-section .success-detail {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(15, 43, 91, 0.06);
+    }
+
+    .preorder-section .card-head {
+      padding: 0.85rem 1.1rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--off);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .preorder-section .card-step {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .preorder-section .card-step.done {
+      background: var(--green);
+    }
+
+    .preorder-section .card-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .preorder-section .card-body {
+      padding: 1.1rem;
+    }
+
+    .preorder-section .product-tiles {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .preorder-section .product-tile {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      padding: 0.9rem 1rem;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s, transform 0.1s;
+      position: relative;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .preorder-section .product-tile:active,
+    .preorder-section .size-pill:active,
+    .preorder-section .btn-reserve:active {
+      transform: scale(0.985);
+    }
+
+    .preorder-section .product-tile.selected {
+      border-color: var(--amber);
+      background: var(--amber-bg);
+    }
+
+    .preorder-section .product-tile .tile-badge {
+      position: absolute;
+      top: -9px;
+      right: 12px;
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.6rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.6rem;
+      border-radius: 20px;
+    }
+
+    .preorder-section .tile-badge.hot {
+      background: var(--amber);
+      color: var(--ink);
+    }
+
+    .preorder-section .tile-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+      width: 44px;
+      text-align: center;
+    }
+
+    .preorder-section .tile-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .preorder-section .tile-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+    }
+
+    .preorder-section .tile-desc {
+      font-size: 0.76rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .preorder-section .tile-price {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+
+    .preorder-section .tile-radio {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: var(--white);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.15s;
+    }
+
+    .preorder-section .tile-radio::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: transparent;
+      transition: background 0.15s;
+    }
+
+    .preorder-section .product-tile.selected .tile-radio {
+      border-color: var(--amber);
+    }
+
+    .preorder-section .product-tile.selected .tile-radio::after {
+      background: var(--amber);
+    }
+
+    .preorder-section .size-pills {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    .preorder-section .size-pill {
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 0.7rem 0.75rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .preorder-section .size-pill.selected {
+      border-color: var(--amber);
+      background: var(--amber-bg);
+    }
+
+    .preorder-section .size-pill .sp-label {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      color: var(--navy);
+    }
+
+    .preorder-section .size-pill .sp-sub {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 0.1rem;
+    }
+
+    .preorder-section .fields {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .preorder-section .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .preorder-section .field-label {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.78rem;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+    }
+
+    .preorder-section .field-label .req {
+      color: var(--amber);
+    }
+
+    .preorder-section .field-input {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--ink);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      -webkit-appearance: none;
+    }
+
+    .preorder-section .field-input:focus {
+      border-color: var(--navy-mid);
+      box-shadow: 0 0 0 3px rgba(26, 61, 124, 0.1);
+    }
+
+    .preorder-section .field-input::placeholder {
+      color: #CBD5E1;
+    }
+
+    .preorder-section .field-input.error {
+      border-color: #DC2626;
+    }
+
+    .preorder-section .field-hint {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .preorder-section .field-error {
+      font-size: 0.72rem;
+      color: #DC2626;
+      display: none;
+    }
+
+    .preorder-section .field-input.error + .field-error {
+      display: block;
+    }
+
+    .preorder-section .summary-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .preorder-section .sum-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.85rem;
+    }
+
+    .preorder-section .sum-row .sr-label {
+      color: var(--muted);
+    }
+
+    .preorder-section .sum-row .sr-val {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .preorder-section .sum-row .sr-val.empty {
+      color: var(--border);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .preorder-section .sum-divider {
+      border: none;
+      border-top: 1px dashed var(--border);
+      margin: 0.35rem 0;
+    }
+
+    .preorder-section .sum-row.total .sr-label {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--ink);
+    }
+
+    .preorder-section .sum-row.total .sr-val {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: var(--navy);
+    }
+
+    .preorder-section .sum-note {
+      margin-top: 0.6rem;
+      background: var(--green-bg);
+      border: 1px solid #A7F3D0;
+      border-radius: 8px;
+      padding: 0.55rem 0.75rem;
+      font-size: 0.76rem;
+      color: var(--green);
+      font-weight: 500;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+      line-height: 1.5;
+    }
+
+    .preorder-section .sticky-cta {
+      position: static;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 0.9rem 1.25rem;
+      z-index: 300;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      box-shadow: 0 -4px 20px rgba(15, 43, 91, 0.1);
+      margin-top: 0.25rem;
+    }
+
+    .preorder-section .cta-price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .preorder-section .cta-price-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .preorder-section .cta-price-val {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--navy);
+    }
+
+    .preorder-section .cta-price-val.empty {
+      font-size: 0.85rem;
+      color: var(--border);
+      font-weight: 400;
+    }
+
+    .preorder-section .btn-reserve,
+    .preorder-section .btn-wa-success {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s, background 0.15s;
+      text-decoration: none;
+    }
+
+    .preorder-section .btn-reserve {
+      background: var(--amber);
+      color: var(--ink);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 0.9rem;
+      border-radius: 10px;
+      letter-spacing: 0.01em;
+    }
+
+    .preorder-section .btn-reserve:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .preorder-section .cta-footnote {
+      text-align: center;
+      font-size: 0.7rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+    }
+
+    .preorder-section .success-screen {
+      display: none;
+      text-align: center;
+      padding: 3rem 1.5rem 6rem;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .preorder-section .success-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      animation: preorder-pop-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes preorder-pop-in {
+      from {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .preorder-section .success-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .preorder-section .success-sub {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .preorder-section .success-detail {
+      padding: 1rem 1.25rem;
+      text-align: left;
+      margin-bottom: 1.25rem;
+    }
+
+    .preorder-section .success-detail-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.83rem;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .preorder-section .success-detail-row:last-child {
+      border-bottom: none;
+    }
+
+    .preorder-section .success-detail-row .dr-label {
+      color: var(--muted);
+    }
+
+    .preorder-section .success-detail-row .dr-val {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .preorder-section .btn-wa-success {
+      background: var(--green);
+      color: var(--white);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.9rem;
+      border-radius: 10px;
+      margin-bottom: 0.75rem;
+    }
+
+    .preorder-section .btn-wa-success:hover {
+      background: #047857;
+    }
+
+    .preorder-section .card.locked {
+      opacity: 0.45;
+      pointer-events: none;
+    }
+
+    .preorder-section .product-detail-card {
+      border: 2px solid var(--amber);
+      box-shadow: 0 4px 20px rgba(245, 158, 11, 0.12);
+      display: none;
+      animation: preorder-slide-in 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
+    }
+
+    .preorder-section .product-detail-card.visible {
+      display: block;
+    }
+
+    @keyframes preorder-slide-in {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .preorder-section .detail-selected-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--amber);
+      color: var(--ink);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.68rem;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 20px;
+    }
+
+    .preorder-section .detail-inner {
+      display: flex;
+      gap: 0;
+      flex-direction: column;
+    }
+
+    .preorder-section .detail-image-area {
+      background: #111;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .preorder-section .detail-main-img {
+      width: 100%;
+      height: 240px;
+      object-fit: contain;
+      object-position: center;
+      padding: 0.9rem;
+      display: block;
+    }
+
+    .preorder-section .detail-main-img.placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      height: 180px;
+    }
+
+    .preorder-section .detail-thumbs {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0 1rem 0.9rem;
+      justify-content: center;
+    }
+
+    .preorder-section .detail-thumb {
+      width: 52px;
+      height: 40px;
+      border-radius: 6px;
+      border: 2px solid #333;
+      background: #1a1a1a;
+      object-fit: contain;
+      cursor: pointer;
+      transition: border-color 0.15s;
+      padding: 2px;
+    }
+
+    .preorder-section .detail-thumb.active {
+      border-color: var(--amber);
+    }
+
+    .preorder-section .detail-thumb.placeholder-thumb {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .preorder-section .detail-info {
+      padding: 1.1rem 1.1rem 1.25rem;
+      background: var(--amber-bg);
+    }
+
+    .preorder-section .detail-top-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .preorder-section .detail-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+
+    .preorder-section .detail-price {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--amber-dark);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .preorder-section .detail-price-note {
+      font-size: 0.65rem;
+      color: var(--muted);
+      font-weight: 400;
+      display: block;
+      text-align: right;
+    }
+
+    .preorder-section .detail-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .preorder-section .detail-stars {
+      color: var(--amber);
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+    }
+
+    .preorder-section .detail-rating-text {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .preorder-section .detail-desc {
+      font-size: 0.83rem;
+      color: #334155;
+      line-height: 1.65;
+      margin-bottom: 0.9rem;
+    }
+
+    .preorder-section .detail-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem 0.75rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem 0.9rem;
+    }
+
+    .preorder-section .detail-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+      font-size: 0.76rem;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    .preorder-section .detail-feature .df-tick {
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .preorder-section .progress-bar {
+      height: 3px;
+      background: var(--border);
+      position: sticky;
+      top: 72px;
+      z-index: 190;
+    }
+
+    .preorder-section .progress-fill {
+      height: 100%;
+      background: var(--amber);
+      transition: width 0.4s ease;
+      width: 0%;
+    }
+
+    @media (max-width: 600px) {
+      .preorder-section .size-pills,
+      .preorder-section .detail-features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <section class="preorder-section" id="form">
+    <div class="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-eyebrow">🔥 Limited First Batch</div>
+      <h1>Reserve Your<br><em>Windshield Cover</em></h1>
+      <p class="hero-sub">Lock in your spot before stock arrives. No payment now — we confirm on WhatsApp and collect on delivery.</p>
+      <div class="hero-trust">
+        <div class="trust-pill"><span class="tp-icon">🚚</span> Free Delivery</div>
+        <div class="trust-pill"><span class="tp-icon">💳</span> Pay on Delivery</div>
+        <div class="trust-pill"><span class="tp-icon">✅</span> Fit Guarantee</div>
+      </div>
+    </div>
+
+    <div class="counter-strip">
+      🏷️ <span class="counter-num" id="counter">23</span> people have already reserved · spots filling fast
+    </div>
+
+    <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+
+    <div class="form-wrap" id="main-form">
+      <div class="card" id="card-product">
+        <div class="card-head">
+          <div class="card-step" id="step1-num">1</div>
+          <div class="card-title">Pick Your Cover Type</div>
+        </div>
+        <div class="card-body">
+          <div class="product-tiles">
+            <div class="product-tile" data-product="umbrella" data-price="1299" onclick="selectProduct(this)">
+              <div class="tile-badge">🇺🇸 US Favourite</div>
+              <div class="tile-icon">☂️</div>
+              <div class="tile-info">
+                <div class="tile-name">Umbrella Sunshade</div>
+                <div class="tile-desc">One-click open · Suction mount · 10-sec setup</div>
+              </div>
+              <div class="tile-price">₹1,299</div>
+              <div class="tile-radio"></div>
+            </div>
+
+            <div class="product-tile" data-product="inside" data-price="899" onclick="selectProduct(this)">
+              <div class="tile-badge hot">⭐ Most Popular</div>
+              <div class="tile-icon">☀️</div>
+              <div class="tile-info">
+                <div class="tile-name">Foldable Panel Sunshade</div>
+                <div class="tile-desc">Multi-layer · Folds flat · Heavy-duty thermal block</div>
+              </div>
+              <div class="tile-price">₹899</div>
+              <div class="tile-radio"></div>
+            </div>
+
+            <div class="product-tile" data-product="outside" data-price="499" onclick="selectProduct(this)">
+              <div class="tile-icon">🚗</div>
+              <div class="tile-info">
+                <div class="tile-name">Exterior Cover</div>
+                <div class="tile-desc">Door-jam fit · Anti-theft flaps · Full coverage</div>
+              </div>
+              <div class="tile-price">₹499</div>
+              <div class="tile-radio"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-detail-card" id="product-detail">
+        <div class="detail-inner">
+          <div class="detail-image-area">
+            <div class="detail-selected-badge">✓ Selected</div>
+            <img class="detail-main-img" id="detail-img-main" src="" alt="" style="display:none">
+            <div class="detail-main-img placeholder" id="detail-img-placeholder" style="display:flex"></div>
+            <div class="detail-thumbs" id="detail-thumbs"></div>
+          </div>
+          <div class="detail-info">
+            <div class="detail-top-row">
+              <div class="detail-name" id="detail-name">—</div>
+              <div>
+                <div class="detail-price" id="detail-price">₹—</div>
+                <span class="detail-price-note">Inclusive of all taxes</span>
+              </div>
+            </div>
+            <div class="detail-rating">
+              <span class="detail-stars">★★★★☆</span>
+              <span class="detail-rating-text">(4.5/5) 85+ Reviews</span>
+            </div>
+            <div class="detail-desc" id="detail-desc"></div>
+            <div class="detail-features" id="detail-features"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card locked" id="card-size">
+        <div class="card-head">
+          <div class="card-step" id="step2-num">2</div>
+          <div class="card-title">Your Car Size</div>
+        </div>
+        <div class="card-body">
+          <div class="size-pills">
+            <div class="size-pill" data-size="hatchback" onclick="selectSize(this)">
+              <div class="sp-label">🚗 Hatchback</div>
+              <div class="sp-sub">Alto, WagonR, Swift</div>
+            </div>
+            <div class="size-pill" data-size="sedan" onclick="selectSize(this)">
+              <div class="sp-label">🚙 Sedan</div>
+              <div class="sp-sub">City, Verna, Dzire</div>
+            </div>
+            <div class="size-pill" data-size="suv" onclick="selectSize(this)">
+              <div class="sp-label">🚐 SUV / MUV</div>
+              <div class="sp-sub">Creta, Innova, Fortuner</div>
+            </div>
+            <div class="size-pill" data-size="other" onclick="selectSize(this)">
+              <div class="sp-label">🤷 Not Sure</div>
+              <div class="sp-sub">We'll confirm on WhatsApp</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card locked" id="card-details">
+        <div class="card-head">
+          <div class="card-step" id="step3-num">3</div>
+          <div class="card-title">Your Details</div>
+        </div>
+        <div class="card-body">
+          <div class="fields">
+            <div class="field-group">
+              <label class="field-label">Full Name <span class="req">*</span></label>
+              <input class="field-input" type="text" id="f-name" placeholder="e.g. Rahul Mehta" autocomplete="name" inputmode="text">
+              <span class="field-error">Please enter your name</span>
+            </div>
+            <div class="field-group">
+              <label class="field-label">WhatsApp Number <span class="req">*</span></label>
+              <input class="field-input" type="tel" id="f-phone" placeholder="e.g. 98765 43210" autocomplete="tel" inputmode="numeric" maxlength="10" pattern="[0-9]{10}">
+              <span class="field-hint">We'll confirm your order on WhatsApp</span>
+              <span class="field-error">Please enter a valid 10-digit number</span>
+            </div>
+            <div class="field-group">
+              <label class="field-label">Email Address <span class="req">*</span></label>
+              <input class="field-input" type="email" id="f-email" placeholder="e.g. rahul@gmail.com" autocomplete="email" inputmode="email">
+              <span class="field-error">Please enter a valid email</span>
+            </div>
+            <div class="field-group">
+              <label class="field-label">Delivery Area in Vadodara <span class="req">*</span></label>
+              <input class="field-input" type="text" id="f-area" placeholder="e.g. Alkapuri, Gotri, Manjalpur" inputmode="text">
+              <span class="field-hint">Approximate area is fine — we'll get the exact address on WhatsApp</span>
+              <span class="field-error">Please enter your area</span>
+            </div>
+            <div class="field-group">
+              <label class="field-label">Any Note? <span style="font-weight:400;color:var(--muted)">(Optional)</span></label>
+              <input class="field-input" type="text" id="f-note" placeholder="e.g. I have a sunroof, specific timing needed…">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card locked" id="card-summary">
+        <div class="card-head">
+          <div class="card-step" id="step4-num">4</div>
+          <div class="card-title">Order Summary</div>
+        </div>
+        <div class="card-body">
+          <div class="summary-rows">
+            <div class="sum-row">
+              <span class="sr-label">Cover Type</span>
+              <span class="sr-val empty" id="sum-product">—</span>
+            </div>
+            <div class="sum-row">
+              <span class="sr-label">Car Size</span>
+              <span class="sr-val empty" id="sum-size">—</span>
+            </div>
+            <div class="sum-row">
+              <span class="sr-label">Delivery</span>
+              <span class="sr-val" style="color:var(--green);font-weight:700">FREE</span>
+            </div>
+            <hr class="sum-divider">
+            <div class="sum-row total">
+              <span class="sr-label">Total (Pay on Delivery)</span>
+              <span class="sr-val" id="sum-total">₹—</span>
+            </div>
+          </div>
+          <div class="sum-note">
+            🔒 No payment now. We'll confirm your order on WhatsApp and you pay on delivery — zero risk.
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="sticky-cta" id="sticky-cta">
+        <div class="cta-price-row">
+          <div>
+            <div class="cta-price-label">Total (Pay on Delivery)</div>
+            <div class="cta-price-val empty" id="cta-price">Select a product to start</div>
+          </div>
+          <div style="font-size:0.7rem;color:var(--green);font-weight:600;background:var(--green-bg);padding:0.25rem 0.6rem;border-radius:6px">FREE delivery</div>
+        </div>
+        <button class="btn-reserve" id="btn-reserve" disabled onclick="handleReserve()">
+          🔒 Reserve My Spot
+        </button>
+        <div class="cta-footnote">🔒 No payment now · Confirm on WhatsApp · Pay on delivery</div>
+      </div>
+    </div>
+
+    <div class="success-screen" id="success-screen">
+      <div class="success-icon">🎉</div>
+      <div class="success-title">You're Reserved!</div>
+      <p class="success-sub">Your spot in the first batch is locked. We'll WhatsApp you within a few hours to confirm.</p>
+      <div class="success-detail" id="success-detail"></div>
+      <a class="btn-wa-success" id="success-wa" href="#">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.116 1.527 5.845L0 24l6.343-1.502A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.655-.492-5.193-1.353l-.371-.214-3.862.915.976-3.757-.236-.386A9.934 9.934 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Chat With Us on WhatsApp
+      </a>
+      <p style="font-size:0.75rem;color:var(--muted)">We'll reach out shortly. Keep an eye on your WhatsApp 👋</p>
+  </section>
+
+  <script>
+    const products = {
+      umbrella: {
+        name: 'Umbrella Sunshade',
+        icon: '☂️',
+        price: 1299,
+        rating: 4.3,
+        reviews: 62,
+        image: 'images/configurator/po-umbrella.png',
+        desc: 'Opens like an umbrella and shields your windshield in seconds, helping reduce heat buildup inside your car so you return to a cooler, more comfortable interior.',
+        features: ['10-second setup', 'Premium UV protection', 'Easy to store in door', 'Custom fit for your car']
+      },
+      inside: {
+        name: 'Foldable Panel Sunshade',
+        icon: '☀️',
+        price: 899,
+        rating: 4.5,
+        reviews: 85,
+        image: 'images/configurator/po-accordion.png',
+        desc: 'Thick, padded sunshade with structured folding panels. Ideal for long-term daily parking under intense heat.',
+        features: ['Heavy-duty thermal block', '3-layer protection', 'Structured fit', 'Easy to use and fold']
+      },
+      outside: {
+        name: 'Exterior Windshield Cover',
+        icon: '🚗',
+        price: 499,
+        rating: 4.2,
+        reviews: 41,
+        image: 'images/configurator/po-outside.png',
+        desc: 'External shield that secures inside door jams. Blocks heat before it even touches the glass.',
+        features: ['Complete coverage', 'Multi-layer fabric blocks sun, dust & frost', 'Side mirror slots', 'Anti-theft door flaps']
+      }
+    };
+
+    const sizeLabels = {
+      hatchback: 'Hatchback', sedan: 'Sedan', suv: 'SUV / MUV', other: 'Not Sure'
+    };
+
+    let state = { product: null, size: null };
+    let formUnlocked = false;
+
+    let count = 23;
+    setInterval(() => {
+      if (Math.random() < 0.3) {
+        count++;
+        document.getElementById('counter').textContent = count;
+      }
+    }, 8000);
+
+    function renderStars(rating) {
+      const full = Math.floor(rating);
+      const half = rating - full >= 0.3 ? 1 : 0;
+      const empty = 5 - full - half;
+      return '★'.repeat(full) + (half ? '½' : '') + '☆'.repeat(empty);
+    }
+
+    function showProductDetail(key) {
+      const p = products[key];
+      const card = document.getElementById('product-detail');
+
+      document.getElementById('detail-name').textContent = p.name;
+      document.getElementById('detail-price').textContent = '₹' + p.price.toLocaleString('en-IN');
+      document.getElementById('detail-desc').textContent = p.desc;
+
+      const ratingEl = card.querySelector('.detail-rating');
+      ratingEl.innerHTML = `<span class="detail-stars">${renderStars(p.rating)}</span><span class="detail-rating-text">(${p.rating}/5) ${p.reviews}+ Reviews</span>`;
+
+      document.getElementById('detail-features').innerHTML = p.features.map(f =>
+        `<div class="detail-feature"><span class="df-tick">✓</span>${f}</div>`
+      ).join('');
+
+      const imgMain = document.getElementById('detail-img-main');
+      const imgPlaceholder = document.getElementById('detail-img-placeholder');
+      imgMain.src = p.image;
+      imgMain.alt = p.name;
+      imgMain.style.display = 'block';
+      imgMain.onerror = () => {
+        imgMain.style.display = 'none';
+        imgPlaceholder.textContent = p.icon;
+        imgPlaceholder.style.display = 'flex';
+      };
+      imgPlaceholder.style.display = 'none';
+
+      document.getElementById('detail-thumbs').innerHTML = [0, 1].map((_, i) =>
+        `<img class="detail-thumb${i === 0 ? ' active' : ''}" src="${p.image}" alt="View ${i + 1}"
+          onerror="this.className=this.className+' placeholder-thumb'; this.src=''; this.textContent='${p.icon}'"
+          onclick="document.querySelectorAll('.detail-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active')">`
+      ).join('');
+
+      card.classList.add('visible');
+    }
+
+    function selectProduct(el) {
+      document.querySelectorAll('.product-tile').forEach(t => t.classList.remove('selected'));
+      el.classList.add('selected');
+      state.product = el.dataset.product;
+
+      showProductDetail(state.product);
+
+      document.getElementById('card-size').classList.remove('locked');
+      document.getElementById('step1-num').classList.add('done');
+      document.getElementById('step1-num').textContent = '✓';
+
+      updateSummary();
+      updateProgress();
+      setTimeout(() => preorderScrollTo('product-detail'), 200);
+    }
+
+    function selectSize(el) {
+      document.querySelectorAll('.size-pill').forEach(p => p.classList.remove('selected'));
+      el.classList.add('selected');
+      state.size = el.dataset.size;
+
+      document.getElementById('card-details').classList.remove('locked');
+      document.getElementById('card-summary').classList.remove('locked');
+      document.getElementById('step2-num').classList.add('done');
+      document.getElementById('step2-num').textContent = '✓';
+      formUnlocked = true;
+
+      updateSummary();
+      updateProgress();
+      setTimeout(() => preorderScrollTo('card-details'), 200);
+    }
+
+    function updateSummary() {
+      const p = state.product ? products[state.product] : null;
+
+      const sp = document.getElementById('sum-product');
+      sp.textContent = p ? p.name : '—';
+      sp.className = 'sr-val' + (p ? '' : ' empty');
+
+      const ss = document.getElementById('sum-size');
+      ss.textContent = state.size ? sizeLabels[state.size] : '—';
+      ss.className = 'sr-val' + (state.size ? '' : ' empty');
+
+      const total = p ? p.price : null;
+      const st = document.getElementById('sum-total');
+      const ctaPrice = document.getElementById('cta-price');
+
+      if (total) {
+        st.textContent = '₹' + total.toLocaleString('en-IN');
+        ctaPrice.textContent = '₹' + total.toLocaleString('en-IN');
+        ctaPrice.className = 'cta-price-val';
+      } else {
+        st.textContent = '₹—';
+        ctaPrice.textContent = 'Select a product to start';
+        ctaPrice.className = 'cta-price-val empty';
+      }
+
+      document.getElementById('btn-reserve').disabled = !(state.product && state.size);
+    }
+
+    function updateProgress() {
+      let pct = 0;
+      if (state.product) pct = 30;
+      if (state.size) pct = 60;
+      if (formUnlocked) pct = 75;
+      document.getElementById('progress').style.width = pct + '%';
+    }
+
+    function preorderScrollTo(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function validate() {
+      let ok = true;
+      const name = document.getElementById('f-name');
+      const phone = document.getElementById('f-phone');
+      const email = document.getElementById('f-email');
+      const area = document.getElementById('f-area');
+
+      if (!name.value.trim()) { name.classList.add('error'); ok = false } else name.classList.remove('error');
+      if (!/^\d{10}$/.test(phone.value.replace(/\s/g, ''))) { phone.classList.add('error'); ok = false } else phone.classList.remove('error');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { email.classList.add('error'); ok = false } else email.classList.remove('error');
+      if (!area.value.trim()) { area.classList.add('error'); ok = false } else area.classList.remove('error');
+
+      return ok;
+    }
+
+    function handleReserve() {
+      if (!formUnlocked) return;
+      if (!validate()) {
+        preorderScrollTo('card-details');
+        return;
+      }
+
+      const p = products[state.product];
+      const name = document.getElementById('f-name').value.trim();
+      const phone = document.getElementById('f-phone').value.replace(/\s/g, '');
+      const email = document.getElementById('f-email').value.trim();
+      const area = document.getElementById('f-area').value.trim();
+      const note = document.getElementById('f-note').value.trim();
+
+      const rows = [
+        { l: 'Name', v: name },
+        { l: 'Product', v: p.name },
+        { l: 'Car Size', v: sizeLabels[state.size] },
+        { l: 'Area', v: area },
+        { l: 'Total (COD)', v: '₹' + p.price.toLocaleString('en-IN') },
+      ];
+      document.getElementById('success-detail').innerHTML = rows.map(r =>
+        `<div class="success-detail-row"><span class="dr-label">${r.l}</span><span class="dr-val">${r.v}</span></div>`
+      ).join('');
+
+      const msg = encodeURIComponent(
+        `🔥 *New Pre-Order — ProtectMyWindshield*\n\n` +
+        `👤 Name: ${name}\n` +
+        `📱 Phone: ${phone}\n` +
+        `📧 Email: ${email}\n` +
+        `🚗 Product: ${p.icon} ${p.name}\n` +
+        `📐 Car Size: ${sizeLabels[state.size]}\n` +
+        `📍 Area: ${area}\n` +
+        (note ? `📝 Note: ${note}\n` : '') +
+        `💰 Total: ₹${p.price.toLocaleString('en-IN')} (Pay on Delivery)\n\n` +
+        `Please confirm my pre-order!`
+      );
+      document.getElementById('success-wa').href = `https://wa.me/91XXXXXXXXXX?text=${msg}`;
+
+      document.getElementById('main-form').style.display = 'none';
+      document.getElementById('success-screen').style.display = 'block';
+      document.getElementById('sticky-cta').style.display = 'none';
+      document.getElementById('progress').style.width = '100%';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      setTimeout(() => {
+        window.location.href = `https://wa.me/91XXXXXXXXXX?text=${msg}`;
+      }, 1800);
+    }
+  </script>
+
   <div class="divider"></div>
 
   <!-- FAQ -->

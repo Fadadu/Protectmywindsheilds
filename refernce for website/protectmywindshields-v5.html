@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProtectMyWindshield | Interior & Exterior Windshield Protection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+:root{
+  --navy:#0F2B5B;
+  --navy-mid:#1A3D7C;
+  --navy-light:#EEF3FB;
+  --amber:#F59E0B;
+  --amber-light:#FFFBEB;
+  --amber-dark:#92400E;
+  --green:#059669;
+  --green-light:#ECFDF5;
+  --red:#DC2626;
+  --red-light:#FEF2F2;
+  --white:#FFFFFF;
+  --off:#F8FAFC;
+  --ink:#0F172A;
+  --muted:#64748B;
+  --border:#E2E8F0;
+}
+
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ===== MARQUEE ===== */
+.topbar{background:var(--navy);padding:0.5rem 0;overflow:hidden;white-space:nowrap}
+.topbar-inner{display:inline-flex;animation:scroll-left 30s linear infinite}
+.topbar span{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.07em;text-transform:uppercase;color:rgba(255,255,255,0.8);padding:0 2rem}
+.topbar span.sep{color:var(--amber)}
+@keyframes scroll-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ===== NAV ===== */
+nav{background:var(--white);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;position:sticky;top:0;z-index:200;border-bottom:1px solid var(--border);box-shadow:0 1px 12px rgba(15,43,91,0.06)}
+.nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.15rem;color:var(--navy);text-decoration:none;letter-spacing:-0.02em}
+.nav-logo span{color:var(--amber)}
+.nav-tagline{font-size:0.75rem;color:var(--muted);font-weight:500;margin-top:1px}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.nav-link{font-size:0.88rem;font-weight:600;color:var(--navy);text-decoration:none;transition:color 0.15s}
+.nav-link:hover{color:var(--amber-dark)}
+.nav-link.active{color:var(--amber-dark)}
+.nav-cta{background:var(--navy);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.88rem;padding:0.6rem 1.3rem;border-radius:8px;text-decoration:none;white-space:nowrap;transition:background 0.2s}
+.nav-cta:hover{background:var(--navy-mid)}
+@media(max-width:600px){.nav-tagline{display:none}.nav-right{gap:0.6rem}.nav-link{display:none}}
+
+/* ===== HERO ===== */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,#1e3a6e 60%,#162f5c 100%);color:var(--white);text-align:center;padding:5rem 1.5rem 4rem}
+.hero-tag{display:inline-flex;align-items:center;gap:0.4rem;background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.4);color:var(--amber);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 1rem;border-radius:20px;margin-bottom:1.75rem}
+.hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2.6rem,7vw,5.5rem);line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.25rem}
+.hero h1 .highlight{color:var(--amber)}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.68);max-width:540px;margin:0 auto 2.5rem;line-height:1.8}
+.hero-btns{display:flex;gap:0.9rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.btn-big{display:inline-block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;padding:0.9rem 2rem;border-radius:10px;text-decoration:none;transition:transform 0.18s,opacity 0.18s}
+.btn-big:hover{transform:translateY(-2px);opacity:0.92}
+.btn-primary{background:var(--amber);color:var(--ink)}
+.btn-ghost{background:rgba(255,255,255,0.1);color:var(--white);border:1px solid rgba(255,255,255,0.25)}
+.btn-ghost:hover{background:rgba(255,255,255,0.18)}
+.hero-promise{font-size:0.75rem;color:rgba(255,255,255,0.35);letter-spacing:0.07em;text-transform:uppercase;font-weight:500}
+
+/* ===== TRUST BAR ===== */
+.trust-bar{background:var(--white);border-bottom:1px solid var(--border);padding:0.9rem 1.5rem}
+.trust-inner{max-width:1060px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:2rem}
+.trust-item{display:flex;align-items:center;gap:0.45rem;font-size:0.8rem;font-weight:600;color:var(--muted)}
+.trust-item .dot{width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0}
+
+/* ===== STATS BAR ===== */
+.stats-bar{background:var(--navy);display:flex;flex-wrap:wrap;justify-content:center}
+.stat-block{flex:1;min-width:150px;text-align:center;padding:1.75rem 1rem;border-right:1px solid rgba(255,255,255,0.08)}
+.stat-block:last-child{border-right:none}
+.stat-block .num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:2.2rem;color:var(--amber);line-height:1;letter-spacing:-0.02em}
+.stat-block .lbl{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.45);margin-top:0.3rem}
+@media(max-width:500px){.stats-bar{flex-direction:column}.stat-block{border-right:none;border-bottom:1px solid rgba(255,255,255,0.08)}.stat-block:last-child{border-bottom:none}}
+
+/* ===== DIVIDER ===== */
+.divider{height:4px;background:linear-gradient(90deg,var(--navy),var(--amber),var(--navy))}
+
+/* ===== SECTIONS ===== */
+section{padding:4rem 1.5rem}
+.container{max-width:1060px;margin:0 auto}
+.section-tag{display:inline-block;background:var(--navy-light);color:var(--navy);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.35rem 0.9rem;border-radius:6px;margin-bottom:1rem}
+h2.section-h{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.1;letter-spacing:-0.025em;margin-bottom:1.25rem;color:var(--ink)}
+
+/* ===== SHOP SECTION ===== */
+.shop{background:var(--off)}
+.shop .section-tag{background:var(--navy-light);color:var(--navy)}
+.shop-intro{color:var(--muted);font-size:1rem;line-height:1.75;max-width:560px;margin-bottom:3rem}
+.product-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem}
+@media(max-width:700px){.product-grid{grid-template-columns:1fr}}
+
+/* ===== PRODUCT CARD ===== */
+.product-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s}
+.product-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(15,43,91,0.1)}
+.product-img{width:100%;aspect-ratio:4/3;background:var(--navy);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.product-img svg{width:70%;max-width:260px;height:auto}
+.product-line-badge{position:absolute;top:1rem;left:1rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.3rem 0.75rem;border-radius:5px}
+.badge-exterior{background:var(--amber);color:var(--ink)}
+.badge-interior{background:var(--navy-light);color:var(--navy)}
+.soldout-badge{position:absolute;top:1rem;right:1rem;background:var(--red);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.28rem 0.65rem;border-radius:5px}
+.product-info{padding:1.5rem}
+.product-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;margin-bottom:0.35rem;color:var(--ink)}
+.product-tagline{font-size:0.85rem;color:var(--muted);margin-bottom:1rem;line-height:1.5}
+.product-rating{display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.stars-sm{color:var(--amber);font-size:0.9rem;letter-spacing:1px}
+.rating-count{font-size:0.8rem;color:var(--muted);font-weight:500}
+.product-price-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem}
+.product-price{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.5rem;color:var(--ink);letter-spacing:-0.02em}
+.product-price-note{font-size:0.78rem;color:var(--muted);font-weight:500}
+.preorder-btn{width:100%;background:var(--navy);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.92rem;padding:0.8rem;border-radius:9px;border:none;cursor:pointer;transition:background 0.18s;display:flex;align-items:center;justify-content:center;gap:0.5rem}
+.preorder-btn:hover{background:var(--navy-mid)}
+.preorder-btn .sold-label{background:var(--red);color:var(--white);font-size:0.65rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:0.15rem 0.5rem;border-radius:3px}
+.view-details{width:100%;background:transparent;color:var(--navy);font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:0.85rem;padding:0.6rem;border:1px solid var(--border);border-radius:9px;cursor:pointer;margin-top:0.6rem;transition:border-color 0.15s,color 0.15s}
+.view-details:hover{border-color:var(--navy);color:var(--navy-mid)}
+
+/* ===== PRODUCT DRAWER ===== */
+.drawer-overlay{position:fixed;inset:0;background:rgba(15,23,42,0.55);z-index:300;opacity:0;pointer-events:none;transition:opacity 0.3s;backdrop-filter:blur(3px)}
+.drawer-overlay.open{opacity:1;pointer-events:all}
+.drawer{position:fixed;bottom:0;left:0;right:0;background:var(--white);border-radius:20px 20px 0 0;z-index:301;max-height:92vh;overflow-y:auto;transform:translateY(100%);transition:transform 0.38s cubic-bezier(0.32,0.72,0,1)}
+.drawer.open{transform:translateY(0)}
+.drawer-handle{width:40px;height:4px;background:var(--border);border-radius:2px;margin:1rem auto 0}
+.drawer-inner{padding:1.5rem 2rem 3rem;max-width:960px;margin:0 auto}
+@media(max-width:600px){.drawer-inner{padding:1rem 1.25rem 3rem}}
+
+.drawer-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+@media(max-width:680px){.drawer-grid{grid-template-columns:1fr}}
+
+/* image gallery */
+.gallery{display:flex;flex-direction:column;gap:0.75rem}
+.gallery-main{width:100%;aspect-ratio:4/3;background:var(--navy);border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.gallery-main svg{width:70%;height:auto}
+.gallery-thumbs{display:flex;gap:0.6rem}
+.gallery-thumb{width:70px;height:54px;border-radius:8px;border:2px solid var(--border);cursor:pointer;background:var(--off);display:flex;align-items:center;justify-content:center;overflow:hidden;transition:border-color 0.15s;flex-shrink:0}
+.gallery-thumb.active{border-color:var(--navy)}
+.gallery-thumb svg{width:80%;height:auto}
+
+/* drawer product info */
+.drawer-badge-row{display:flex;gap:0.5rem;align-items:center;margin-bottom:0.75rem;flex-wrap:wrap}
+.d-badge{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.28rem 0.7rem;border-radius:5px}
+.d-badge-line{background:var(--navy-light);color:var(--navy)}
+.d-badge-sold{background:var(--red);color:var(--white)}
+.d-badge-preorder{background:var(--amber-light);color:var(--amber-dark);border:1px solid rgba(245,158,11,0.3)}
+.drawer-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-0.025em;color:var(--ink);margin-bottom:0.5rem}
+.drawer-tagline{font-size:0.95rem;color:var(--muted);line-height:1.7;margin-bottom:1.25rem}
+
+/* rating */
+.drawer-rating{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border)}
+.d-stars{color:var(--amber);font-size:1rem;letter-spacing:1px}
+.d-rating-num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;color:var(--ink)}
+.d-rating-count{font-size:0.82rem;color:var(--muted)}
+.d-rating-bar-wrap{flex:1;display:flex;flex-direction:column;gap:3px}
+.d-rating-row{display:flex;align-items:center;gap:6px;font-size:0.72rem;color:var(--muted)}
+.d-bar-track{flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden}
+.d-bar-fill{height:100%;background:var(--amber);border-radius:3px}
+
+/* pricing */
+.drawer-price-row{display:flex;align-items:baseline;gap:0.75rem;margin-bottom:0.5rem}
+.drawer-price{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:2rem;color:var(--ink);letter-spacing:-0.03em}
+.drawer-price-mrp{font-size:1rem;color:var(--muted);text-decoration:line-through}
+.drawer-price-note{font-size:0.8rem;color:var(--muted);margin-bottom:1.5rem}
+
+/* stock info */
+.stock-info{background:var(--red-light);border:1px solid rgba(220,38,38,0.2);border-radius:8px;padding:0.75rem 1rem;margin-bottom:1.25rem;font-size:0.85rem;color:var(--red);font-weight:600}
+.stock-info span{font-weight:400;color:#991B1B}
+
+/* preorder form */
+.drawer-preorder-btn{width:100%;background:var(--navy);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;padding:0.9rem;border-radius:10px;border:none;cursor:pointer;margin-bottom:0.75rem;transition:background 0.18s}
+.drawer-preorder-btn:hover{background:var(--navy-mid)}
+.drawer-notify-btn{width:100%;background:var(--off);color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:0.92rem;padding:0.9rem;border-radius:10px;border:1px solid var(--border);cursor:pointer;transition:border-color 0.18s}
+.drawer-notify-btn:hover{border-color:var(--navy)}
+
+/* specs */
+.drawer-specs{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.specs-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);margin-bottom:0.9rem}
+.specs-table{display:flex;flex-direction:column;gap:0}
+.spec-row{display:flex;justify-content:space-between;align-items:center;padding:0.65rem 0;border-bottom:1px solid var(--border);font-size:0.88rem}
+.spec-row:last-child{border-bottom:none}
+.spec-key{color:var(--muted);font-weight:500}
+.spec-val{color:var(--ink);font-weight:600;text-align:right}
+
+/* reviews */
+.drawer-reviews{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.review-card{background:var(--off);border-radius:10px;padding:1rem 1.25rem;margin-bottom:0.75rem}
+.review-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem}
+.reviewer{font-weight:700;font-size:0.88rem;color:var(--ink)}
+.review-stars{color:var(--amber);font-size:0.8rem}
+.review-text{font-size:0.85rem;color:var(--muted);line-height:1.6}
+.review-date{font-size:0.75rem;color:var(--border);margin-top:0.35rem}
+
+/* ===== PROBLEM ===== */
+.problem{background:var(--white)}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+@media(max-width:680px){.problem-grid{grid-template-columns:1fr;gap:2rem}}
+.problem p{font-size:1rem;line-height:1.8;color:var(--muted);margin-bottom:1rem}
+.heat-boxes{display:flex;flex-direction:column;gap:0.9rem}
+.heat-box{background:var(--off);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1.25rem}
+.heat-box .big-num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:2.6rem;color:var(--navy);line-height:1;min-width:90px;text-align:center;letter-spacing:-0.03em}
+.heat-box .desc{font-size:0.88rem;color:var(--muted);line-height:1.5;font-weight:500}
+.heat-box.accent{border-color:rgba(245,158,11,0.4);border-left:4px solid var(--amber)}
+.heat-box.accent .big-num{color:var(--amber-dark)}
+
+/* ===== COUPON ===== */
+.coupon-strip{background:var(--navy);padding:3rem 1.5rem;text-align:center}
+.coupon-inner{max-width:660px;margin:0 auto}
+.coupon-label{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:0.75rem}
+.coupon-card{border:2px dashed rgba(245,158,11,0.4);border-radius:16px;padding:2rem 2.5rem;background:rgba(245,158,11,0.05)}
+.coupon-card .off{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.5rem);color:var(--amber);line-height:1;display:block;letter-spacing:-0.03em;margin-bottom:0.5rem}
+.coupon-card .what{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.2rem;color:var(--white);letter-spacing:-0.01em;margin-bottom:0.5rem}
+.coupon-card .fine{font-size:0.83rem;color:rgba(255,255,255,0.45);margin-bottom:1.5rem;line-height:1.65}
+.btn-coupon{display:inline-block;background:var(--amber);color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.97rem;padding:0.8rem 2.2rem;border-radius:10px;text-decoration:none;transition:opacity 0.2s}
+.btn-coupon:hover{opacity:0.9}
+
+/* ===== SOLUTION ===== */
+.solution{background:var(--off)}
+.solution-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+@media(max-width:680px){.solution-grid{grid-template-columns:1fr;gap:2rem}}
+.solution p{font-size:1rem;line-height:1.8;color:var(--muted);margin-bottom:1rem}
+.solution-visual{background:var(--navy);border-radius:16px;padding:2.5rem;display:flex;align-items:center;justify-content:center}
+.solution-visual svg{width:100%;max-width:320px;height:auto}
+
+/* ===== WHY US ===== */
+.why{background:var(--white)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:2.5rem}
+.why-card{background:var(--off);border-radius:14px;padding:1.75rem 1.5rem;border:1px solid var(--border);position:relative;overflow:hidden}
+.why-card::after{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--navy)}
+.why-card .icon{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.72rem;letter-spacing:0.08em;color:var(--navy);background:var(--navy-light);width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.why-card h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.02rem;letter-spacing:-0.01em;margin-bottom:0.6rem;color:var(--ink)}
+.why-card p{font-size:0.87rem;color:var(--muted);line-height:1.65}
+.why-card .verdict{display:inline-flex;align-items:center;gap:0.3rem;background:var(--green-light);color:var(--green);font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.22rem 0.6rem;border-radius:5px;margin-top:1rem}
+
+/* ===== BENEFITS ===== */
+.benefits{background:var(--off)}
+.benefits-list{display:flex;flex-direction:column;gap:0.9rem;margin-top:2rem}
+.benefit-row{background:var(--white);border-radius:12px;padding:1.3rem 1.5rem;display:flex;align-items:flex-start;gap:1.25rem;border:1px solid var(--border);border-left:4px solid var(--navy)}
+.benefit-row .check{font-size:1rem;font-weight:700;color:var(--navy);flex-shrink:0;margin-top:0.15rem;width:18px;text-align:center}
+.benefit-row h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.97rem;letter-spacing:-0.01em;margin-bottom:0.3rem;color:var(--ink)}
+.benefit-row p{font-size:0.87rem;color:var(--muted);line-height:1.6}
+
+/* ===== CONTEXT ===== */
+.context{background:var(--navy)}
+.context .section-tag{background:rgba(245,158,11,0.15);color:var(--amber)}
+.context h2.section-h{color:var(--white)}
+.context p{font-size:1rem;line-height:1.8;color:rgba(255,255,255,0.62);margin-bottom:1rem}
+.tag-row{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.75rem}
+.ctag{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.78);font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:0.78rem;padding:0.42rem 1rem;border-radius:8px;border:1px solid rgba(255,255,255,0.12)}
+
+/* ===== PROMISE ===== */
+.promise{background:var(--white)}
+.promise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;margin-top:2.5rem}
+.promise-block{text-align:center;padding:2rem 1.25rem;border:1px solid var(--border);border-radius:14px;background:var(--off)}
+.promise-block .p-icon{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.72rem;letter-spacing:0.06em;color:var(--navy);background:var(--navy-light);width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.promise-block h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.97rem;color:var(--navy);margin-bottom:0.5rem;letter-spacing:-0.01em}
+.promise-block p{font-size:0.83rem;color:var(--muted);line-height:1.6}
+
+/* ===== EARLY ACCESS ===== */
+.early{background:var(--amber-light);border-top:1px solid rgba(245,158,11,0.2);border-bottom:1px solid rgba(245,158,11,0.2);text-align:center;padding:4rem 1.5rem}
+.early h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2.2rem,5vw,3.5rem);letter-spacing:-0.03em;color:var(--ink);margin-bottom:0.75rem}
+.early p{font-size:1rem;max-width:500px;margin:0 auto 2.5rem;color:var(--muted);line-height:1.75}
+.early-btns{display:flex;gap:0.9rem;justify-content:center;flex-wrap:wrap}
+
+/* ===== FORM ===== */
+.form-sec{background:var(--navy)}
+.form-sec .section-tag{background:rgba(245,158,11,0.15);color:var(--amber)}
+.form-sec h2.section-h{color:var(--white)}
+.form-intro{color:rgba(255,255,255,0.52);margin-bottom:2.5rem;line-height:1.75;font-size:0.95rem}
+.form-wrap{max-width:600px;margin:0 auto}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+@media(max-width:540px){.form-row{grid-template-columns:1fr}}
+.form-group{display:flex;flex-direction:column;gap:0.4rem}
+.form-group.full{grid-column:1/-1}
+label{font-size:0.72rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:rgba(255,255,255,0.48)}
+input[type=text],input[type=tel]{font-family:'Inter',sans-serif;font-size:0.95rem;padding:0.78rem 1.05rem;border:1.5px solid rgba(255,255,255,0.12);border-radius:10px;background:rgba(255,255,255,0.07);color:var(--white);outline:none;width:100%;transition:border-color 0.15s,background 0.15s}
+input::placeholder{color:rgba(255,255,255,0.22)}
+input:focus{border-color:var(--amber);background:rgba(255,255,255,0.1)}
+.radio-label{font-size:0.72rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:rgba(255,255,255,0.48);margin-bottom:0.55rem;display:block}
+.radio-opts{display:flex;flex-wrap:wrap;gap:0.55rem;margin-bottom:1.4rem}
+.radio-opt{position:relative}
+.radio-opt input[type=radio]{position:absolute;opacity:0;width:0;height:0}
+.radio-opt label{display:block;background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.5rem 1rem;font-size:0.87rem;font-weight:600;color:rgba(255,255,255,0.6);cursor:pointer;text-transform:none;letter-spacing:0;transition:all 0.15s}
+.radio-opt input:checked+label{background:rgba(245,158,11,0.16);border-color:var(--amber);color:var(--amber)}
+.radio-opt label:hover{border-color:rgba(245,158,11,0.45);color:rgba(255,255,255,0.88)}
+.btn-form{width:100%;background:var(--amber);color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.02rem;padding:0.95rem;border:none;border-radius:10px;cursor:pointer;margin-top:0.75rem;transition:opacity 0.18s,transform 0.18s}
+.btn-form:hover{opacity:0.9;transform:translateY(-1px)}
+.success-msg{display:none;background:rgba(5,150,105,0.13);border:1px solid rgba(5,150,105,0.35);color:#34D399;border-radius:10px;padding:1.2rem 1.5rem;text-align:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.97rem;margin-top:1rem}
+
+/* ===== FAQ ===== */
+.faq{background:var(--off)}
+.faq-list{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:2.5rem}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{width:100%;background:var(--white);border:none;padding:1.15rem 1.5rem;text-align:left;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.95rem;letter-spacing:-0.01em;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;color:var(--ink);transition:background 0.15s}
+.faq-q:hover{background:var(--off)}
+.faq-q .arrow{font-size:0.75rem;color:var(--muted);flex-shrink:0;transition:transform 0.22s;background:var(--off);width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.faq-q.open{background:var(--navy);color:var(--white)}
+.faq-q.open .arrow{background:rgba(255,255,255,0.1);color:var(--amber);transform:rotate(180deg)}
+.faq-a{display:none;padding:1rem 1.5rem 1.3rem;background:var(--white);font-size:0.9rem;line-height:1.75;color:var(--muted)}
+
+/* ===== FINAL CTA ===== */
+.final-cta{background:linear-gradient(160deg,var(--navy) 0%,#1e3a6e 100%);text-align:center;padding:6rem 1.5rem}
+.final-cta h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2.2rem,5.5vw,4rem);letter-spacing:-0.03em;color:var(--white);margin-bottom:0.5rem}
+.final-cta h2 span{color:var(--amber)}
+.final-cta p{color:rgba(255,255,255,0.48);font-size:1rem;max-width:440px;margin:0.75rem auto 2.5rem;line-height:1.75}
+
+/* ===== FOOTER ===== */
+footer{background:var(--ink);color:rgba(255,255,255,0.32);text-align:center;padding:1.75rem;font-size:0.8rem;font-weight:500}
+footer a{color:var(--amber);text-decoration:none}
+</style>
+</head>
+<body>
+
+<!-- MARQUEE -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>Limited Pre-order</span><span class="sep">◆</span>
+    <span>Interior & Exterior Lines</span><span class="sep">◆</span>
+    <span>Only For Early Customers</span><span class="sep">◆</span>
+    <span>No Payment to Reserve</span><span class="sep">◆</span>
+    <span>First Batch Priority Access</span><span class="sep">◆</span>
+    <span>Limited Pre-order</span><span class="sep">◆</span>
+    <span>Interior & Exterior Lines</span><span class="sep">◆</span>
+    <span>Only For Early Customers</span><span class="sep">◆</span>
+    <span>No Payment to Reserve</span><span class="sep">◆</span>
+    <span>First Batch Priority Access</span><span class="sep">◆</span>
+    <span>Limited Pre-order</span><span class="sep">◆</span>
+    <span>Interior & Exterior Lines</span><span class="sep">◆</span>
+    <span>Only For Early Customers</span><span class="sep">◆</span>
+    <span>No Payment to Reserve</span><span class="sep">◆</span>
+    <span>First Batch Priority Access</span><span class="sep">◆</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div>
+    <a class="nav-logo" href="#"><span>Protect</span>MyWindshield</a>
+    <div class="nav-tagline">Interior & Exterior Heat Protection</div>
+  </div>
+  <div class="nav-right">
+    <a class="nav-link" href="#shop">Shop</a>
+    <a class="nav-link" href="#how">How It Works</a>
+    <a class="nav-link" href="#faq">FAQ</a>
+    <a class="nav-cta" href="#form">Pre-order Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Limited Pre-order — Early Customers Only</div>
+  <h1>
+    Two Products.<br>
+    One Mission.<br>
+    <span class="highlight">Zero Heat Inside.</span>
+  </h1>
+  <p class="hero-sub">Our Interior and Exterior windshield shields work together to keep your car cooler while it is parked. Both lines are sold out — join the pre-order before the first batch closes.</p>
+  <div class="hero-btns">
+    <a class="btn-big btn-primary" href="#shop">See Our Products</a>
+    <a class="btn-big btn-ghost" href="#form">Join Pre-order</a>
+  </div>
+  <p class="hero-promise">Sold Out — Limited Pre-order Open &nbsp;·&nbsp; Early Customers Only</p>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="dot"></span> Zero payment to pre-order</div>
+    <div class="trust-item"><span class="dot"></span> Two product lines — Interior & Exterior</div>
+    <div class="trust-item"><span class="dot"></span> Fit confirmed per car model</div>
+    <div class="trust-item"><span class="dot"></span> First batch priority for early customers</div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-block"><div class="num">5–8 hrs</div><div class="lbl">Daily sun exposure for parked cars</div></div>
+  <div class="stat-block"><div class="num">70°C+</div><div class="lbl">Interior temp in direct sun</div></div>
+  <div class="stat-block"><div class="num">2</div><div class="lbl">Product lines — Interior & Exterior</div></div>
+  <div class="stat-block"><div class="num">₹0</div><div class="lbl">Required to secure your pre-order</div></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SHOP SECTION -->
+<section class="shop" id="shop">
+  <div class="container">
+    <span class="section-tag">Our Products</span>
+    <h2 class="section-h">Interior & Exterior Protection.</h2>
+    <p class="shop-intro">Both product lines are currently sold out and open for limited pre-order. Early customers get priority access once the first batch is confirmed. No payment required to reserve your spot.</p>
+
+    <div class="product-grid">
+
+      <!-- EXTERIOR CARD -->
+      <div class="product-card" onclick="openDrawer('exterior')">
+        <div class="product-img">
+          <span class="product-line-badge badge-exterior">Exterior Line</span>
+          <span class="soldout-badge">Sold Out</span>
+          <svg viewBox="0 0 300 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.7">
+              <line x1="60" y1="0" x2="80" y2="52" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+              <line x1="110" y1="0" x2="118" y2="52" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+              <line x1="150" y1="0" x2="150" y2="52" stroke="#F59E0B" stroke-width="3.5" stroke-linecap="round"/>
+              <line x1="190" y1="0" x2="182" y2="52" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+              <line x1="240" y1="0" x2="220" y2="52" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+            </g>
+            <rect x="20" y="54" width="260" height="34" rx="5" fill="#F59E0B"/>
+            <text x="150" y="77" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="800" font-size="12" fill="#0F172A" letter-spacing="1.5">EXTERIOR SHIELD</text>
+            <g opacity="0.35">
+              <line x1="65" y1="54" x2="45" y2="18" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/>
+              <line x1="118" y1="54" x2="106" y2="14" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/>
+              <line x1="150" y1="54" x2="150" y2="12" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/>
+              <line x1="182" y1="54" x2="194" y2="14" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/>
+              <line x1="235" y1="54" x2="255" y2="18" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/>
+            </g>
+            <rect x="40" y="94" width="220" height="54" rx="4" fill="#1A3D7C" opacity="0.6"/>
+            <text x="150" y="126" text-anchor="middle" font-family="'Inter',sans-serif" font-size="10" fill="rgba(255,255,255,0.5)">windshield</text>
+            <rect x="10" y="153" width="280" height="58" rx="5" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <text x="150" y="186" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="11" fill="#34D399">Cooler Interior</text>
+          </svg>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Exterior Windshield Shield</div>
+          <div class="product-tagline">Mounts outside the glass. Reflects sunlight before it enters.</div>
+          <div class="product-rating">
+            <span class="stars-sm">★★★★★</span>
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.88rem;color:var(--ink)">4.8</span>
+            <span class="rating-count">· 124 pre-orders</span>
+          </div>
+          <div class="product-price-row">
+            <span class="product-price">₹1,499</span>
+            <span class="product-price-note">incl. taxes · price at delivery</span>
+          </div>
+          <button class="preorder-btn" onclick="event.stopPropagation();openDrawer('exterior')">
+            <span>Pre-order Now</span>
+            <span class="sold-label">Sold Out</span>
+          </button>
+          <button class="view-details" onclick="event.stopPropagation();openDrawer('exterior')">View Product Details</button>
+        </div>
+      </div>
+
+      <!-- INTERIOR CARD -->
+      <div class="product-card" onclick="openDrawer('interior')">
+        <div class="product-img" style="background:#1A3D7C">
+          <span class="product-line-badge badge-interior">Interior Line</span>
+          <span class="soldout-badge">Sold Out</span>
+          <svg viewBox="0 0 300 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.3">
+              <line x1="60" y1="0" x2="80" y2="52" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+              <line x1="150" y1="0" x2="150" y2="52" stroke="#F59E0B" stroke-width="3.5" stroke-linecap="round"/>
+              <line x1="240" y1="0" x2="220" y2="52" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+            </g>
+            <rect x="40" y="52" width="220" height="54" rx="4" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <text x="150" y="80" text-anchor="middle" font-family="'Inter',sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">windshield</text>
+            <rect x="20" y="112" width="260" height="30" rx="4" fill="#EEF3FB"/>
+            <text x="150" y="133" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="800" font-size="11" fill="#0F2B5B" letter-spacing="1">INTERIOR SHIELD</text>
+            <rect x="10" y="148" width="280" height="62" rx="5" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <text x="150" y="183" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="11" fill="#34D399">Blocks Light & UV</text>
+          </svg>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Interior Windshield Shield</div>
+          <div class="product-tagline">Fits inside the cabin. Blocks UV and reduces interior heat buildup.</div>
+          <div class="product-rating">
+            <span class="stars-sm">★★★★★</span>
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.88rem;color:var(--ink)">4.6</span>
+            <span class="rating-count">· 89 pre-orders</span>
+          </div>
+          <div class="product-price-row">
+            <span class="product-price">₹999</span>
+            <span class="product-price-note">incl. taxes · price at delivery</span>
+          </div>
+          <button class="preorder-btn" onclick="event.stopPropagation();openDrawer('interior')">
+            <span>Pre-order Now</span>
+            <span class="sold-label">Sold Out</span>
+          </button>
+          <button class="view-details" onclick="event.stopPropagation();openDrawer('interior')">View Product Details</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="container">
+    <div class="problem-grid">
+      <div>
+        <span class="section-tag">The Problem</span>
+        <h2 class="section-h">Most Cars Sit in Heat Longer Than People Realize.</h2>
+        <p>Many cars spend five to eight hours parked in open sunlight every day. Over time, that heat does more than make the car uncomfortable. It slowly affects the interior surfaces and makes cooling harder each time you return.</p>
+        <p>The steering wheel feels too hot. The air inside feels heavy. The AC takes longer. After months of daily exposure, the effects show on the dashboard and trim.</p>
+      </div>
+      <div class="heat-boxes">
+        <div class="heat-box"><div class="big-num">5–8</div><div class="desc">hours your car bakes in open sunlight every single day</div></div>
+        <div class="heat-box"><div class="big-num">70°+</div><div class="desc">interior temperature possible in a fully sun-exposed parked car</div></div>
+        <div class="heat-box accent"><div class="big-num" style="font-size:1.5rem;min-width:90px">FADES</div><div class="desc">dashboard, trim, and leather degraded by daily heat over months</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COUPON -->
+<div class="coupon-strip">
+  <div class="coupon-inner">
+    <p class="coupon-label">Early Bird — Limited Spots Only</p>
+    <div class="coupon-card">
+      <span class="off">Priority Pre-order</span>
+      <div class="what">For First Batch Customers Only</div>
+      <div class="fine">Both product lines are sold out. Reserve before we close the pre-order. No payment required now — we contact you once the batch is confirmed.</div>
+      <a class="btn-coupon" href="#form">Claim Your Pre-order Spot</a>
+    </div>
+  </div>
+</div>
+
+<!-- SOLUTION -->
+<section class="solution" id="how">
+  <div class="container">
+    <div class="solution-grid">
+      <div class="solution-visual">
+        <svg viewBox="0 0 300 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g opacity="0.8">
+            <line x1="50" y1="0" x2="70" y2="48" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="100" y1="0" x2="108" y2="48" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="150" y1="0" x2="150" y2="48" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+            <line x1="200" y1="0" x2="192" y2="48" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="250" y1="0" x2="230" y2="48" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+          </g>
+          <rect x="20" y="50" width="260" height="36" rx="5" fill="#F59E0B"/>
+          <text x="150" y="74" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="800" font-size="12" fill="#0F172A" letter-spacing="1.5">EXTERIOR SHIELD</text>
+          <g opacity="0.4">
+            <line x1="60" y1="50" x2="40" y2="14" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4 3" stroke-linecap="round"/>
+            <line x1="150" y1="50" x2="150" y2="10" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4 3" stroke-linecap="round"/>
+            <line x1="240" y1="50" x2="260" y2="16" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4 3" stroke-linecap="round"/>
+          </g>
+          <rect x="40" y="92" width="220" height="52" rx="4" fill="#1A3D7C" opacity="0.6"/>
+          <rect x="40" y="126" width="220" height="18" rx="3" fill="#EEF3FB" opacity="0.9"/>
+          <text x="150" y="140" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="10" fill="#0F2B5B" letter-spacing="1">INTERIOR SHIELD</text>
+          <rect x="10" y="150" width="280" height="70" rx="5" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <text x="150" y="190" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="12" fill="#34D399">Cooler Interior</text>
+        </svg>
+      </div>
+      <div>
+        <span class="section-tag">The Solution</span>
+        <h2 class="section-h">Two Shields. Better Together.</h2>
+        <p>The Exterior Shield sits on the outside of the glass and reflects direct sunlight before it reaches the windshield — stopping heat at the source.</p>
+        <p>The Interior Shield fits inside the cabin and blocks UV and residual heat from warming the dashboard, seats, and trim throughout the day.</p>
+        <p>Used together, they create the most effective barrier against daily heat buildup for parked cars.</p>
+        <a class="btn-big btn-primary" href="#shop" style="margin-top:1.25rem;font-size:0.95rem;display:inline-block">View Products →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="container">
+    <span class="section-tag">Why It Makes Sense</span>
+    <h2 class="section-h">What Our Products Deliver.</h2>
+    <div class="why-grid">
+      <div class="why-card"><span class="icon">01</span><h3>Heat Reducing</h3><p>Reflects direct sunlight before it heats the glass. Less heat in, cooler cabin when you return.</p><span class="verdict">✓ Proven physics</span></div>
+      <div class="why-card"><span class="icon">02</span><h3>Surface Protecting</h3><p>Daily UV and heat breaks down dashboards, trim, and leather. Both shields cut that exposure down.</p><span class="verdict">✓ Long-term protection</span></div>
+      <div class="why-card"><span class="icon">03</span><h3>AC Efficient</h3><p>A cooler interior means your AC reaches comfort significantly faster. Less fuel wasted every day.</p><span class="verdict">✓ Saves running cost</span></div>
+      <div class="why-card"><span class="icon">04</span><h3>Built for Daily Use</h3><p>Designed for cars that park outdoors 4–8+ hours every day in Indian heat conditions.</p><span class="verdict">✓ For Indian conditions</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="container">
+    <span class="section-tag">What You Avoid</span>
+    <h2 class="section-h">What This Helps You Avoid Over Time.</h2>
+    <div class="benefits-list">
+      <div class="benefit-row"><div class="check">—</div><div><h3>Burning Seats & Steering Wheel</h3><p>The interior starts at a lower base temperature so surfaces are not painfully hot when you get in.</p></div></div>
+      <div class="benefit-row"><div class="check">—</div><div><h3>Fading Dashboard & Trim</h3><p>UV and sustained heat are the primary cause of dashboard cracking and trim discolouration.</p></div></div>
+      <div class="benefit-row"><div class="check">—</div><div><h3>Slow AC & Wasted Fuel</h3><p>Cooling from 70°C takes significantly more effort than from 45°C. Your fuel bill feels it every month.</p></div></div>
+      <div class="benefit-row"><div class="check">—</div><div><h3>Accelerated Interior Wear</h3><p>Small daily reductions in heat compound into significantly longer-lasting interiors over time.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTEXT -->
+<section class="context">
+  <div class="container">
+    <span class="section-tag">Who This Is For</span>
+    <h2 class="section-h">Built for Cars That Stay Parked Outdoors.</h2>
+    <p>Many cars today are parked in open spaces for most of the day — apartment parking, office areas, roadside locations where shade is not available. Heat exposure in these conditions happens daily, which is why a consistent protection method becomes useful over time.</p>
+    <div class="tag-row">
+      <span class="ctag">Apartment Parking</span>
+      <span class="ctag">Office Lots</span>
+      <span class="ctag">Street Parking</span>
+      <span class="ctag">No Shade Available</span>
+      <span class="ctag">4–8hr Daily Exposure</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE -->
+<section class="promise">
+  <div class="container">
+    <span class="section-tag">Our Promise</span>
+    <h2 class="section-h">What You Get When You Pre-order.</h2>
+    <div class="promise-grid">
+      <div class="promise-block"><span class="p-icon">01</span><h3>Priority Access</h3><p>Pre-orders get first access when the first production batch is ready.</p></div>
+      <div class="promise-block"><span class="p-icon">02</span><h3>Zero Payment Now</h3><p>No money required to pre-order. We contact you with payment details once confirmed.</p></div>
+      <div class="promise-block"><span class="p-icon">03</span><h3>Right Fit</h3><p>We use your car model to ensure shield dimensions are correct before producing.</p></div>
+      <div class="promise-block"><span class="p-icon">04</span><h3>We Reach Out First</h3><p>Once the batch is confirmed, we contact you before anyone else gets access.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EARLY ACCESS -->
+<section class="early">
+  <div class="container">
+    <span class="section-tag" style="background:rgba(245,158,11,0.2);color:var(--amber-dark)">Be First</span>
+    <h2>Secure Your Pre-order Spot.</h2>
+    <p>Both product lines are sold out and open for limited pre-order. Early customers get priority once the first batch is confirmed. No payment required.</p>
+    <div class="early-btns">
+      <a class="btn-big btn-primary" href="#form">Join the Pre-order</a>
+      <a class="btn-big" style="background:var(--navy);color:white;border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700" href="#faq">Read FAQs</a>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-sec" id="form">
+  <div class="container">
+    <div class="form-wrap">
+      <span class="section-tag">Pre-order</span>
+      <h2 class="section-h">Tell Us About Your Car.</h2>
+      <p class="form-intro">Share a few details so we can prepare the right fit and contact you when your batch is ready. No payment now. No commitment.</p>
+      <form id="reserveForm">
+        <div class="form-row">
+          <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" placeholder="Your name" required></div>
+          <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group full"><label for="car">Car Model</label><input type="text" id="car" placeholder="e.g. Maruti Swift 2022, Hyundai Creta..." required></div>
+        </div>
+        <div>
+          <span class="radio-label">Which product are you interested in?</span>
+          <div class="radio-opts">
+            <div class="radio-opt"><input type="radio" name="product" id="pr1" value="exterior" required><label for="pr1">Exterior Shield</label></div>
+            <div class="radio-opt"><input type="radio" name="product" id="pr2" value="interior"><label for="pr2">Interior Shield</label></div>
+            <div class="radio-opt"><input type="radio" name="product" id="pr3" value="both"><label for="pr3">Both</label></div>
+          </div>
+        </div>
+        <div>
+          <span class="radio-label">Where do you usually park?</span>
+          <div class="radio-opts">
+            <div class="radio-opt"><input type="radio" name="parking" id="p1" value="apartment" required><label for="p1">Apartment</label></div>
+            <div class="radio-opt"><input type="radio" name="parking" id="p2" value="office"><label for="p2">Office</label></div>
+            <div class="radio-opt"><input type="radio" name="parking" id="p3" value="street"><label for="p3">Street</label></div>
+          </div>
+        </div>
+        <div>
+          <span class="radio-label">How long parked in the sun daily?</span>
+          <div class="radio-opts">
+            <div class="radio-opt"><input type="radio" name="duration" id="d1" value="2-4h" required><label for="d1">2–4 hours</label></div>
+            <div class="radio-opt"><input type="radio" name="duration" id="d2" value="4-8h"><label for="d2">4–8 hours</label></div>
+            <div class="radio-opt"><input type="radio" name="duration" id="d3" value="8h+"><label for="d3">8+ hours</label></div>
+          </div>
+        </div>
+        <button type="submit" class="btn-form">Secure My Pre-order Spot →</button>
+        <div class="success-msg" id="successMsg">You're in. We'll contact you when the first batch is confirmed.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <span class="section-tag">FAQ</span>
+    <h2 class="section-h">Questions We Get Asked.</h2>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">1. Both products show Sold Out. Can I still get one? <span class="arrow">▼</span></button><div class="faq-a">Yes. Both lines are sold out for immediate availability, but we have a limited pre-order open for early customers. Reserve your spot now — no payment required — and you get priority access once the first batch is produced.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">2. What is the difference between Interior and Exterior? <span class="arrow">▼</span></button><div class="faq-a">The Exterior Shield mounts on the outside of the windshield and reflects sunlight before it even reaches the glass — stopping heat at the source. The Interior Shield fits inside the cabin and blocks UV and residual heat from warming the dashboard and seats. Both are more effective together.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">3. Is there any payment required to pre-order? <span class="arrow">▼</span></button><div class="faq-a">No. Zero payment is required to pre-order. We are collecting early interest to understand demand. Once the batch is confirmed and ready, we will contact you with pricing and payment details.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">4. Will it fit my car? <span class="arrow">▼</span></button><div class="faq-a">That is why we ask for your car model. We use those details to determine which models to produce first. If your car is in the first batch, we confirm with you before finalizing.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">5. When will the first batch be ready? <span class="arrow">▼</span></button><div class="faq-a">We are not giving a confirmed date yet. Once we have enough pre-orders to finalize the batch, early customers will be the first to know and receive access before anyone else.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Protect Your Car<br><span>Before Peak Summer.</span></h2>
+    <p>Both product lines are sold out. The pre-order is open — but limited to early customers only.</p>
+    <a class="btn-big btn-primary" href="#form" style="margin:0.4rem;display:inline-block">Join the Pre-order</a>
+    <a class="btn-big btn-ghost" href="#shop" style="margin:0.4rem;display:inline-block">See Products First</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 ProtectMyWindshield.com &nbsp;·&nbsp; Interior & Exterior Windshield Protection &nbsp;·&nbsp; <a href="#form">Pre-order Now</a></p>
+</footer>
+
+<!-- ===== PRODUCT DRAWER ===== -->
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="productDrawer">
+  <div class="drawer-handle"></div>
+  <div class="drawer-inner">
+    <div class="drawer-grid">
+
+      <!-- LEFT: Gallery -->
+      <div class="gallery">
+        <div class="gallery-main" id="galleryMain"></div>
+        <div class="gallery-thumbs" id="galleryThumbs"></div>
+      </div>
+
+      <!-- RIGHT: Info -->
+      <div>
+        <div class="drawer-badge-row">
+          <span class="d-badge d-badge-line" id="dLineBadge"></span>
+          <span class="d-badge d-badge-sold">Sold Out</span>
+          <span class="d-badge d-badge-preorder">Pre-order Open</span>
+        </div>
+        <div class="drawer-title" id="dTitle"></div>
+        <div class="drawer-tagline" id="dTagline"></div>
+
+        <!-- Rating -->
+        <div class="drawer-rating">
+          <div>
+            <div class="d-stars" id="dStars"></div>
+            <div style="display:flex;gap:0.4rem;align-items:center;margin-top:0.2rem">
+              <span class="d-rating-num" id="dRatingNum"></span>
+              <span class="d-rating-count" id="dRatingCount"></span>
+            </div>
+          </div>
+          <div class="d-rating-bar-wrap" id="dRatingBars"></div>
+        </div>
+
+        <!-- Price -->
+        <div class="drawer-price-row">
+          <span class="drawer-price" id="dPrice"></span>
+          <span class="drawer-price-mrp" id="dMrp"></span>
+        </div>
+        <div class="drawer-price-note">Price at delivery · No payment now</div>
+
+        <!-- Stock -->
+        <div class="stock-info">
+          <strong>Sold Out</strong> — <span id="dStockNote"></span>
+        </div>
+
+        <!-- CTA -->
+        <button class="drawer-preorder-btn" onclick="document.getElementById('productDrawer').classList.remove('open');document.getElementById('drawerOverlay').classList.remove('open');document.body.style.overflow='';setTimeout(()=>document.getElementById('form').scrollIntoView({behavior:'smooth'}),300)">
+          Secure Pre-order Spot — Free
+        </button>
+        <button class="drawer-notify-btn" onclick="closeDrawer()">Continue Browsing</button>
+
+        <!-- Specs -->
+        <div class="drawer-specs">
+          <div class="specs-title">Product Specifications</div>
+          <div class="specs-table" id="dSpecs"></div>
+        </div>
+
+        <!-- Reviews -->
+        <div class="drawer-reviews">
+          <div class="specs-title">Customer Reviews</div>
+          <div id="dReviews"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+const products = {
+  exterior: {
+    line: 'Exterior Line',
+    title: 'Exterior Windshield Shield',
+    tagline: 'Mounts on the outside of the glass. Reflects direct sunlight before it enters — stopping heat at the source rather than after it has already built up.',
+    rating: 4.8,
+    ratingCount: '124 pre-orders',
+    bars: [
+      {label:'5 stars', pct:'78%'},
+      {label:'4 stars', pct:'16%'},
+      {label:'3 stars', pct:'4%'},
+      {label:'2 stars', pct:'1%'},
+      {label:'1 star',  pct:'1%'},
+    ],
+    price: '₹1,499',
+    mrp: '₹1,999',
+    stockNote: 'Pre-order open for first batch — limited early customer spots remaining.',
+    specs: [
+      {k:'Product Line', v:'Exterior'},
+      {k:'Placement', v:'Outside the windshield'},
+      {k:'Mechanism', v:'Sunlight reflection'},
+      {k:'Material', v:'Multi-layer reflective film'},
+      {k:'Compatibility', v:'Confirmed per car model'},
+      {k:'Installation', v:'No tools required'},
+      {k:'Batch Status', v:'Pre-order — First Batch'},
+    ],
+    reviews: [
+      {name:'Rohan M.', stars:'★★★★★', text:'Exactly what I was looking for. I park outside my office for 8 hours and this makes a real difference. Interior is noticeably less hot.', date:'Pre-order customer'},
+      {name:'Priya S.', stars:'★★★★★', text:'Love the concept. The exterior placement is the right call — other sunshades that go inside never really helped much.', date:'Pre-order customer'},
+      {name:'Arjun K.', stars:'★★★★☆', text:'Good build quality for the price. Would have given 5 stars if it shipped sooner, but the pre-order process was smooth.', date:'Pre-order customer'},
+    ],
+    svgMain: `<svg viewBox="0 0 300 220" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.75"><line x1="60" y1="0" x2="80" y2="54" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/><line x1="110" y1="0" x2="118" y2="54" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/><line x1="150" y1="0" x2="150" y2="54" stroke="#F59E0B" stroke-width="3.5" stroke-linecap="round"/><line x1="190" y1="0" x2="182" y2="54" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/><line x1="240" y1="0" x2="220" y2="54" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/></g><rect x="20" y="56" width="260" height="34" rx="5" fill="#F59E0B"/><text x="150" y="79" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="800" font-size="12" fill="#0F172A" letter-spacing="1.5">EXTERIOR SHIELD</text><g opacity="0.35"><line x1="65" y1="56" x2="45" y2="18" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><line x1="150" y1="56" x2="150" y2="12" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><line x1="235" y1="56" x2="255" y2="20" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></g><rect x="40" y="96" width="220" height="54" rx="4" fill="#1A3D7C" opacity="0.6"/><text x="150" y="128" text-anchor="middle" font-family="'Inter',sans-serif" font-size="10" fill="rgba(255,255,255,0.5)">windshield</text><rect x="10" y="156" width="280" height="56" rx="5" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/><text x="150" y="188" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="12" fill="#34D399">Cooler Interior</text></svg>`,
+    svgAlt: [
+      `<svg viewBox="0 0 80 60" fill="none"><rect x="5" y="20" width="70" height="12" rx="3" fill="#F59E0B" opacity="0.8"/><line x1="15" y1="0" x2="20" y2="20" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/><line x1="40" y1="0" x2="40" y2="20" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/><line x1="65" y1="0" x2="60" y2="20" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/><rect x="10" y="35" width="60" height="20" rx="3" fill="rgba(255,255,255,0.08)"/><text x="40" y="49" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#34D399" font-weight="700">COOL</text></svg>`,
+      `<svg viewBox="0 0 80 60" fill="none"><rect x="8" y="18" width="64" height="10" rx="2" fill="#F59E0B" opacity="0.6"/><text x="40" y="27" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#0F172A" font-weight="800">SHIELD</text><rect x="15" y="32" width="50" height="24" rx="3" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)"/><text x="40" y="47" text-anchor="middle" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,0.4)">exterior</text></svg>`,
+      `<svg viewBox="0 0 80 60" fill="none"><rect x="0" y="0" width="80" height="60" fill="#1A3D7C" rx="4"/><text x="40" y="22" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">Reflective</text><text x="40" y="36" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#F59E0B" font-weight="700">Multi-layer</text><text x="40" y="50" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">Material</text></svg>`,
+    ]
+  },
+  interior: {
+    line: 'Interior Line',
+    title: 'Interior Windshield Shield',
+    tagline: 'Fits inside the cabin against the windshield. Blocks UV and residual heat from warming the dashboard, steering wheel, and seats throughout the parking day.',
+    rating: 4.6,
+    ratingCount: '89 pre-orders',
+    bars: [
+      {label:'5 stars', pct:'70%'},
+      {label:'4 stars', pct:'20%'},
+      {label:'3 stars', pct:'7%'},
+      {label:'2 stars', pct:'2%'},
+      {label:'1 star',  pct:'1%'},
+    ],
+    price: '₹999',
+    mrp: '₹1,399',
+    stockNote: 'Pre-order open for first batch — join early for priority access.',
+    specs: [
+      {k:'Product Line', v:'Interior'},
+      {k:'Placement', v:'Inside the cabin'},
+      {k:'Mechanism', v:'UV & heat blocking'},
+      {k:'Material', v:'UV-rated insulating film'},
+      {k:'Compatibility', v:'Confirmed per car model'},
+      {k:'Installation', v:'No tools required'},
+      {k:'Batch Status', v:'Pre-order — First Batch'},
+    ],
+    reviews: [
+      {name:'Sneha R.', stars:'★★★★★', text:'Very happy with the quality. It fits snugly and the difference in interior temperature is real. My steering wheel is no longer burning hot.', date:'Pre-order customer'},
+      {name:'Mehul P.', stars:'★★★★☆', text:'Good value for the price point. Works well for everyday parking. Would recommend combining with the exterior shield for best results.', date:'Pre-order customer'},
+      {name:'Divya T.', stars:'★★★★★', text:'I was skeptical but after using it for two weeks the dashboard is visibly cooler when I get back. Simple product that does the job.', date:'Pre-order customer'},
+    ],
+    svgMain: `<svg viewBox="0 0 300 220" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.3"><line x1="60" y1="0" x2="80" y2="54" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/><line x1="150" y1="0" x2="150" y2="54" stroke="#F59E0B" stroke-width="3.5" stroke-linecap="round"/><line x1="240" y1="0" x2="220" y2="54" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/></g><rect x="40" y="54" width="220" height="54" rx="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><text x="150" y="82" text-anchor="middle" font-family="'Inter',sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">windshield</text><rect x="20" y="114" width="260" height="28" rx="4" fill="#EEF3FB"/><text x="150" y="133" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="800" font-size="11" fill="#0F2B5B" letter-spacing="1">INTERIOR SHIELD</text><rect x="10" y="148" width="280" height="62" rx="5" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/><text x="150" y="183" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="12" fill="#34D399">Blocks UV & Heat</text></svg>`,
+    svgAlt: [
+      `<svg viewBox="0 0 80 60" fill="none"><rect x="10" y="30" width="60" height="18" rx="3" fill="#EEF3FB"/><text x="40" y="43" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#0F2B5B" font-weight="800">INTERIOR</text><rect x="15" y="8" width="50" height="20" rx="3" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)"/><text x="40" y="21" text-anchor="middle" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,0.35)">glass</text></svg>`,
+      `<svg viewBox="0 0 80 60" fill="none"><rect x="0" y="0" width="80" height="60" fill="#1A3D7C" rx="4"/><text x="40" y="22" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">UV Rated</text><text x="40" y="36" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#EEF3FB" font-weight="700">Insulating</text><text x="40" y="50" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">Film</text></svg>`,
+      `<svg viewBox="0 0 80 60" fill="none"><rect x="5" y="5" width="70" height="50" rx="4" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/><text x="40" y="28" text-anchor="middle" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,0.4)">No tools</text><text x="40" y="42" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#34D399" font-weight="700">Easy Fit</text></svg>`,
+    ]
+  }
+};
+
+let currentThumb = 0;
+
+function openDrawer(type) {
+  const p = products[type];
+  document.getElementById('dLineBadge').textContent = p.line;
+  document.getElementById('dTitle').textContent = p.title;
+  document.getElementById('dTagline').textContent = p.tagline;
+  document.getElementById('dStars').textContent = '★'.repeat(Math.floor(p.rating)) + (p.rating % 1 >= 0.5 ? '★' : '');
+  document.getElementById('dRatingNum').textContent = p.rating;
+  document.getElementById('dRatingCount').textContent = '· ' + p.ratingCount;
+  document.getElementById('dPrice').textContent = p.price;
+  document.getElementById('dMrp').textContent = p.mrp;
+  document.getElementById('dStockNote').textContent = p.stockNote;
+
+  // Rating bars
+  const barsEl = document.getElementById('dRatingBars');
+  barsEl.innerHTML = p.bars.map(b => `
+    <div class="d-rating-row">
+      <span style="min-width:44px">${b.label}</span>
+      <div class="d-bar-track"><div class="d-bar-fill" style="width:${b.pct}"></div></div>
+      <span style="min-width:28px;text-align:right">${b.pct}</span>
+    </div>`).join('');
+
+  // Specs
+  document.getElementById('dSpecs').innerHTML = p.specs.map(s => `
+    <div class="spec-row"><span class="spec-key">${s.k}</span><span class="spec-val">${s.v}</span></div>`).join('');
+
+  // Reviews
+  document.getElementById('dReviews').innerHTML = p.reviews.map(r => `
+    <div class="review-card">
+      <div class="review-head"><span class="reviewer">${r.name}</span><span class="review-stars">${r.stars}</span></div>
+      <div class="review-text">${r.text}</div>
+      <div class="review-date">${r.date}</div>
+    </div>`).join('');
+
+  // Gallery main + thumbs
+  setGalleryMain(p.svgMain);
+  const thumbsEl = document.getElementById('galleryThumbs');
+  const allSvgs = [p.svgMain, ...p.svgAlt];
+  thumbsEl.innerHTML = allSvgs.map((svg, i) => `
+    <div class="gallery-thumb ${i===0?'active':''}" onclick="selectThumb(${i}, ${JSON.stringify(allSvgs).replace(/"/g,"'")})">
+      ${svg}
+    </div>`).join('');
+
+  document.getElementById('drawerOverlay').classList.add('open');
+  document.getElementById('productDrawer').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function setGalleryMain(svg) {
+  document.getElementById('galleryMain').innerHTML = svg;
+}
+
+function selectThumb(idx, svgs) {
+  document.querySelectorAll('.gallery-thumb').forEach((t,i) => t.classList.toggle('active', i===idx));
+  setGalleryMain(svgs[idx]);
+}
+
+function closeDrawer() {
+  document.getElementById('drawerOverlay').classList.remove('open');
+  document.getElementById('productDrawer').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('reserveForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  document.getElementById('successMsg').style.display='block';
+  const btn=this.querySelector('.btn-form');
+  btn.textContent='Submitted';
+  btn.style.background='#059669';
+  btn.disabled=true;
+  document.getElementById('successMsg').scrollIntoView({behavior:'smooth',block:'center'});
+});
+
+function toggleFaq(btn){
+  const ans=btn.nextElementSibling;
+  const isOpen=btn.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(b=>{b.classList.remove('open');b.nextElementSibling.style.display='none'});
+  if(!isOpen){btn.classList.add('open');ans.style.display='block'}
+}
+</script>
+</body>
+</html>

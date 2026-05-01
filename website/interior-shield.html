@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProtectMyWindshield™ Interior Comfort Shield | Amazon.in</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #0f1111;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased
+    }
+
+    :root {
+      --amz-orange: #FF9900;
+      --link: #007185;
+      --border: #ddd;
+      --text-muted: #565959;
+    }
+
+    /* ===== TOP NAV ===== */
+    header {
+      background: #131921;
+      color: white;
+      padding: 0.5rem 1rem;
+    }
+    .header-container {
+      max-width: 1500px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .logo {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      color: white;
+      text-decoration: none;
+      font-size: 1.25rem;
+    }
+    .logo span { color: var(--amz-orange); }
+    
+    .search-bar {
+      flex: 1;
+      display: flex;
+      height: 40px;
+      background: #fff;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .search-bar input { flex: 1; border: none; padding: 0 1rem; outline: none; }
+    .search-btn { background: var(--amz-orange); width: 45px; display: flex; align-items: center; justify-content: center; }
+
+    /* ===== BREADCRUMB ===== */
+    .breadcrumb {
+      padding: 1rem 0;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+    }
+    .breadcrumb a { color: inherit; text-decoration: none; }
+
+    /* ===== PRODUCT MAIN ===== */
+    .product-layout {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr 0.6fr;
+      gap: 2rem;
+      padding: 0 2rem 4rem;
+    }
+
+    @media(max-width: 1100px) {
+      .product-layout { grid-template-columns: 1fr; }
+    }
+
+    /* Column 1: Image Gallery */
+    .gallery-col { display: flex; gap: 1rem; position: sticky; top: 1rem; height: fit-content; }
+    .thumbs { display: flex; flex-direction: column; gap: 0.5rem; }
+    .thumb { width: 40px; height: 50px; border: 1px solid var(--border); border-radius: 2px; cursor: pointer; overflow: hidden; }
+    .thumb:hover, .thumb.active { border-color: #e77600; box-shadow: 0 0 3px 2px rgba(228,121,17,.5); }
+    .thumb img { width: 100%; height: 100%; object-fit: cover; }
+    
+    .main-img { flex: 1; border: 1px solid #f3f3f3; border-radius: 4px; overflow: hidden; }
+    .main-img img { width: 100%; display: block; }
+
+    /* Column 2: Content */
+    .content-col h1 { font-size: 1.5rem; line-height: 1.3; font-weight: 500; margin-bottom: 0.5rem; }
+    .brand-link { color: var(--link); font-size: 0.85rem; text-decoration: none; }
+    
+    .ratings-summary { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+    .stars { color: var(--amz-orange); letter-spacing: 1px; font-size: 0.85rem; }
+    .rating-link { font-size: 0.85rem; color: var(--link); text-decoration: none; }
+
+    .price-section { margin-bottom: 1rem; }
+    .deal-badge { background: #CC0C39; color: white; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 700; border-radius: 2px; margin-bottom: 0.5rem; display: inline-block; }
+    .price-row { display: flex; align-items: baseline; gap: 0.5rem; color: #CC0C39; }
+    .discount-pct { font-size: 1.75rem; font-weight: 300; }
+    .price-val { font-size: 1.75rem; font-weight: 500; color: #0f1111; }
+    .mrp-row { font-size: 0.85rem; color: var(--text-muted); }
+    .mrp-row span { text-decoration: line-through; }
+
+    .bullets { margin: 1.5rem 0; padding-left: 1.25rem; }
+    .bullets li { margin-bottom: 0.5rem; font-size: 0.9rem; line-height: 1.4; }
+    .bullets b { font-weight: 700; }
+
+    /* Column 3: Buy Box */
+    .buy-box { border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+    .buy-box .price-val { font-size: 1.5rem; margin-bottom: 0.5rem; display: block; }
+    .delivery-info { font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.5; }
+    
+    .stock-status { color: #007600; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 400; }
+    
+    .buy-btn { width: 100%; border-radius: 20px; padding: 0.6rem; font-size: 0.85rem; cursor: pointer; border: none; margin-bottom: 0.5rem; font-weight: 500; }
+    .btn-yellow { background: #FFD814; color: #0f1111; box-shadow: 0 2px 5px 0 rgba(213,217,217,.5); }
+    .btn-orange { background: #FFA41C; color: #0f1111; box-shadow: 0 2px 5px 0 rgba(213,217,217,.5); }
+
+    /* ===== SECTIONS ===== */
+    .section-h { border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1.5rem; color: #c45500; font-size: 1.2rem; font-weight: 700; }
+    .inner-section { max-width: 1400px; margin: 0 auto; padding: 0 2rem 4rem; }
+
+    .specs-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .specs-table tr { border-bottom: 1px solid #f3f3f3; }
+    .specs-table td { padding: 0.75rem; }
+    .specs-table .label { font-weight: 700; background: #f9f9f9; width: 30%; }
+
+    footer { background: #232F3E; color: white; padding: 4rem 0; text-align: center; font-size: 0.85rem; }
+    footer a { color: white; text-decoration: none; margin: 0 1rem; }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <a href="protectmywindshields-v6.html" class="logo">Protect<span>MyWindshield</span></a>
+      <div class="search-bar">
+        <input type="text" placeholder="Search ProtectMyWindshield.in">
+        <div class="search-btn">🔍</div>
+      </div>
+      <div style="font-size:0.75rem;">
+        <div>Hello, Sign in</div>
+        <b>Account & Lists</b>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="products.html">Car Accessories</a> &rsaquo; <a href="#">Sun Protection</a> &rsaquo; <a href="#">Interior Shades</a>
+  </div>
+
+  <!-- PRODUCT MAIN -->
+  <section class="product-layout">
+    <!-- Image Column -->
+    <div class="gallery-col">
+      <div class="thumbs">
+        <div class="thumb active"><img src="interior_shield_inside_car_1777459151241.png"></div>
+        <div class="thumb"><img src="material_closeup_1777459169115.png"></div>
+      </div>
+      <div class="main-img">
+        <img src="interior_shield_inside_car_1777459151241.png" alt="Interior Shield">
+      </div>
+    </div>
+
+    <!-- Content Column -->
+    <div class="content-col">
+      <a href="#" class="brand-link">Visit the ProtectMyWindshield Store</a>
+      <h1>ProtectMyWindshield™ Interior Comfort Sun Shade for Cars | Pop-Up Twist-to-Fold Design | Blocks 99% UV Rays | Universal Fit for Front Windshield</h1>
+      
+      <div class="ratings-summary">
+        <div class="stars">★★★★★</div>
+        <a href="#reviews" class="rating-link">89 ratings</a>
+        <span style="color:var(--border)">|</span>
+        <a href="#" class="rating-link">12 answered questions</a>
+      </div>
+
+      <div class="price-section">
+        <div class="price-row">
+          <span class="discount-pct">-28%</span>
+          <span class="price-val">₹999</span>
+        </div>
+        <div class="mrp-row">M.R.P.: <span>₹1,399</span></div>
+        <p style="font-size:0.85rem; margin-top:0.5rem;">Inclusive of all taxes</p>
+      </div>
+
+      <ul class="bullets">
+        <li><b>INSTANT 5-SECOND SETUP:</b> High-tensile spring frame pops open instantly and stays in place using your car's sun visors. No suction cups or adhesive needed.</li>
+        <li><b>REFLECTIVE THERMAL FABRIC:</b> Premium silver-coated material reflects 99% of UV rays, keeping your steering wheel touchable and your seats cool.</li>
+        <li><b>DASHBOARD PRESERVATION:</b> Prevents leather cracking and plastic fading caused by direct midday sun exposure inside your cabin.</li>
+        <li><b>COMPACT TWIST-TO-FOLD:</b> Effortlessly twists into a small circle for easy storage in door pockets or seatback pouches.</li>
+        <li><b>UNIVERSAL DIMENSIONS:</b> Flexible frame adapts to fit most hatchbacks, sedans, and small SUVs.</li>
+      </ul>
+    </div>
+
+    <!-- Buy Box Column -->
+    <div class="buy-box">
+      <span class="price-val">₹999</span>
+      <div class="delivery-info">
+        FREE delivery <b>Tomorrow, June 5</b>. <a href="#" class="brand-link">Details</a>
+      </div>
+      
+      <div class="stock-status">In stock</div>
+      
+      <button class="buy-btn btn-yellow" onclick="location.href='https://wa.me/910000000000?text=Hi,%20I\'d%20like%20to%20order%20the%20Interior%20Shield'">Add to Cart</button>
+      <button class="buy-btn btn-orange" onclick="location.href='https://wa.me/910000000000?text=Hi,%20I\'d%20like%20to%20order%20the%20Interior%20Shield'">Buy Now</button>
+
+      <div style="margin-top:1.5rem; font-size:0.85rem; color:var(--text-muted);">
+        Ships from <b>ProtectMyWindshield</b><br>
+        Sold by <b>ProtectMyWindshield Official</b>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL DETAILS -->
+  <section class="inner-section">
+    <h2 class="section-h">Technical Details</h2>
+    <table class="specs-table">
+      <tr><td class="label">Brand</td><td>ProtectMyWindshield™</td></tr>
+      <tr><td class="label">Model</td><td>PMW-INT-COM-V1</td></tr>
+      <tr><td class="label">Item Weight</td><td>280 g</td></tr>
+      <tr><td class="label">Material</td><td>Silver-Coated Polyester, Spring Steel</td></tr>
+      <tr><td class="label">Foldable</td><td>Yes</td></tr>
+    </table>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="inner-section" id="reviews">
+    <h2 class="section-h">Customer reviews</h2>
+    <div style="display:grid; grid-template-columns: 1fr 2fr; gap:4rem;">
+      <div>
+        <div style="font-size:3rem; font-weight:700;">4.7 out of 5</div>
+        <div class="stars" style="font-size:1.5rem; margin:0.5rem 0;">★★★★★</div>
+        <p style="color:var(--text-muted); font-size:0.9rem;">89 global ratings</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:0.5rem;">
+        <div style="display:flex; align-items:center; gap:1rem; font-size:0.85rem;"><span>5 star</span><div style="flex:1; height:18px; background:#f0f0f0; border-radius:2px; overflow:hidden;"><div style="width:78%; height:100%; background:#ffa41c;"></div></div><span>78%</span></div>
+        <div style="display:flex; align-items:center; gap:1rem; font-size:0.85rem;"><span>4 star</span><div style="flex:1; height:18px; background:#f0f0f0; border-radius:2px; overflow:hidden;"><div style="width:15%; height:100%; background:#ffa41c;"></div></div><span>15%</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="inner-section">
+      <p>© 1996-2026, ProtectMyWindshield.in, Inc. or its affiliates</p>
+    </div>
+  </footer>
+</body>
+
+</html>

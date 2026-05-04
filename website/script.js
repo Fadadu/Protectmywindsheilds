@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = '91XXXXXXXXXX';
+const WHATSAPP_NUMBER = '918511245666';
 
 const products = {
   umbrella: {

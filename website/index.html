@@ -410,12 +410,14 @@
         gap: 0.35rem;
         text-align: center;
       }
+
       .daily-coupon .badge {
         font-size: 0.62rem;
         padding: 0.22rem 0.55rem;
         display: inline-block;
         margin-bottom: 0.1rem;
       }
+
       .countdown {
         padding: 0.25rem 0.6rem;
       }
@@ -1837,6 +1839,7 @@
         gap: 2rem;
         text-align: center;
       }
+
       .footer-mission p {
         margin: 0 auto;
       }
@@ -2401,6 +2404,7 @@
         opacity: 0;
         transform: translateY(10px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -2570,19 +2574,31 @@
       </div>
 
       <div class="marquee-track reverse" style="margin-top:1.5rem;">
-        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (14).png" alt="Customer Review"></div>
-        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (15).png" alt="Customer Review"></div>
-        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (16).png" alt="Customer Review"></div>
-        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (17).png" alt="Customer Review"></div>
-        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (18).png" alt="Customer Review"></div>
-        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (19).png" alt="Customer Review"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (14).png" alt="Customer Review">
+        </div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (15).png" alt="Customer Review">
+        </div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (16).png" alt="Customer Review">
+        </div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (17).png" alt="Customer Review">
+        </div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (18).png" alt="Customer Review">
+        </div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (19).png" alt="Customer Review">
+        </div>
 
-        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (14).png" alt="Customer Review"></div>
-        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (15).png" alt="Customer Review"></div>
-        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (16).png" alt="Customer Review"></div>
-        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (17).png" alt="Customer Review"></div>
-        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (18).png" alt="Customer Review"></div>
-        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (19).png" alt="Customer Review"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (14).png" alt="Customer Review">
+        </div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (15).png" alt="Customer Review">
+        </div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (16).png" alt="Customer Review">
+        </div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (17).png" alt="Customer Review">
+        </div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (18).png" alt="Customer Review">
+        </div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (19).png" alt="Customer Review">
+        </div>
       </div>
     </div>
 
@@ -2997,7 +3013,7 @@
         max-width: 1000px;
         display: grid;
         grid-template-columns: 1fr 1.2fr;
-        grid-template-areas: 
+        grid-template-areas:
           "detail product"
           "detail size"
           "detail user"
@@ -3005,11 +3021,28 @@
         align-items: start;
         gap: 2rem;
       }
-      .preorder-section #card-product { grid-area: product; }
-      .preorder-section #product-detail { grid-area: detail; position: sticky; top: 2rem; }
-      .preorder-section #card-size { grid-area: size; }
-      .preorder-section #card-details { grid-area: user; }
-      .preorder-section #card-summary { grid-area: summary; }
+
+      .preorder-section #card-product {
+        grid-area: product;
+      }
+
+      .preorder-section #product-detail {
+        grid-area: detail;
+        position: sticky;
+        top: 2rem;
+      }
+
+      .preorder-section #card-size {
+        grid-area: size;
+      }
+
+      .preorder-section #card-details {
+        grid-area: user;
+      }
+
+      .preorder-section #card-summary {
+        grid-area: summary;
+      }
     }
 
     .preorder-section .card,
@@ -3279,7 +3312,7 @@
       display: none;
     }
 
-    .preorder-section .field-input.error + .field-error {
+    .preorder-section .field-input.error+.field-error {
       display: block;
     }
 
@@ -3774,6 +3807,7 @@
     }
 
     @media (max-width: 600px) {
+
       .preorder-section .size-pills,
       .preorder-section .detail-features {
         grid-template-columns: 1fr;
@@ -3881,29 +3915,35 @@
           <div class="fields">
             <div class="field-group">
               <label class="field-label">Full Name <span class="req">*</span></label>
-              <input class="field-input" type="text" id="f-name" placeholder="e.g. Rahul Mehta" autocomplete="name" inputmode="text">
+              <input class="field-input" type="text" id="f-name" placeholder="e.g. Rahul Mehta" autocomplete="name"
+                inputmode="text">
               <span class="field-error">Please enter your name</span>
             </div>
             <div class="field-group">
               <label class="field-label">WhatsApp Number <span class="req">*</span></label>
-              <input class="field-input" type="tel" id="f-phone" placeholder="e.g. 98765 43210" autocomplete="tel" inputmode="numeric" maxlength="10" pattern="[0-9]{10}">
+              <input class="field-input" type="tel" id="f-phone" placeholder="e.g. 98765 43210" autocomplete="tel"
+                inputmode="numeric" maxlength="10" pattern="[0-9]{10}">
               <span class="field-hint">We'll confirm your order on WhatsApp</span>
               <span class="field-error">Please enter a valid 10-digit number</span>
             </div>
             <div class="field-group">
               <label class="field-label">Email Address <span class="req">*</span></label>
-              <input class="field-input" type="email" id="f-email" placeholder="e.g. rahul@gmail.com" autocomplete="email" inputmode="email">
+              <input class="field-input" type="email" id="f-email" placeholder="e.g. rahul@gmail.com"
+                autocomplete="email" inputmode="email">
               <span class="field-error">Please enter a valid email</span>
             </div>
             <div class="field-group">
               <label class="field-label">Delivery Area in Vadodara <span class="req">*</span></label>
-              <input class="field-input" type="text" id="f-area" placeholder="e.g. Alkapuri, Gotri, Manjalpur" inputmode="text">
+              <input class="field-input" type="text" id="f-area" placeholder="e.g. Alkapuri, Gotri, Manjalpur"
+                inputmode="text">
               <span class="field-hint">Approximate area is fine — we'll get the exact address on WhatsApp</span>
               <span class="field-error">Please enter your area</span>
             </div>
             <div class="field-group">
-              <label class="field-label">Any Note? <span style="font-weight:400;color:var(--muted)">(Optional)</span></label>
-              <input class="field-input" type="text" id="f-note" placeholder="e.g. I have a sunroof, specific timing needed…">
+              <label class="field-label">Any Note? <span
+                  style="font-weight:400;color:var(--muted)">(Optional)</span></label>
+              <input class="field-input" type="text" id="f-note"
+                placeholder="e.g. I have a sunroof, specific timing needed…">
             </div>
           </div>
         </div>
@@ -3941,27 +3981,31 @@
       </div>
     </div>
 
-      <div class="sticky-cta" id="sticky-cta">
-        <div class="cta-price-row">
-          <div>
-            <div class="cta-price-label">Total</div>
-            <div class="cta-price-val empty" id="cta-price">Select a product to start</div>
-          </div>
-          <div style="font-size:0.7rem;color:var(--green);font-weight:600;background:var(--green-bg);padding:0.25rem 0.6rem;border-radius:6px">FREE delivery</div>
+    <div class="sticky-cta" id="sticky-cta">
+      <div class="cta-price-row">
+        <div>
+          <div class="cta-price-label">Total</div>
+          <div class="cta-price-val empty" id="cta-price">Select a product to start</div>
         </div>
-        <button class="btn-reserve" id="btn-reserve" disabled onclick="handleReserve()">
-          Pre-order Now
-        </button>
-        <div class="cta-footnote">Choose Pay Now (online) or Pay Later (COD)</div>
+        <div
+          style="font-size:0.7rem;color:var(--green);font-weight:600;background:var(--green-bg);padding:0.25rem 0.6rem;border-radius:6px">
+          FREE delivery</div>
       </div>
+      <button class="btn-reserve" id="btn-reserve" disabled onclick="handleReserve()">
+        Pre-order Now
+      </button>
+      <div class="cta-footnote">Choose Pay Now (online) or Pay Later (COD)</div>
+    </div>
 
     <div class="payment-modal" id="payment-modal" aria-hidden="true">
       <div class="payment-modal-card" role="dialog" aria-modal="true" aria-labelledby="payment-modal-title">
         <div class="payment-modal-title" id="payment-modal-title">Choose payment option</div>
         <div class="payment-modal-sub">Pay now online, or choose Pay Later (COD) and we’ll confirm your order.</div>
         <div class="payment-modal-actions">
-          <button class="payment-btn payment-btn-primary" type="button" onclick="choosePayNow()">Pay Now (Online)</button>
-          <button class="payment-btn payment-btn-secondary" type="button" onclick="choosePayLater()">Pay Later (COD) — Order Confirmed</button>
+          <button class="payment-btn payment-btn-primary" type="button" onclick="choosePayNow()">Pay Now
+            (Online)</button>
+          <button class="payment-btn payment-btn-secondary" type="button" onclick="choosePayLater()">Pay Later (COD) —
+            Order Confirmed</button>
         </div>
       </div>
     </div>
@@ -3982,7 +4026,12 @@
       <p class="success-sub">Your pre-order is confirmed. We'll message you shortly.</p>
       <div class="success-detail" id="success-detail"></div>
       <a class="btn-wa-success" id="success-wa" href="#">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.116 1.527 5.845L0 24l6.343-1.502A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.655-.492-5.193-1.353l-.371-.214-3.862.915.976-3.757-.236-.386A9.934 9.934 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+          <path
+            d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.116 1.527 5.845L0 24l6.343-1.502A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.655-.492-5.193-1.353l-.371-.214-3.862.915.976-3.757-.236-.386A9.934 9.934 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+        </svg>
         Chat With Us on WhatsApp
       </a>
       <p style="font-size:0.75rem;color:var(--muted)">We'll reach out shortly. Keep an eye on your WhatsApp</p>
@@ -4031,7 +4080,7 @@
 
     let state = { product: null, size: null };
     let formUnlocked = false;
-  let pendingOrder = null;
+    let pendingOrder = null;
 
     function renderStars(rating) {
       const full = Math.floor(rating);
@@ -4400,6 +4449,12 @@
       }, 1000);
     }
     window.addEventListener('load', function () {
+      // Prevent auto-scroll to hash sections on refresh
+      if (window.location.hash) {
+        window.history.replaceState('', document.title, window.location.pathname + window.location.search);
+        window.scrollTo(0, 0);
+      }
+
       let countdownTime = 60 * 60 * 4 + 60 * 23 + 15; // 4h 23m 15s
       let display = document.querySelector('#countdownTimer');
       if (display) startTimer(countdownTime, display);
@@ -4459,11 +4514,11 @@
     function updateShadeFromBtn(btn) {
       const shade = btn.dataset.shade;
       currentShade = shade;
-      
+
       // Update button states
       document.querySelectorAll('.shade-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      
+
       updateImages();
       updatePriceDisplay();
     }
@@ -4495,7 +4550,7 @@
       thumbsBox.innerHTML = '';
       allImages = data.images;
       currentImageIndex = 0;
-      
+
       data.images.forEach((img, idx) => {
         const t = document.createElement('div');
         t.className = 'config-thumb' + (idx === 0 ? ' active' : '');
@@ -4611,7 +4666,7 @@
 
       const totalPrice = basePrice + addonsTotal;
       const configStr = `${configData[currentShade].title} for ${carNames[currentCar]}`;
-      
+
       const formData = {
         name,
         phone,
@@ -4623,7 +4678,7 @@
       // Update UI
       document.getElementById('successConfig').innerText = configStr;
       document.getElementById('configSuccess').style.display = 'block';
-      
+
       // Update message text
       const successTitle = document.querySelector('#configSuccess h3');
       if (successTitle) successTitle.textContent = "Order Received!";
@@ -4638,7 +4693,7 @@
       try {
         await fetch('https://formspree.io/f/xlgzeege', {
           method: 'POST',
-          headers: { 
+          headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
           },
@@ -4651,7 +4706,7 @@
       // WhatsApp message
       const addonsText = addonsSelected.length > 0 ? ` Selected add-ons: ${addonsSelected.join(', ')}.` : '';
       const msg = `Hi, I'm ${name}. I just pre-ordered the ${configStr} (Total: ₹${totalPrice.toLocaleString('en-IN')}).${addonsText} My phone is ${phone}. Please confirm my spot!`;
-      
+
       setTimeout(() => {
         window.open(`https://wa.me/910000000000?text=${encodeURIComponent(msg)}`, '_blank');
       }, 2000);

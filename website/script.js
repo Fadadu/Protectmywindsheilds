@@ -287,9 +287,24 @@ function showSuccess(order, paymentMode) {
     { l: 'Total', v: '₹' + order.total.toLocaleString('en-IN') },
     { l: 'Payment', v: paymentMode },
   ];
-  document.getElementById('success-detail').innerHTML = rows.map(r =>
-    `<div class="success-detail-row"><span class="dr-label">${r.l}</span><span class="dr-val">${r.v}</span></div>`
-  ).join('');
+  const summaryContainer = document.getElementById('success-detail');
+  summaryContainer.innerHTML = ''; // Clear previous
+  rows.forEach(r => {
+    const row = document.createElement('div');
+    row.className = 'success-detail-row';
+    
+    const label = document.createElement('span');
+    label.className = 'dr-label';
+    label.textContent = r.l;
+    
+    const val = document.createElement('span');
+    val.className = 'dr-val';
+    val.textContent = r.v;
+    
+    row.appendChild(label);
+    row.appendChild(val);
+    summaryContainer.appendChild(row);
+  });
 
   const msg = buildWhatsAppMessage(order, paymentMode);
   document.getElementById('success-wa').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;

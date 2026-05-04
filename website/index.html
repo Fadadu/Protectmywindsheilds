@@ -2992,6 +2992,26 @@
       gap: 1.25rem;
     }
 
+    @media (min-width: 900px) {
+      .preorder-section .form-wrap {
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        grid-template-areas: 
+          "detail product"
+          "detail size"
+          "detail user"
+          "detail summary";
+        align-items: start;
+        gap: 2rem;
+      }
+      .preorder-section #card-product { grid-area: product; }
+      .preorder-section #product-detail { grid-area: detail; position: sticky; top: 2rem; }
+      .preorder-section #card-size { grid-area: size; }
+      .preorder-section #card-details { grid-area: user; }
+      .preorder-section #card-summary { grid-area: summary; }
+    }
+
     .preorder-section .card,
     .preorder-section .product-detail-card,
     .preorder-section .success-detail {

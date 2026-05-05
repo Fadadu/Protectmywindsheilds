@@ -1458,8 +1458,11 @@ footer {
 }
 
 .preorder-section .card.locked {
-  opacity: 0.45;
-  pointer-events: none;
+  display: none;
+}
+
+.preorder-section .sticky-cta.locked {
+  display: none;
 }
 
 .preorder-section .product-detail-card {

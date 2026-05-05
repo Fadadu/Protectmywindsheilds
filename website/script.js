@@ -130,6 +130,7 @@ function selectSize(el) {
 
   document.getElementById('card-details').classList.remove('locked');
   document.getElementById('card-summary').classList.remove('locked');
+  document.getElementById('sticky-cta').classList.remove('locked');
   document.getElementById('step2-num').classList.add('done');
   document.getElementById('step2-num').textContent = '✓';
   formUnlocked = true;

@@ -56,7 +56,11 @@ const products = {
 };
 
 const sizeLabels = {
-  hatchback: 'Hatchback', sedan: 'Sedan', suv: 'SUV / MUV', other: 'Not Sure'
+  hatchback: 'Hatchback',
+  sedan: 'Sedan',
+  suv: 'SUV / MUV',
+  luxury: 'Luxury & Premium',
+  other: 'Not Sure'
 };
 
 let state = { product: null, size: null };

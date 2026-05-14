@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = '918511245666';
+// WHATSAPP_NUMBER is defined in car-data.js
 
 const products = {
   umbrella: {
@@ -387,101 +387,6 @@ function toggleFaq(btn) {
     ans.style.display = 'block';
     if(window.posthog) posthog.capture('faq_viewed', { question: btn.innerText.replace('▼', '').trim() });
   }
-}
-
-// --- New Car Dropdown Logic ---
-const carData = {
-  hatchback: { label: 'Hatchback', models: ['Alto','WagonR','Swift','Baleno','i20','Tiago','Kwid','Celerio','Grand i10','Altroz'] },
-  sedan: { label: 'Sedan', models: ['City','Verna','Dzire','Amaze','Slavia','Virtus','Aura','Ciaz'] },
-  suv: { label: 'SUV / MUV', models: ['Creta','Innova','Fortuner','Nexon','Punch','Scorpio','Thar','XUV700','Seltos','Brezza','Grand Vitara','Carens'] },
-  luxury: { label: 'Luxury & Premium', models: ['Defender','Range Rover','BMW 5 Series','Mercedes GLE','Audi Q7','Jaguar F-PACE','Volvo XC90'] }
-};
-
-function onCarTypeChange() {
-  const typeEl = document.getElementById('car-type');
-  const modelWrap = document.getElementById('model-wrap');
-  const modelEl = document.getElementById('car-model');
-  const luxuryHint = document.getElementById('luxury-hint');
-  
-  const type = typeEl.value;
-  if(!type) {
-    if(modelWrap) modelWrap.style.display = 'none';
-    return;
-  }
-  
-  state.size = type;
-  state.product = 'inside';
-  
-  // Update price in state/products if needed
-  if(products['inside']) {
-    products['inside'].price = type === 'luxury' ? 1119 : 899;
-  }
-  
-  const models = carData[type].models;
-  if(modelEl) {
-    modelEl.innerHTML = '<option value="">— Select Model —</option>' + models.map(m => '<option value="' + m + '">' + m + '</option>').join('');
-  }
-  
-  if(modelWrap) modelWrap.style.display = 'block';
-  
-  if (type === 'luxury') {
-    if(luxuryHint) luxuryHint.style.display = 'block';
-  } else {
-    if(luxuryHint) luxuryHint.style.display = 'none';
-  }
-  
-  const sumProduct = document.getElementById('sum-product');
-  if(sumProduct) updateSummary();
-  
-  updateDetailWhatsAppLink();
-}
-
-function onCarModelChange() {
-  const modelEl = document.getElementById('car-model');
-  const model = modelEl.value;
-  if(!model) return;
-  
-  const detailsCard = document.getElementById('card-details');
-  if(detailsCard) {
-    detailsCard.classList.remove('locked');
-    const summaryCard = document.getElementById('card-summary');
-    if(summaryCard) summaryCard.classList.remove('locked');
-    const stickyCta = document.getElementById('sticky-cta');
-    if(stickyCta) stickyCta.classList.remove('locked');
-    
-    const stepNum = document.getElementById('step2-num');
-    if (stepNum) {
-      stepNum.classList.add('done');
-      stepNum.textContent = '✓';
-    }
-    formUnlocked = true;
-    updateSummary();
-    setTimeout(() => preorderScrollTo('card-details'), 200);
-  }
-  
-  updateDetailWhatsAppLink();
-}
-
-function updateDetailWhatsAppLink() {
-  const btn = document.getElementById('wa-detail-btn');
-  if(!btn) return;
-  
-  const typeEl = document.getElementById('car-type');
-  const modelEl = document.getElementById('car-model');
-  
-  const type = typeEl ? typeEl.value : '';
-  const model = modelEl ? modelEl.value : '';
-  
-  let msg = "Hi, I'm interested in the Suncraft Foldable Panel Sunshade.";
-  if(type && model) {
-    const classLabel = carData[type].label;
-    msg += ` I have a ${classLabel} (${model}). Please share details and pricing.`;
-  } else if(type) {
-    const classLabel = carData[type].label;
-    msg += ` I have a ${classLabel}. Please share details and pricing.`;
-  }
-  
-  btn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 }
 
 // --- Auth Modal Logic ---

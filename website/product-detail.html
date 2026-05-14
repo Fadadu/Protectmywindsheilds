@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:#fff;color:#0F172A;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
@@ -178,7 +179,27 @@ footer{background:#0F172A;margin-top:5rem}
         Sold out — Pre-order now to secure your spot in the next batch.
       </div>
 
-      <div class="selection-area" style="margin-bottom: 2rem;">
+      <div class="preorder-section" style="padding:0; margin-bottom:2rem;">
+        <div class="fields">
+          <div class="field-group">
+            <label class="field-label">Car Class</label>
+            <select class="field-input" id="car-type" onchange="onCarTypeChange()">
+              <option value="">— Select Class —</option>
+              <option value="hatchback">Hatchback</option>
+              <option value="sedan">Sedan</option>
+              <option value="suv">SUV / MUV</option>
+              <option value="luxury">Luxury &amp; Premium</option>
+            </select>
+          </div>
+          <div class="field-group" id="model-wrap">
+            <label class="field-label">Car Model</label>
+            <select class="field-input" id="car-model" onchange="onCarModelChange()">
+              <option value="">— Select a class first —</option>
+            </select>
+            <div style="font-size:0.75rem;color:#92400E;font-weight:600;display:none" id="luxury-hint">+ Includes Premium Leather Pouch &amp; Microfiber</div>
+          </div>
+        </div>
+      </div>
         <div style="margin-bottom: 1rem;">
           <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Select Car Class</label>
           <select id="car-type" onchange="onCarTypeChange()" style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #E2E8F0; background: #fff; font-family: inherit; font-size: 0.95rem; color: #0F172A;">
@@ -189,9 +210,10 @@ footer{background:#0F172A;margin-top:5rem}
             <option value="luxury">Luxury & Premium</option>
           </select>
         </div>
-        <div id="model-wrap" style="display: none; margin-bottom: 1rem;">
+        <div id="model-wrap" style="margin-bottom: 1rem;">
           <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Select Car Model</label>
           <select id="car-model" onchange="onCarModelChange()" style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #E2E8F0; background: #fff; font-family: inherit; font-size: 0.95rem; color: #0F172A;">
+            <option value="">— Select a class first —</option>
           </select>
           <div style="font-size: 0.75rem; color: #92400E; margin-top: 0.4rem; font-weight: 600; display: none;" id="luxury-hint">+ Includes Premium Leather Pouch & Microfiber</div>
         </div>
@@ -245,6 +267,7 @@ footer{background:#0F172A;margin-top:5rem}
     </div>
   </div>
 
+
 </div>
 
 <!-- FOOTER -->
@@ -279,6 +302,7 @@ footer{background:#0F172A;margin-top:5rem}
   <span>Chat on WhatsApp</span>
 </a>
 
+<script src="car-data.js"></script>
 <script>
 function changeImg(el, src) {
   document.getElementById('mainImg').src = src;

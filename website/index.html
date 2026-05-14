@@ -387,9 +387,10 @@
                 <option value="luxury">Luxury & Premium</option>
               </select>
             </div>
-            <div class="field-group" id="model-wrap" style="display:none; margin-top:1.5rem;">
+            <div class="field-group" id="model-wrap" style="margin-top:1.5rem;">
               <label class="field-label">Car Model</label>
               <select class="field-input" id="car-model" onchange="onCarModelChange()">
+                <option value="">— Select Model —</option>
               </select>
               <div style="font-size:0.75rem; color:var(--amber); margin-top:0.4rem; font-weight:600; display:none;" id="luxury-hint">+ Includes Premium Leather Pouch & Microfiber</div>
             </div>
@@ -580,6 +581,7 @@
     <span>Chat on WhatsApp</span>
   </a>
 
+  <script src="car-data.js"></script>
   <script src="script.js" defer></script>
 </body>
 

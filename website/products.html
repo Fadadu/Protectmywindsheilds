@@ -3,716 +3,181 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ProtectMyWindshield | Keep Your Car Cool | Shield Your Windshield</title>
+<title>Shop | Suncraft — Premium Car Heat Protection</title>
+<meta name="description" content="Browse Suncraft's Foldable Panel Sunshade — engineered to block UV and reduce interior heat in seconds.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <style>
+/* ===== RESET & BASE ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-
-:root{
-  --navy:#0F2B5B;
-  --navy-mid:#1A3D7C;
-  --navy-light:#EEF3FB;
-  --amber:#F59E0B;
-  --amber-light:#FFFBEB;
-  --amber-dark:#92400E;
-  --green:#059669;
-  --green-light:#ECFDF5;
-  --red:#DC2626;
-  --red-light:#FEF2F2;
-  --white:#FFFFFF;
-  --off:#F8FAFC;
-  --ink:#0F172A;
-  --muted:#64748B;
-  --border:#E2E8F0;
-}
-
-body{font-family:'Inter',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-
-/* ===== MARQUEE ===== */
-.topbar{background:var(--navy);padding:0.5rem 0;overflow:hidden;white-space:nowrap}
-.topbar-inner{display:inline-flex;animation:scroll-left 30s linear infinite}
-.topbar span{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.07em;text-transform:uppercase;color:rgba(255,255,255,0.8);padding:0 2rem}
-.topbar span.sep{color:var(--amber)}
-@keyframes scroll-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+body{background:#fff;color:#0F172A;font-family:'Plus Jakarta Sans',sans-serif;-webkit-font-smoothing:antialiased}
 
 /* ===== NAV ===== */
-nav{background:var(--white);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;position:sticky;top:0;z-index:200;border-bottom:1px solid var(--border);box-shadow:0 1px 12px rgba(15,43,91,0.06)}
-.nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.15rem;color:var(--navy);text-decoration:none;letter-spacing:-0.02em}
-.nav-logo span{color:var(--amber)}
-.nav-tagline{font-size:0.75rem;color:var(--muted);font-weight:500;margin-top:1px}
-.nav-right{display:flex;align-items:center;gap:1rem}
-.nav-link{font-size:0.88rem;font-weight:600;color:var(--navy);text-decoration:none;transition:color 0.15s}
-.nav-link:hover{color:var(--amber-dark)}
-.nav-cta{background:var(--green);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.88rem;padding:0.6rem 1.3rem;border-radius:8px;text-decoration:none;white-space:nowrap;transition:background 0.2s; display:flex; align-items:center; gap:0.5rem;}
-.nav-cta:hover{background:#047857}
-@media(max-width:600px){.nav-tagline{display:none}.nav-right{gap:0.6rem}.nav-link{display:none}}
+nav{background:#fff;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:1px solid #E2E8F0;box-shadow:0 1px 12px rgba(15,43,91,0.06)}
+.nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.2rem;color:#0F2B5B;text-decoration:none;letter-spacing:-0.02em}
+.nav-logo span{color:#F59E0B}
+.nav-right{display:flex;align-items:center;gap:1.75rem}
+.nav-link{font-size:0.85rem;font-weight:500;color:#64748B;text-decoration:none;transition:color 0.15s;letter-spacing:0.02em}
+.nav-link:hover,.nav-link.active{color:#0F2B5B}
+.nav-cta{background:#059669;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.85rem;padding:0.55rem 1.25rem;border-radius:6px;text-decoration:none;transition:opacity 0.15s}
+.nav-cta:hover{opacity:0.85}
 
-/* ===== HERO ===== */
-.hero{
-  background:linear-gradient(160deg, rgba(15, 43, 91, 0.88) 0%, rgba(26, 61, 124, 0.88) 100%), url('https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
-  color:var(--white);text-align:center;padding:6rem 1.5rem 5rem;
-}
-.hero-tag{display:inline-flex;align-items:center;gap:0.4rem;background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.4);color:var(--amber);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 1rem;border-radius:20px;margin-bottom:1.75rem; backdrop-filter:blur(4px)}
-.hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2.6rem,7vw,5.5rem);line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.25rem}
-.hero h1 .highlight{color:var(--amber)}
-.hero-stars{display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-bottom:1.5rem}
-.stars{color:var(--amber);font-size:1.2rem;letter-spacing:1px}
-.hero-stars span{font-size:0.9rem;color:rgba(255,255,255,0.85);font-weight:500}
-.hero-sub{font-size:1.1rem;color:rgba(255,255,255,0.85);max-width:560px;margin:0 auto 2.5rem;line-height:1.75;font-weight:400}
-.hero-btns{display:flex;gap:0.9rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
-.btn-big{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;padding:0.9rem 2rem;border-radius:10px;text-decoration:none;transition:transform 0.18s,opacity 0.18s}
-.btn-big:hover{transform:translateY(-2px);opacity:0.92}
-.btn-primary{background:var(--amber);color:var(--ink)}
-.btn-whatsapp{background:var(--green);color:var(--white);}
-.btn-whatsapp:hover{background:#047857}
-.hero-promise{font-size:0.75rem;color:rgba(255,255,255,0.55);letter-spacing:0.07em;text-transform:uppercase;font-weight:500}
+/* ===== HEADER ===== */
+.shop-header{padding:5rem 2rem 4rem;max-width:1200px;margin:0 auto;border-bottom:1px solid #E2E8F0}
+.shop-header h1{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2.5rem,6vw,4.5rem);letter-spacing:-0.035em;color:#0F172A;margin-bottom:0.75rem}
+.shop-header p{font-size:1rem;color:#64748B;max-width:480px;line-height:1.6;font-weight:400}
 
-/* ===== TRUST BAR ===== */
-.trust-bar{background:var(--white);border-bottom:1px solid var(--border);padding:0.9rem 1.5rem}
-.trust-inner{max-width:1060px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:2rem}
-.trust-item{display:flex;align-items:center;gap:0.45rem;font-size:0.8rem;font-weight:600;color:var(--muted)}
-.trust-item .dot{width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0}
+/* ===== CATEGORY GRID ===== */
+.category-section{padding:3rem 2rem 5rem;max-width:1200px;margin:0 auto}
+.category-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:#94A3B8;margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem}
+.category-title::after{content:'';flex:1;height:1px;background:#E2E8F0}
 
-/* ===== STATS BAR ===== */
-.stats-bar{background:var(--navy);display:flex;flex-wrap:wrap;justify-content:center}
-.stat-block{flex:1;min-width:150px;text-align:center;padding:1.75rem 1rem;border-right:1px solid rgba(255,255,255,0.08)}
-.stat-block:last-child{border-right:none}
-.stat-block .num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:2.2rem;color:var(--amber);line-height:1;letter-spacing:-0.02em}
-.stat-block .lbl{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.45);margin-top:0.3rem}
-@media(max-width:500px){.stats-bar{flex-direction:column}.stat-block{border-right:none;border-bottom:1px solid rgba(255,255,255,0.08)}.stat-block:last-child{border-bottom:none}}
-
-/* ===== DAILY COUPON STRIP ===== */
-.daily-coupon{background:var(--red);color:var(--white);padding:0.75rem 1rem;text-align:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.95rem;font-weight:700;letter-spacing:0.02em; display:flex; align-items:center; justify-content:center; gap:1rem; flex-wrap:wrap;}
-.daily-coupon .badge{background:var(--white);color:var(--red);padding:0.2rem 0.6rem;border-radius:4px;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:800}
-.countdown{font-variant-numeric: tabular-nums; background:rgba(0,0,0,0.2); padding:0.2rem 0.6rem; border-radius:4px;}
-
-/* ===== DIVIDER ===== */
-.divider{height:4px;background:linear-gradient(90deg,var(--navy),var(--amber),var(--navy))}
-
-/* ===== SECTIONS ===== */
-section{padding:4rem 1.5rem}
-.container{max-width:1060px;margin:0 auto}
-.section-tag{display:inline-block;background:var(--navy-light);color:var(--navy);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.35rem 0.9rem;border-radius:6px;margin-bottom:1rem}
-h2.section-h{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.1;letter-spacing:-0.025em;margin-bottom:1.25rem;color:var(--ink)}
-
-/* ===== SHOP SECTION ===== */
-.shop{background:var(--off)}
-.shop .section-tag{background:rgba(245,158,11,0.15);color:var(--amber-dark)}
-.shop-intro{color:var(--muted);font-size:1rem;line-height:1.75;max-width:600px;margin-bottom:3rem}
-.product-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem}
-@media(max-width:700px){.product-grid{grid-template-columns:1fr}}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
 
 /* ===== PRODUCT CARD ===== */
-.product-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s}
-.product-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(15,43,91,0.1)}
-.product-img{width:100%;aspect-ratio:4/3;background:var(--navy);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.product-img svg{width:70%;max-width:260px;height:auto}
-.product-line-badge{position:absolute;top:1rem;left:1rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.3rem 0.75rem;border-radius:5px;box-shadow:0 2px 8px rgba(0,0,0,0.15)}
-.badge-exterior{background:var(--amber);color:var(--ink)}
-.badge-interior{background:var(--navy-light);color:var(--navy)}
-.soldout-badge{position:absolute;top:1rem;right:1rem;background:var(--red);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.28rem 0.65rem;border-radius:5px;box-shadow:0 2px 8px rgba(0,0,0,0.15)}
-.product-info{padding:1.5rem}
-.product-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;margin-bottom:0.35rem;color:var(--ink)}
-.product-tagline{font-size:0.85rem;color:var(--muted);margin-bottom:1rem;line-height:1.5}
-.product-rating{display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
-.stars-sm{color:var(--amber);font-size:0.9rem;letter-spacing:1px}
-.rating-count{font-size:0.8rem;color:var(--muted);font-weight:500}
-.product-price-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem}
-.product-price{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.5rem;color:var(--ink);letter-spacing:-0.02em}
-.product-price-note{font-size:0.78rem;color:var(--muted);font-weight:500}
-.preorder-btn{width:100%;background:var(--green);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.95rem;padding:0.8rem;border-radius:9px;border:none;cursor:pointer;transition:background 0.18s;display:flex;align-items:center;justify-content:center;gap:0.5rem}
-.preorder-btn:hover{background:#047857}
-.preorder-btn .wa-icon{width:18px;height:18px;fill:currentColor}
-.view-details{width:100%;background:transparent;color:var(--navy);font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:0.85rem;padding:0.6rem;border:1px solid var(--border);border-radius:9px;cursor:pointer;margin-top:0.6rem;transition:border-color 0.15s,color 0.15s}
-.view-details:hover{border-color:var(--navy);color:var(--navy-mid)}
+.product-card{background:#fff;border:1px solid #E2E8F0;border-radius:12px;overflow:hidden;cursor:pointer;text-decoration:none;color:inherit;display:block;transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s}
+.product-card:hover{border-color:#CBD5E1;transform:translateY(-4px);box-shadow:0 12px 40px rgba(15,43,91,0.10)}
 
-/* ===== PRODUCT DRAWER ===== */
-.drawer-overlay{position:fixed;inset:0;background:rgba(15,23,42,0.55);z-index:300;opacity:0;pointer-events:none;transition:opacity 0.3s;backdrop-filter:blur(3px)}
-.drawer-overlay.open{opacity:1;pointer-events:all}
-.drawer{position:fixed;bottom:0;left:0;right:0;background:var(--white);border-radius:20px 20px 0 0;z-index:301;max-height:92vh;overflow-y:auto;transform:translateY(100%);transition:transform 0.38s cubic-bezier(0.32,0.72,0,1)}
-.drawer.open{transform:translateY(0)}
-.drawer-handle{width:40px;height:4px;background:var(--border);border-radius:2px;margin:1rem auto 0}
-.drawer-inner{padding:1.5rem 2rem 3rem;max-width:960px;margin:0 auto}
-@media(max-width:600px){.drawer-inner{padding:1rem 1.25rem 3rem}}
+.card-img{background:#F8FAFC;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s}
+.product-card:hover .card-img img{transform:scale(1.03)}
 
-.drawer-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
-@media(max-width:680px){.drawer-grid{grid-template-columns:1fr}}
+.card-badge{position:absolute;top:1rem;left:1rem;background:#F59E0B;color:#0a0a0a;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 0.7rem;border-radius:4px}
 
-/* image gallery */
-.gallery{display:flex;flex-direction:column;gap:0.75rem}
-.gallery-main{width:100%;aspect-ratio:4/3;background:var(--navy);border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.gallery-main svg{width:70%;height:auto}
-.gallery-thumbs{display:flex;gap:0.6rem}
-.gallery-thumb{width:70px;height:54px;border-radius:8px;border:2px solid var(--border);cursor:pointer;background:var(--off);display:flex;align-items:center;justify-content:center;overflow:hidden;transition:border-color 0.15s;flex-shrink:0}
-.gallery-thumb.active{border-color:var(--navy)}
-.gallery-thumb svg{width:80%;height:auto}
+.card-body{padding:1.5rem 1.5rem 1.75rem;background:#fff}
+.card-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.25rem;color:#0F172A;margin-bottom:0.75rem;letter-spacing:-0.02em}
+.card-desc{font-size:0.88rem;color:#64748B;line-height:1.65;margin-bottom:1.5rem}
+.card-footer-row{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.card-price{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.3rem;color:#0F172A}
+.card-price .mrp{font-size:0.9rem;font-weight:400;color:#CBD5E1;text-decoration:line-through;margin-left:0.5rem}
+.card-arrow{width:36px;height:36px;background:#F1F5F9;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#94A3B8;transition:background 0.2s,color 0.2s;flex-shrink:0}
+.product-card:hover .card-arrow{background:#F59E0B;color:#0a0a0a}
 
-/* drawer product info */
-.drawer-badge-row{display:flex;gap:0.5rem;align-items:center;margin-bottom:0.75rem;flex-wrap:wrap}
-.d-badge{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.28rem 0.7rem;border-radius:5px}
-.d-badge-line{background:var(--navy-light);color:var(--navy)}
-.d-badge-sold{background:var(--red);color:var(--white)}
-.d-badge-preorder{background:var(--amber-light);color:var(--amber-dark);border:1px solid rgba(245,158,11,0.3)}
-.drawer-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-0.025em;color:var(--ink);margin-bottom:0.5rem}
-.drawer-tagline{font-size:0.95rem;color:var(--muted);line-height:1.7;margin-bottom:1.25rem}
-
-/* rating */
-.drawer-rating{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border)}
-.d-stars{color:var(--amber);font-size:1rem;letter-spacing:1px}
-.d-rating-num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;color:var(--ink)}
-.d-rating-count{font-size:0.82rem;color:var(--muted)}
-.d-rating-bar-wrap{flex:1;display:flex;flex-direction:column;gap:3px}
-.d-rating-row{display:flex;align-items:center;gap:6px;font-size:0.72rem;color:var(--muted)}
-.d-bar-track{flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden}
-.d-bar-fill{height:100%;background:var(--amber);border-radius:3px}
-
-/* pricing */
-.drawer-price-row{display:flex;align-items:baseline;gap:0.75rem;margin-bottom:0.5rem}
-.drawer-price{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:2rem;color:var(--ink);letter-spacing:-0.03em}
-.drawer-price-mrp{font-size:1rem;color:var(--muted);text-decoration:line-through}
-.drawer-price-note{font-size:0.8rem;color:var(--muted);margin-bottom:1.5rem}
-
-/* stock info */
-.stock-info{background:var(--red-light);border:1px solid rgba(220,38,38,0.2);border-radius:8px;padding:0.75rem 1rem;margin-bottom:1.25rem;font-size:0.85rem;color:var(--red);font-weight:600}
-.stock-info span{font-weight:400;color:#991B1B}
-
-/* preorder form */
-.drawer-preorder-btn{width:100%;background:var(--green);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;padding:0.9rem;border-radius:10px;border:none;cursor:pointer;margin-bottom:0.75rem;transition:background 0.18s; display:flex; align-items:center; justify-content:center; gap:0.5rem;}
-.drawer-preorder-btn:hover{background:#047857}
-.drawer-notify-btn{width:100%;background:var(--off);color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:0.92rem;padding:0.9rem;border-radius:10px;border:1px solid var(--border);cursor:pointer;transition:border-color 0.18s}
-.drawer-notify-btn:hover{border-color:var(--navy)}
-
-/* specs */
-.drawer-specs{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
-.specs-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);margin-bottom:0.9rem}
-.specs-table{display:flex;flex-direction:column;gap:0}
-.spec-row{display:flex;justify-content:space-between;align-items:center;padding:0.65rem 0;border-bottom:1px solid var(--border);font-size:0.88rem}
-.spec-row:last-child{border-bottom:none}
-.spec-key{color:var(--muted);font-weight:500}
-.spec-val{color:var(--ink);font-weight:600;text-align:right}
-
-/* reviews */
-.drawer-reviews{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
-.review-card{background:var(--off);border-radius:10px;padding:1rem 1.25rem;margin-bottom:0.75rem}
-.review-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem}
-.reviewer{font-weight:700;font-size:0.88rem;color:var(--ink)}
-.review-stars{color:var(--amber);font-size:0.8rem}
-.review-text{font-size:0.85rem;color:var(--muted);line-height:1.6}
-.review-date{font-size:0.75rem;color:var(--border);margin-top:0.35rem}
-
-/* ===== PROBLEM ===== */
-.problem{background:var(--white)}
-.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
-@media(max-width:680px){.problem-grid{grid-template-columns:1fr;gap:2rem}}
-.problem p{font-size:1rem;line-height:1.8;color:var(--muted);margin-bottom:1rem;font-weight:400}
-.heat-boxes{display:flex;flex-direction:column;gap:0.9rem}
-.heat-box{background:var(--off);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1.25rem;box-shadow:0 1px 4px rgba(15,43,91,0.06)}
-.heat-box .big-num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:2.8rem;color:var(--navy);line-height:1;min-width:90px;text-align:center;letter-spacing:-0.03em}
-.heat-box .desc{font-size:0.88rem;color:var(--muted);line-height:1.5;font-weight:500}
-.heat-box.accent{border-color:var(--amber);border-left:4px solid var(--amber)}
-.heat-box.accent .big-num{color:var(--amber-dark)}
-
-/* ===== COUPON ===== */
-.coupon-strip{background:var(--navy);padding:3rem 1.5rem;text-align:center}
-.coupon-inner{max-width:660px;margin:0 auto}
-.coupon-label{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.75rem}
-.coupon-card{border:2px dashed rgba(245,158,11,0.5);border-radius:16px;padding:2rem 2.5rem;background:rgba(245,158,11,0.06)}
-.coupon-card .off{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2.2rem,6vw,4rem);color:var(--amber);line-height:1;display:block;letter-spacing:-0.03em;margin-bottom:0.5rem}
-.coupon-card .what{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.3rem;color:var(--white);letter-spacing:-0.01em;margin-bottom:0.5rem}
-.coupon-card .fine{font-size:0.85rem;color:rgba(255,255,255,0.5);margin-bottom:1.5rem;line-height:1.6}
-.btn-coupon{display:inline-block;background:var(--amber);color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;letter-spacing:0.01em;padding:0.8rem 2.2rem;border-radius:10px;text-decoration:none;transition:opacity 0.2s}
-.btn-coupon:hover{opacity:0.9}
-
-/* ===== SOLUTION ===== */
-.solution{background:var(--off)}
-.solution-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
-@media(max-width:680px){.solution-grid{grid-template-columns:1fr;gap:2rem}}
-.solution p{font-size:1rem;line-height:1.8;color:var(--muted);margin-bottom:1rem}
-.solution-visual{background:var(--navy);border-radius:16px;padding:2.5rem;display:flex;align-items:center;justify-content:center}
-.solution-visual svg{width:100%;max-width:320px;height:auto}
-
-/* ===== WHY US ===== */
-.why{background:var(--white)}
-.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:2.5rem}
-.why-card{background:var(--off);border-radius:14px;padding:1.75rem 1.5rem;border:1px solid var(--border);box-shadow:0 1px 4px rgba(15,43,91,0.05);position:relative;overflow:hidden}
-.why-card::after{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--navy)}
-.why-card .icon{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.75rem;letter-spacing:0.08em;color:var(--navy);background:var(--navy-light);width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
-.why-card h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-0.01em;margin-bottom:0.6rem;color:var(--ink)}
-.why-card p{font-size:0.88rem;color:var(--muted);line-height:1.65}
-.why-card .verdict{display:inline-flex;align-items:center;gap:0.3rem;background:var(--green-light);color:var(--green);font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.25rem 0.65rem;border-radius:5px;margin-top:1rem}
-
-/* ===== BENEFITS ===== */
-.benefits{background:var(--off)}
-.benefits-list{display:flex;flex-direction:column;gap:0.9rem;margin-top:2rem}
-.benefit-row{background:var(--white);border-radius:12px;padding:1.4rem 1.6rem;display:flex;align-items:flex-start;gap:1.25rem;border:1px solid var(--border);border-left:4px solid var(--navy)}
-.benefit-row .check{font-size:1.2rem;font-weight:700;color:var(--navy);flex-shrink:0;margin-top:0.1rem;width:20px;text-align:center}
-.benefit-row h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;letter-spacing:-0.01em;margin-bottom:0.35rem;color:var(--ink)}
-.benefit-row p{font-size:0.88rem;color:var(--muted);line-height:1.6}
-
-/* ===== CONTEXT ===== */
-.context{background:var(--navy)}
-.context .section-tag{background:rgba(245,158,11,0.15);color:var(--amber)}
-.context h2.section-h{color:var(--white)}
-.context p{font-size:1rem;line-height:1.8;color:rgba(255,255,255,0.65);margin-bottom:1rem}
-.tag-row{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.75rem}
-.ctag{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.8);font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:0.8rem;letter-spacing:0.04em;padding:0.45rem 1rem;border-radius:8px;border:1px solid rgba(255,255,255,0.12)}
-
-/* ===== PROMISE ===== */
-.promise{background:var(--white)}
-.promise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.25rem;margin-top:2.5rem}
-.promise-block{text-align:center;padding:2rem 1.25rem;border:1px solid var(--border);border-radius:14px;background:var(--off);box-shadow:0 1px 4px rgba(15,43,91,0.04)}
-.promise-block .p-icon{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.75rem;letter-spacing:0.06em;color:var(--navy);background:var(--navy-light);width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
-.promise-block h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;color:var(--navy);margin-bottom:0.5rem;letter-spacing:-0.01em}
-.promise-block p{font-size:0.85rem;color:var(--muted);line-height:1.6}
-
-/* ===== EARLY ACCESS ===== */
-.early{background:var(--amber-light);border-top:1px solid rgba(245,158,11,0.2);border-bottom:1px solid rgba(245,158,11,0.2);text-align:center;padding:4rem 1.5rem}
-.early h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2.2rem,5vw,3.5rem);letter-spacing:-0.03em;color:var(--ink);margin-bottom:0.75rem}
-.early p{font-size:1rem;max-width:520px;margin:0 auto 2.5rem;color:var(--muted);line-height:1.75}
-.early-btns{display:flex;gap:0.9rem;justify-content:center;flex-wrap:wrap}
-
-/* ===== FORM ===== */
-.form-sec{background:var(--navy)}
-.form-sec .section-tag{background:rgba(245,158,11,0.15);color:var(--amber)}
-.form-sec h2.section-h{color:var(--white)}
-.form-intro{color:rgba(255,255,255,0.55);margin-bottom:2.5rem;line-height:1.75;font-size:0.95rem}
-.form-wrap{max-width:620px;margin:0 auto}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
-@media(max-width:560px){.form-row{grid-template-columns:1fr}}
-.form-group{display:flex;flex-direction:column;gap:0.45rem}
-.form-group.full{grid-column:1/-1}
-label{font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.5)}
-input[type=text],input[type=tel]{font-family:'Inter',sans-serif;font-size:0.95rem;padding:0.8rem 1.1rem;border:1.5px solid rgba(255,255,255,0.12);border-radius:10px;background:rgba(255,255,255,0.07);color:var(--white);outline:none;width:100%;transition:border-color 0.15s,background 0.15s}
-input::placeholder{color:rgba(255,255,255,0.25)}
-input:focus{border-color:var(--amber);background:rgba(255,255,255,0.1)}
-.radio-label{font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.6rem;display:block}
-.radio-opts{display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.4rem}
-.radio-opt{position:relative}
-.radio-opt input[type=radio]{position:absolute;opacity:0;width:0;height:0}
-.radio-opt label{display:block;background:rgba(255,255,255,0.07);border:1.5px solid rgba(255,255,255,0.12);border-radius:8px;padding:0.55rem 1.1rem;font-size:0.88rem;font-weight:600;color:rgba(255,255,255,0.65);cursor:pointer;text-transform:none;letter-spacing:0;transition:all 0.15s}
-.radio-opt input:checked+label{background:rgba(245,158,11,0.18);border-color:var(--amber);color:var(--amber)}
-.radio-opt label:hover{border-color:rgba(245,158,11,0.5);color:rgba(255,255,255,0.9)}
-.btn-form{width:100%;background:var(--green);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:-0.01em;padding:1rem;border:none;border-radius:10px;cursor:pointer;margin-top:0.75rem;transition:background 0.18s,transform 0.18s; display:flex; align-items:center; justify-content:center; gap:0.5rem;}
-.btn-form:hover{background:#047857;transform:translateY(-1px)}
-.btn-form .wa-icon{width:20px;height:20px;fill:currentColor}
-
-/* ===== FAQ ===== */
-.faq{background:var(--off)}
-.faq-list{display:flex;flex-direction:column;gap:0;margin-top:2.5rem;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 1px 6px rgba(15,43,91,0.05)}
-.faq-item{border-bottom:1px solid var(--border)}
-.faq-item:last-child{border-bottom:none}
-.faq-q{width:100%;background:var(--white);border:none;padding:1.2rem 1.5rem;text-align:left;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.97rem;letter-spacing:-0.01em;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;color:var(--ink);transition:background 0.15s}
-.faq-q:hover{background:var(--off)}
-.faq-q .arrow{font-size:0.8rem;color:var(--muted);flex-shrink:0;transition:transform 0.22s;background:var(--off);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.faq-q.open{background:var(--navy);color:var(--white)}
-.faq-q.open .arrow{background:rgba(255,255,255,0.12);color:var(--amber);transform:rotate(180deg)}
-.faq-a{display:none;padding:1.1rem 1.5rem 1.4rem;background:var(--white);font-size:0.92rem;line-height:1.75;color:var(--muted)}
-
-/* ===== FINAL CTA ===== */
-.final-cta{background:linear-gradient(160deg,var(--navy) 0%,#1e3a6e 100%);text-align:center;padding:6rem 1.5rem;position:relative;overflow:hidden}
-.final-cta h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2.2rem,5.5vw,4rem);letter-spacing:-0.03em;color:var(--white);margin-bottom:0.5rem}
-.final-cta h2 span{color:var(--amber)}
-.final-cta p{color:rgba(255,255,255,0.5);font-size:1rem;max-width:460px;margin:0.75rem auto 2.5rem;line-height:1.75}
-.final-cta .btn-whatsapp{margin:0.4rem}
+/* ===== TRUST STRIP ===== */
+.trust-strip{background:#F8FAFC;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;padding:1.5rem 2rem}
+.trust-strip-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:3rem}
+.trust-item{display:flex;align-items:center;gap:0.6rem;font-size:0.8rem;color:#64748B;font-weight:500}
+.trust-item svg{color:#94A3B8}
 
 /* ===== FOOTER ===== */
-footer{background:var(--ink);color:rgba(255,255,255,0.35);text-align:center;padding:1.75rem;font-size:0.8rem;font-weight:500}
-footer a{color:var(--amber);text-decoration:none}
+footer{background:var(--ink, #0F172A)}
+.footer-grid{max-width:1060px;margin:0 auto;padding:4rem 2rem 2rem;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem}
+@media(max-width:700px){.footer-grid{grid-template-columns:1fr;gap:2rem}}
+.footer-mission h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.6rem;color:#fff;margin-bottom:0.75rem;line-height:1.2}
+.footer-mission p{font-size:0.88rem;color:rgba(255,255,255,0.35);line-height:1.7}
+.footer-links h4,.footer-contact h4{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);margin-bottom:1rem}
+.footer-links a,.footer-contact a:not(.footer-email){display:block;font-size:0.88rem;color:rgba(255,255,255,0.4);text-decoration:none;margin-bottom:0.5rem;transition:color 0.15s}
+.footer-links a:hover,.footer-contact a:hover{color:#fff}
+.footer-email{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.95rem;color:#F59E0B;text-decoration:none;transition:opacity 0.15s}
+.footer-email:hover{opacity:0.8}
+.footer-bottom{max-width:1060px;margin:0 auto;padding:1.5rem 2rem;border-top:1px solid rgba(255,255,255,0.06);font-size:0.8rem;color:rgba(255,255,255,0.2)}
 
-/* Mobile Optimization */
-@media (max-width: 768px) {
-  nav {
-    padding: 0.75rem 1rem;
-  }
-  .nav-tagline, .nav-link {
-    display: none;
-  }
-  .hero {
-    padding: 4.5rem 1.25rem;
-  }
-  .hero h1 {
-    font-size: 2.25rem;
-    line-height: 1.1;
-  }
-  .product-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem;
-  }
-  .product-info {
-    padding: 1.25rem;
-  }
-  .product-name {
-    font-size: 1.1rem;
-  }
-  .container {
-    padding: 0 1.25rem;
-  }
-  .final-cta h2 {
-    font-size: 2rem;
-  }
-}
+/* ===== WHATSAPP FLOAT ===== */
+.floating-wa{position:fixed;bottom:2rem;right:2rem;background:#25D366;color:#fff;padding:0.8rem 1.5rem;border-radius:50px;display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:0.95rem;box-shadow:0 4px 15px rgba(37,211,102,0.4);z-index:9999;transition:transform 0.2s,box-shadow 0.2s;font-family:'Plus Jakarta Sans',sans-serif}
+.floating-wa:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(37,211,102,0.5)}
+@media(max-width:600px){.floating-wa span{display:none}.floating-wa{padding:1rem;bottom:1.5rem;right:1.5rem}}
 </style>
 </head>
 <body>
 
-<!-- SVG Defs -->
-<svg style="display:none;">
-  <symbol id="wa-icon" viewBox="0 0 24 24">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </symbol>
-</svg>
-
-
 <!-- NAV -->
-<nav id="nav">
-  <div>
-    <a class="nav-logo" href="#"><span>Protect</span>MyWindshield</a>
-    <div class="nav-tagline">Interior & Exterior Heat Protection</div>
-  </div>
+<nav>
+  <a class="nav-logo" href="index.html"><span>Sun</span>craft</a>
   <div class="nav-right">
-    <a class="nav-link" href="products.html">Car Cover</a>
-    <a class="nav-link" href="#how">How It Works</a>
-    <a class="nav-link" href="#faq">FAQ</a>
-    <a class="nav-cta" href="#form">
-      <svg class="wa-icon" style="width:16px;height:16px;fill:currentColor"><use href="#wa-icon"></use></svg>
-      Pre-order Now
-    </a>
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link active" href="products.html">Shop</a>
+    <a class="nav-link" href="index.html#how">How It Works</a>
+    <a class="nav-link" href="index.html#faq">FAQ</a>
   </div>
 </nav>
 
-<!-- DAILY COUPON -->
-<div class="daily-coupon">
-  <span><span class="badge">DEAL OF THE DAY</span> &nbsp; Pre-order today to lock in 10% OFF your final price!</span>
-  <span>Offer ends in: <span class="countdown" id="countdownTimer">04:23:15</span></span>
+<!-- HEADER -->
+<div class="shop-header">
+  <h1>Our Products.</h1>
+  <p>Engineered for Vadodara's heat. One product, obsessively perfected. Click to see details.</p>
 </div>
 
-
-
-<!-- SHOP SECTION -->
-<section class="shop" id="shop">
-  <div class="container">
-    <span class="section-tag">Our Products</span>
-    <h2 class="section-h">Interior & Exterior Protection.</h2>
-    <p class="shop-intro">Both product lines are currently sold out and open for limited pre-order. Early customers get priority access once the first batch is confirmed. No payment required to reserve your spot.</p>
-
-    <div class="product-grid">
-      <!-- EXTERIOR CARD -->
-      <div class="product-card" onclick="location.href='exterior-shield.html'">
-
-        <div class="product-info">
-          <div class="product-name">Exterior Windshield Shield</div>
-          <div class="product-tagline">Mounts outside the glass. Reflects sunlight before it enters.</div>
-          <div class="product-rating">
-            <span class="stars-sm">★★★★★</span>
-            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.88rem;color:var(--ink)">4.8</span>
-            <span class="rating-count">· 124 pre-orders</span>
-          </div>
-          <div class="product-price-row">
-            <span class="product-price">₹1,499</span>
-            <span class="product-price-note">incl. taxes · price at delivery</span>
-          </div>
-          <button class="preorder-btn" onclick="event.stopPropagation(); window.open('https://wa.me/918511245666?text=Hi,%20I%27m%20interested%20in%20a%20ProtectMyWindshield%20sunshade.%20Please%20share%20the%20details%20so%20I%20can%20choose%20the%20right%20model.', '_blank');">
-            <svg class="wa-icon"><use href="#wa-icon"></use></svg>
-            Pre-order on WhatsApp
-          </button>
-          <button class="view-details" onclick="event.stopPropagation();location.href='exterior-shield.html'">View Product Details</button>
-        </div>
-      </div>
-
-      <!-- INTERIOR CARD -->
-      <div class="product-card" onclick="location.href='interior-shield.html'">
-
-        <div class="product-info">
-          <div class="product-name">Interior Windshield Shield</div>
-          <div class="product-tagline">Fits inside the cabin. Blocks UV and reduces interior heat buildup.</div>
-          <div class="product-rating">
-            <span class="stars-sm">★★★★★</span>
-            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.88rem;color:var(--ink)">4.6</span>
-            <span class="rating-count">· 89 pre-orders</span>
-          </div>
-          <div class="product-price-row">
-            <span class="product-price">₹999</span>
-            <span class="product-price-note">incl. taxes · price at delivery</span>
-          </div>
-          <button class="preorder-btn" onclick="event.stopPropagation(); window.open('https://wa.me/918511245666?text=Hi,%20I%27m%20interested%20in%20a%20ProtectMyWindshield%20sunshade.%20Please%20share%20the%20details%20so%20I%20can%20choose%20the%20right%20model.', '_blank');">
-             <svg class="wa-icon"><use href="#wa-icon"></use></svg>
-             Pre-order on WhatsApp
-          </button>
-          <button class="view-details" onclick="event.stopPropagation();location.href='interior-shield.html'">View Product Details</button>
-        </div>
-      </div>
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-strip-inner">
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      UV Rated Material
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+      10-Second Setup
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      89+ Pre-orders
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Free Delivery in Vadodara
     </div>
   </div>
-</section>
+</div>
 
+<!-- CATEGORY GRID -->
+<div class="category-section">
+  <div class="category-title">Windshield Protection</div>
 
+  <div class="product-grid">
 
+    <!-- FOLDABLE PANEL SUNSHADE -->
+    <a class="product-card" href="product-detail.html">
+      <div class="card-img">
+        <span class="card-badge">Pre-order Open</span>
+        <img src="images/foldable-panel-shade/1.png" alt="Foldable Panel Sunshade">
+      </div>
+      <div class="card-body">
+        <div class="card-name">Foldable Panel Sunshade</div>
+        <div class="card-desc">Blocks UV before it reaches your dashboard. Thick, padded, folds flat in your door pocket. Engineered for Indian summer heat.</div>
+        <div class="card-footer-row">
+          <div class="card-price">₹899 <span class="mrp">₹1,399</span></div>
+          <div class="card-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 ProtectMyWindshield.com &nbsp;·&nbsp; Interior & Exterior Windshield Protection &nbsp;·&nbsp; <a href="#form">Pre-order Now</a></p>
+  <div class="footer-grid">
+    <div class="footer-mission">
+      <h2>We aim to cover 1 Lakh+<br><span style="color:#F59E0B">Windshields in Vadodara.</span></h2>
+      <p>Heat exposure builds slowly through daily parking. Our mission is to protect every car in our city from long-term sun damage.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navigation</h4>
+      <a href="index.html">Home</a>
+      <a href="products.html">Shop</a>
+      <a href="index.html#how">How It Works</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#form">Pre-order Now</a>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p style="margin-bottom:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.35)">Questions or Bulk Orders?</p>
+      <a href="mailto:yashraulji18@gmail.com" class="footer-email">yashraulji18@gmail.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Suncraft. &nbsp;·&nbsp; Premium Windshield Heat Protection &nbsp;·&nbsp; Vadodara, Gujarat
+  </div>
 </footer>
 
-<!-- ===== PRODUCT DRAWER ===== -->
-<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
-<div class="drawer" id="productDrawer">
-  <div class="drawer-handle"></div>
-  <div class="drawer-inner">
-    <div class="drawer-grid">
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/918511245666?text=Hi, I'm interested in Suncraft. Please help me select the right model for my car." class="floating-wa" target="_blank">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.116 1.527 5.845L0 24l6.343-1.502A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.655-.492-5.193-1.353l-.371-.214-3.862.915.976-3.757-.236-.386A9.934 9.934 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+  <span>Chat on WhatsApp</span>
+</a>
 
-
-      <!-- RIGHT: Info -->
-      <div>
-        <div class="drawer-badge-row">
-          <span class="d-badge d-badge-line" id="dLineBadge"></span>
-          <span class="d-badge d-badge-sold">Sold Out</span>
-          <span class="d-badge d-badge-preorder">Pre-order Open</span>
-        </div>
-        <div class="drawer-title" id="dTitle"></div>
-        <div class="drawer-tagline" id="dTagline"></div>
-
-        <!-- Rating -->
-        <div class="drawer-rating">
-          <div>
-            <div class="d-stars" id="dStars"></div>
-            <div style="display:flex;gap:0.4rem;align-items:center;margin-top:0.2rem">
-              <span class="d-rating-num" id="dRatingNum"></span>
-              <span class="d-rating-count" id="dRatingCount"></span>
-            </div>
-          </div>
-          <div class="d-rating-bar-wrap" id="dRatingBars"></div>
-        </div>
-
-        <!-- Price -->
-        <div class="drawer-price-row">
-          <span class="drawer-price" id="dPrice"></span>
-          <span class="drawer-price-mrp" id="dMrp"></span>
-        </div>
-        <div class="drawer-price-note">Price at delivery · No payment now</div>
-
-        <!-- Stock -->
-        <div class="stock-info">
-          <strong>Sold Out</strong> — <span id="dStockNote"></span>
-        </div>
-
-        <!-- CTA -->
-        <button class="drawer-preorder-btn" id="drawerPreorderBtn">
-          <svg class="wa-icon"><use href="#wa-icon"></use></svg>
-          Secure Pre-order on WhatsApp
-        </button>
-        <button class="drawer-notify-btn" onclick="closeDrawer()">Continue Browsing</button>
-
-        <!-- Specs -->
-        <div class="drawer-specs">
-          <div class="specs-title">Product Specifications</div>
-          <div class="specs-table" id="dSpecs"></div>
-        </div>
-
-        <!-- Reviews -->
-        <div class="drawer-reviews">
-          <div class="specs-title">Customer Reviews</div>
-          <div id="dReviews"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-// --- Countdown Timer ---
-function startTimer(duration, display) {
-    let timer = duration, hours, minutes, seconds;
-    setInterval(function () {
-        hours = parseInt(timer / 3600, 10);
-        minutes = parseInt((timer % 3600) / 60, 10);
-        seconds = parseInt(timer % 60, 10);
-
-        hours = hours < 10 ? "0" + hours : hours;
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = hours + ":" + minutes + ":" + seconds;
-
-        if (--timer < 0) {
-            timer = duration;
-        }
-    }, 1000);
-}
-window.onload = function () {
-    let countdownTime = 60 * 60 * 4 + 60 * 23 + 15; // 4h 23m 15s
-    let display = document.querySelector('#countdownTimer');
-    startTimer(countdownTime, display);
-};
-
-// --- Product Data & Drawer ---
-const products = {
-  exterior: {
-    line: 'Exterior Line',
-    title: 'Exterior Windshield Shield',
-    tagline: 'Mounts on the outside of the glass. Reflects direct sunlight before it enters — stopping heat at the source rather than after it has already built up.',
-    rating: 4.8,
-    ratingCount: '124 pre-orders',
-    bars: [{label:'5 stars', pct:'78%'},{label:'4 stars', pct:'16%'},{label:'3 stars', pct:'4%'},{label:'2 stars', pct:'1%'},{label:'1 star',  pct:'1%'}],
-    price: '₹1,499', mrp: '₹1,999',
-    stockNote: 'Pre-order open for first batch — limited early customer spots remaining.',
-    specs: [
-      {k:'Product Line', v:'Exterior'},{k:'Placement', v:'Outside the windshield'},
-      {k:'Mechanism', v:'Sunlight reflection'},{k:'Material', v:'Multi-layer reflective film'},
-      {k:'Compatibility', v:'Confirmed per car model'},{k:'Installation', v:'No tools required'},
-    ],
-    reviews: [
-      {name:'Rohan M.', stars:'★★★★★', text:'Exactly what I was looking for. I park outside my office for 8 hours and this makes a real difference. Interior is noticeably less hot.', date:'Pre-order customer'},
-      {name:'Priya S.', stars:'★★★★★', text:'Love the concept. The exterior placement is the right call — other sunshades that go inside never really helped much.', date:'Pre-order customer'}
-    ],
-    svgMain: `<svg viewBox="0 0 300 220" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.75"><line x1="60" y1="0" x2="80" y2="54" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/><line x1="110" y1="0" x2="118" y2="54" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/><line x1="150" y1="0" x2="150" y2="54" stroke="#F59E0B" stroke-width="3.5" stroke-linecap="round"/><line x1="190" y1="0" x2="182" y2="54" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/><line x1="240" y1="0" x2="220" y2="54" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/></g><rect x="20" y="56" width="260" height="34" rx="5" fill="#F59E0B"/><text x="150" y="79" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="800" font-size="12" fill="#0F172A" letter-spacing="1.5">EXTERIOR SHIELD</text><g opacity="0.35"><line x1="65" y1="56" x2="45" y2="18" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><line x1="150" y1="56" x2="150" y2="12" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><line x1="235" y1="56" x2="255" y2="20" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></g><rect x="40" y="96" width="220" height="54" rx="4" fill="#1A3D7C" opacity="0.6"/><text x="150" y="128" text-anchor="middle" font-family="'Inter',sans-serif" font-size="10" fill="rgba(255,255,255,0.5)">windshield</text><rect x="10" y="156" width="280" height="56" rx="5" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/><text x="150" y="188" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="12" fill="#34D399">Cooler Interior</text></svg>`,
-    svgAlt: [
-      `<svg viewBox="0 0 80 60" fill="none"><rect x="5" y="20" width="70" height="12" rx="3" fill="#F59E0B" opacity="0.8"/><text x="40" y="49" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#34D399" font-weight="700">COOL</text></svg>`,
-      `<svg viewBox="0 0 80 60" fill="none"><rect x="0" y="0" width="80" height="60" fill="#1A3D7C" rx="4"/><text x="40" y="22" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">Reflective</text></svg>`
-    ],
-    waMessage: 'Hi, I\'m interested in a ProtectMyWindshield sunshade. Please share the details so I can choose the right model.'
-  },
-  interior: {
-    line: 'Interior Line',
-    title: 'Interior Windshield Shield',
-    tagline: 'Fits inside the cabin against the windshield. Blocks UV and residual heat from warming the dashboard, steering wheel, and seats.',
-    rating: 4.6,
-    ratingCount: '89 pre-orders',
-    bars: [{label:'5 stars', pct:'70%'},{label:'4 stars', pct:'20%'},{label:'3 stars', pct:'7%'},{label:'2 stars', pct:'2%'},{label:'1 star',  pct:'1%'}],
-    price: '₹999', mrp: '₹1,399',
-    stockNote: 'Pre-order open for first batch — join early for priority access.',
-    specs: [
-      {k:'Product Line', v:'Interior'},{k:'Placement', v:'Inside the cabin'},
-      {k:'Mechanism', v:'UV & heat blocking'},{k:'Material', v:'UV-rated insulating film'},
-      {k:'Compatibility', v:'Confirmed per car model'},{k:'Installation', v:'No tools required'}
-    ],
-    reviews: [
-      {name:'Sneha R.', stars:'★★★★★', text:'Very happy with the quality. It fits snugly and the difference in interior temperature is real. My steering wheel is no longer burning hot.', date:'Pre-order customer'}
-    ],
-    svgMain: `<svg viewBox="0 0 300 220" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.3"><line x1="60" y1="0" x2="80" y2="54" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/><line x1="150" y1="0" x2="150" y2="54" stroke="#F59E0B" stroke-width="3.5" stroke-linecap="round"/><line x1="240" y1="0" x2="220" y2="54" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/></g><rect x="40" y="54" width="220" height="54" rx="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><text x="150" y="82" text-anchor="middle" font-family="'Inter',sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">windshield</text><rect x="20" y="114" width="260" height="28" rx="4" fill="#EEF3FB"/><text x="150" y="133" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="800" font-size="11" fill="#0F2B5B" letter-spacing="1">INTERIOR SHIELD</text><rect x="10" y="148" width="280" height="62" rx="5" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/><text x="150" y="183" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="12" fill="#34D399">Blocks UV & Heat</text></svg>`,
-    svgAlt: [
-      `<svg viewBox="0 0 80 60" fill="none"><rect x="10" y="30" width="60" height="18" rx="3" fill="#EEF3FB"/><text x="40" y="43" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#0F2B5B" font-weight="800">INTERIOR</text></svg>`,
-      `<svg viewBox="0 0 80 60" fill="none"><rect x="0" y="0" width="80" height="60" fill="#1A3D7C" rx="4"/><text x="40" y="22" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">UV Rated</text></svg>`
-    ],
-    waMessage: 'Hi, I\'m interested in a ProtectMyWindshield sunshade. Please share the details so I can choose the right model.'
-  }
-};
-
-function openDrawer(type) {
-  const p = products[type];
-  document.getElementById('dLineBadge').textContent = p.line;
-  document.getElementById('dTitle').textContent = p.title;
-  document.getElementById('dTagline').textContent = p.tagline;
-  document.getElementById('dStars').textContent = '★'.repeat(Math.floor(p.rating)) + (p.rating % 1 >= 0.5 ? '★' : '');
-  document.getElementById('dRatingNum').textContent = p.rating;
-  document.getElementById('dRatingCount').textContent = '· ' + p.ratingCount;
-  document.getElementById('dPrice').textContent = p.price;
-  document.getElementById('dMrp').textContent = p.mrp;
-  document.getElementById('dStockNote').textContent = p.stockNote;
-
-  // WhatsApp Button Setup
-  const waBtn = document.getElementById('drawerPreorderBtn');
-  waBtn.onclick = function() {
-    window.open(`https://wa.me/918511245666?text=${p.waMessage}`, '_blank');
-  };
-
-  // Rating bars
-  document.getElementById('dRatingBars').innerHTML = p.bars.map(b => `
-    <div class="d-rating-row">
-      <span style="min-width:44px">${b.label}</span>
-      <div class="d-bar-track"><div class="d-bar-fill" style="width:${b.pct}"></div></div>
-      <span style="min-width:28px;text-align:right">${b.pct}</span>
-    </div>`).join('');
-
-  // Specs
-  document.getElementById('dSpecs').innerHTML = p.specs.map(s => `
-    <div class="spec-row"><span class="spec-key">${s.k}</span><span class="spec-val">${s.v}</span></div>`).join('');
-
-  // Reviews
-  document.getElementById('dReviews').innerHTML = p.reviews.map(r => `
-    <div class="review-card">
-      <div class="review-head"><span class="reviewer">${r.name}</span><span class="review-stars">${r.stars}</span></div>
-      <div class="review-text">${r.text}</div>
-      <div class="review-date">${r.date}</div>
-    </div>`).join('');
-
-
-
-  document.getElementById('drawerOverlay').classList.add('open');
-  document.getElementById('productDrawer').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-
-function closeDrawer() {
-  document.getElementById('drawerOverlay').classList.remove('open');
-  document.getElementById('productDrawer').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-// Forms & FAQ
-document.getElementById('reserveForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  document.getElementById('successMsg').style.display='block';
-  const btn=this.querySelector('.btn-form');
-  btn.textContent='Submitted';
-  btn.style.background='#059669';
-  btn.disabled=true;
-  document.getElementById('successMsg').scrollIntoView({behavior:'smooth',block:'center'});
-});
-
-function toggleFaq(btn){
-  const ans=btn.nextElementSibling;
-  const isOpen=btn.classList.contains('open');
-  document.querySelectorAll('.faq-q.open').forEach(b=>{b.classList.remove('open');b.nextElementSibling.style.display='none'});
-  if(!isOpen){btn.classList.add('open');ans.style.display='block'}
-}
-</script>
-  <a href="https://wa.me/918511245666?text=Hi,%20I'm%20interested%20in%20ProtectMyWindshield.%20Please%20help%20me%20select%20the%20right%20model%20for%20my%20car." class="floating-wa" target="_blank">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.116 1.527 5.845L0 24l6.343-1.502A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.655-.492-5.193-1.353l-.371-.214-3.862.915.976-3.757-.236-.386A9.934 9.934 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
-    </svg>
-    <span>Chat on WhatsApp</span>
-  </a>
-
-  <style>
-    .floating-wa {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: #25D366;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-      z-index: 9999;
-      transition: transform 0.2s, box-shadow 0.2s;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .floating-wa:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
-    }
-
-    @media (max-width: 600px) {
-      .floating-wa span {
-        display: none;
-      }
-
-      .floating-wa {
-        padding: 1rem;
-        bottom: 1.5rem;
-        right: 1.5rem;
-      }
-    }
-  </style>
 </body>
 </html>

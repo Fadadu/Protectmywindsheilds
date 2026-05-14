@@ -4,12 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ProtectMyWindshield | Keep Your Car Cool | Shield Your Windshield</title>
+  <title>Suncraft | Keep Your Car Cool | Shield Your Windshield</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" crossorigin="anonymous">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="stylesheet" href="style.css" crossorigin="anonymous">
   <style>
@@ -85,20 +83,13 @@
 
   <!-- NAV -->
   <nav>
-    <div>
-      <a class="nav-logo" href="#"><span>Protect</span>MyWindshield</a>
-      <div class="nav-tagline">Making You and your car cooler.</div>
-    </div>
+    <a class="nav-logo" href="index.html"><span>Sun</span>craft</a>
     <div class="nav-right" id="navMenu">
-      <a class="nav-link" href="#form" onclick="closeMenu()">Order Now</a>
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="products.html">Shop</a>
       <a class="nav-link" href="#how" onclick="closeMenu()">How It Works</a>
       <a class="nav-link" href="#faq" onclick="closeMenu()">FAQ</a>
-      <a class="nav-link" href="#about" onclick="closeMenu()">About Us</a>
-      <a class="nav-cta" href="#form" onclick="closeMenu()">
-        Car Cover
-      </a>
     </div>
-
   </nav>
 
   <!-- HERO (v4 copy + v5 layout + photo bg) -->
@@ -115,7 +106,7 @@
     <div class="hero-btns">
       <a class="btn-big btn-primary" href="#form">Order Now</a>
       <a class="btn-big btn-whatsapp"
-        href="https://wa.me/918511245666?text=Hi,%20I'm%20interested%20in%20ProtectMyWindshield.%20Please%20help%20me%20select%20the%20right%20model%20for%20my%20car."
+        href="https://wa.me/918511245666?text=Hi,%20I'm%20interested%20in%20Suncraft.%20Please%20help%20me%20select%20the%20right%20model%20for%20my%20car."
         target="_blank">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px">
           <path
@@ -294,6 +285,42 @@
   </section>
 
 
+  
+
+
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <span class="section-tag">FAQ</span>
+      <h2 class="section-h">Questions We Get Asked.</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Does a foldable sunshade actually work? <span class="arrow">▼</span></button>
+          <div class="faq-a">Yes. By reflecting sunlight before it enters the vehicle, it can significantly lower the cabin temperature and prevent your dashboard, steering wheel, and leather seats from cracking or fading under Vadodara's sun.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Why the foldable panel design instead of an umbrella style? <span class="arrow">▼</span></button>
+          <div class="faq-a">Umbrella styles often have fragile mechanisms that can break or scratch your dashboard. Our foldable panel design is durable, uses heavy-duty thermal blocks, and folds completely flat to slip right into your door pocket in seconds.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Will it fit my car perfectly? <span class="arrow">▼</span></button>
+          <div class="faq-a">Instead of a generic "one-size-fits-all", we've categorized the shades by Car Class (Hatchback, Sedan, SUV). Just pick your car model from the dropdown, and we'll send the exact size designed to fit your windshield without sagging.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Is it a hassle to use every day? <span class="arrow">▼</span></button>
+          <div class="faq-a">Not at all. It takes less than 10 seconds to unfold and prop up using your sun visors. It's quicker than picking a song on Spotify.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">I have tinted windows; do I still need this? <span class="arrow">▼</span></button>
+          <div class="faq-a">Yes. The windshield is your car's biggest "heat hole." Even with tint, a physical thermal shield is the only way to keep your steering wheel and seats touchable in the afternoon.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
   <section class="preorder-section" id="form">
     <div class="form-wrap" id="main-form">
       <div class="card" id="card-product">
@@ -304,16 +331,6 @@
         </div>
         <div class="card-body">
           <div class="product-tiles">
-            <div class="product-tile" data-product="umbrella" data-price="1299" onclick="selectProduct(this)">
-              <div class="tile-badge">US Favourite</div>
-              <div class="tile-info">
-                <div class="tile-name">Umbrella Sunshade</div>
-                <div class="tile-desc">One-click open · Suction mount · 10-sec setup</div>
-              </div>
-              <div class="tile-price">₹1,299</div>
-              <div class="tile-radio"></div>
-            </div>
-
             <div class="product-tile" data-product="inside" data-price="899" onclick="selectProduct(this)">
               <div class="tile-badge hot">Most Popular</div>
               <div class="tile-info">
@@ -321,15 +338,6 @@
                 <div class="tile-desc">Multi-layer · Folds flat · Heavy-duty thermal block</div>
               </div>
               <div class="tile-price">₹899</div>
-              <div class="tile-radio"></div>
-            </div>
-
-            <div class="product-tile" data-product="outside" data-price="499" onclick="selectProduct(this)">
-              <div class="tile-info">
-                <div class="tile-name">Exterior Cover</div>
-                <div class="tile-desc">Door-jam fit · Anti-theft flaps · Full coverage</div>
-              </div>
-              <div class="tile-price">₹499</div>
               <div class="tile-radio"></div>
             </div>
           </div>
@@ -368,18 +376,22 @@
           <div class="card-title">Your Car Size</div>
         </div>
         <div class="card-body">
-          <div class="size-pills">
-            <div class="size-pill" data-size="hatchback" onclick="selectSize(this)">
-              <div class="sp-label">Hatchback</div>
-              <div class="sp-sub">Alto, WagonR, Swift</div>
+          <div class="fields">
+            <div class="field-group">
+              <label class="field-label">Car Class</label>
+              <select class="field-input" id="car-type" onchange="onCarTypeChange()">
+                <option value="">— Select Class —</option>
+                <option value="hatchback">Hatchback</option>
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV / MUV</option>
+                <option value="luxury">Luxury & Premium</option>
+              </select>
             </div>
-            <div class="size-pill" data-size="sedan" onclick="selectSize(this)">
-              <div class="sp-label">Sedan</div>
-              <div class="sp-sub">City, Verna, Dzire</div>
-            </div>
-            <div class="size-pill" data-size="suv" onclick="selectSize(this)">
-              <div class="sp-label">SUV / MUV</div>
-              <div class="sp-sub">Creta, Innova, Fortuner</div>
+            <div class="field-group" id="model-wrap" style="display:none; margin-top:1.5rem;">
+              <label class="field-label">Car Model</label>
+              <select class="field-input" id="car-model" onchange="onCarModelChange()">
+              </select>
+              <div style="font-size:0.75rem; color:var(--amber); margin-top:0.4rem; font-weight:600; display:none;" id="luxury-hint">+ Includes Premium Leather Pouch & Microfiber</div>
             </div>
           </div>
         </div>
@@ -515,49 +527,14 @@
       </a>
       <p style="font-size:0.75rem;color:var(--muted)">We'll reach out shortly. Keep an eye on your WhatsApp</p>
     </div>
-  </section>
 
-
-
-  <!-- FAQ -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <span class="section-tag">FAQ</span>
-      <h2 class="section-h">Questions We Get Asked.</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">Does it actually make the car cooler? <span
-              class="arrow">▼</span></button>
-          <div class="faq-a">Yes. While it won't turn your car into a fridge, it stops your dashboard and seats from
-            acting like a heater. Your AC will cool the cabin down much faster because it’s not fighting a 70°C
-            dashboard.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">What’s the difference between Interior and Exterior? <span
-              class="arrow">▼</span></button>
-          <div class="faq-a">
-            <strong>Interior:</strong> Faster to set up and protects your dash from sun damage.<br><br>
-            <strong>Exterior:</strong> The "Pro" version. It blocks the sun before it hits the glass, keeping the car
-            significantly cooler than any inside shade.
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">Is it a hassle to use every day? <span
-              class="arrow">▼</span></button>
-          <div class="faq-a">It takes less than 10 seconds to put up, quicker than picking a song on Spotify. It folds
-            down small enough to fit in your door pocket.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">How is this better than cheap shades? <span
-              class="arrow">▼</span></button>
-          <div class="faq-a">Cheap shades often flake, peel, or collapse after a month. Our shields use premium,
-            high-density reflective material built specifically to survive Vadodara’s extreme summers.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">I have tinted windows; do I still need this? <span
-              class="arrow">▼</span></button>
-          <div class="faq-a">Yes. The windshield is your car's biggest "heat hole." Even with tint, a physical shield is
-            the only way to keep your steering wheel and seats touchable in the afternoon.</div>
+    <div class="payment-modal" id="auth-modal" aria-hidden="true">
+      <div class="payment-modal-card" role="dialog" aria-modal="true">
+        <div class="payment-modal-title">Sign In to Suncrafts</div>
+        <div class="payment-modal-sub">Sign in to track your orders and checkout faster.</div>
+        <div class="payment-modal-actions">
+          <button class="payment-btn payment-btn-primary" type="button" onclick="mockGoogleLogin()">Continue with Google</button>
+          <button class="payment-btn payment-btn-secondary" type="button" onclick="closeAuthModal()">Cancel</button>
         </div>
       </div>
     </div>
@@ -572,7 +549,8 @@
       </div>
       <div class="footer-links">
         <h4>Navigation</h4>
-        <a href="#">Home</a>
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
         <a href="#how">How It Works</a>
         <a href="#faq">FAQ</a>
         <a href="#form">Pre-order Now</a>
@@ -584,14 +562,14 @@
       </div>
     </div>
     <div class="footer-bottom">
-      © 2026 ProtectMyWindshield. &nbsp;·&nbsp; Interior & Exterior Windshield Protection &nbsp;·&nbsp; Vadodara,
+      © 2026 Suncraft. &nbsp;·&nbsp; Premium Windshield Heat Protection &nbsp;·&nbsp; Vadodara,
       Gujarat
     </div>
   </footer>
 
 
 
-  <a href="https://wa.me/918511245666?text=Hi,%20I'm%20interested%20in%20ProtectMyWindshield.%20Please%20help%20me%20select%20the%20right%20model%20for%20my%20car."
+  <a href="https://wa.me/918511245666?text=Hi,%20I'm%20interested%20in%20Suncraft.%20Please%20help%20me%20select%20the%20right%20model%20for%20my%20car."
     class="floating-wa" target="_blank">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
       <path

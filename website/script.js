@@ -244,7 +244,7 @@ function buildOrder() {
 
 function buildWhatsAppMessage(order, paymentMode) {
   return encodeURIComponent(
-    `*New Pre-Order — Suncraft*\n\n` +
+    `*New Order — Suncraft*\n\n` +
     `Name: ${order.name}\n` +
     `Phone: ${order.phone}\n` +
     `Email: ${order.email}\n` +
@@ -253,7 +253,7 @@ function buildWhatsAppMessage(order, paymentMode) {
     (order.note ? `Note: ${order.note}\n` : '') +
     `Total: ₹${order.total.toLocaleString('en-IN')}\n` +
     `Payment: ${paymentMode}\n\n` +
-    `Please confirm my pre-order!`
+    `Please confirm my order!`
   );
 }
 
@@ -317,7 +317,7 @@ function showSuccess(order, paymentMode) {
   document.getElementById('success-wa').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
 
   document.querySelector('.success-title').textContent = "Order Confirmed!";
-  document.querySelector('.success-sub').textContent = "Your pre-order is confirmed. We'll message you shortly.";
+  document.querySelector('.success-sub').textContent = "Your order is confirmed. We'll message you shortly.";
 
   document.getElementById('main-form').style.display = 'none';
   document.getElementById('success-screen').style.display = 'block';

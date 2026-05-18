@@ -1,183 +1,547 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shop | Suncraft — Premium Car Heat Protection</title>
-<meta name="description" content="Browse Suncraft's Foldable Panel Sunshade — engineered to block UV and reduce interior heat in seconds.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<style>
-/* ===== RESET & BASE ===== */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:#fff;color:#0F172A;font-family:'Plus Jakarta Sans',sans-serif;-webkit-font-smoothing:antialiased}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | Suncraft — Premium Car Heat Protection</title>
+  <meta name="description"
+    content="Browse Suncraft's Foldable Panel Sunshade — engineered to block UV and reduce interior heat in seconds.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
 
-/* ===== NAV ===== */
-nav{background:#fff;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:1px solid #E2E8F0;box-shadow:0 1px 12px rgba(15,43,91,0.06)}
-.nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.2rem;color:#0F2B5B;text-decoration:none;letter-spacing:-0.02em}
-.nav-logo span{color:#F59E0B}
-.nav-right{display:flex;align-items:center;gap:1.75rem}
-.nav-link{font-size:0.85rem;font-weight:500;color:#64748B;text-decoration:none;transition:color 0.15s;letter-spacing:0.02em}
-.nav-link:hover,.nav-link.active{color:#0F2B5B}
-.nav-cta{background:#059669;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.85rem;padding:0.55rem 1.25rem;border-radius:6px;text-decoration:none;transition:opacity 0.15s}
-.nav-cta:hover{opacity:0.85}
+    body {
+      background: #fff;
+      color: #0F172A;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased
+    }
 
-/* ===== HEADER ===== */
-.shop-header{padding:5rem 2rem 4rem;max-width:1200px;margin:0 auto;border-bottom:1px solid #E2E8F0}
-.shop-header h1{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2.5rem,6vw,4.5rem);letter-spacing:-0.035em;color:#0F172A;margin-bottom:0.75rem}
-.shop-header p{font-size:1rem;color:#64748B;max-width:480px;line-height:1.6;font-weight:400}
+    /* ===== NAV ===== */
+    nav {
+      background: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      border-bottom: 1px solid #E2E8F0;
+      box-shadow: 0 1px 12px rgba(15, 43, 91, 0.06)
+    }
 
-/* ===== CATEGORY GRID ===== */
-.category-section{padding:3rem 2rem 5rem;max-width:1200px;margin:0 auto}
-.category-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:#94A3B8;margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem}
-.category-title::after{content:'';flex:1;height:1px;background:#E2E8F0}
+    .nav-logo {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #0F2B5B;
+      text-decoration: none;
+      letter-spacing: -0.02em
+    }
 
-.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+    .nav-logo span {
+      color: #F59E0B
+    }
 
-/* ===== PRODUCT CARD ===== */
-.product-card{background:#fff;border:1px solid #E2E8F0;border-radius:12px;overflow:hidden;cursor:pointer;text-decoration:none;color:inherit;display:block;transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s}
-.product-card:hover{border-color:#CBD5E1;transform:translateY(-4px);box-shadow:0 12px 40px rgba(15,43,91,0.10)}
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem
+    }
 
-.card-img{background:#F8FAFC;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
-.card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s}
-.product-card:hover .card-img img{transform:scale(1.03)}
+    .nav-link {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #64748B;
+      text-decoration: none;
+      transition: color 0.15s;
+      letter-spacing: 0.02em
+    }
 
-.card-badge{position:absolute;top:1rem;left:1rem;background:#F59E0B;color:#0a0a0a;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 0.7rem;border-radius:4px}
+    .nav-link:hover,
+    .nav-link.active {
+      color: #0F2B5B
+    }
 
-.card-body{padding:1.5rem 1.5rem 1.75rem;background:#fff}
-.card-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.25rem;color:#0F172A;margin-bottom:0.75rem;letter-spacing:-0.02em}
-.card-desc{font-size:0.88rem;color:#64748B;line-height:1.65;margin-bottom:1.5rem}
-.card-footer-row{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.card-price{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.3rem;color:#0F172A}
-.card-price .mrp{font-size:0.9rem;font-weight:400;color:#CBD5E1;text-decoration:line-through;margin-left:0.5rem}
-.card-arrow{width:36px;height:36px;background:#F1F5F9;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#94A3B8;transition:background 0.2s,color 0.2s;flex-shrink:0}
-.product-card:hover .card-arrow{background:#F59E0B;color:#0a0a0a}
+    .nav-cta {
+      background: #059669;
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.55rem 1.25rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity 0.15s
+    }
 
-/* ===== TRUST STRIP ===== */
-.trust-strip{background:#F8FAFC;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;padding:1.5rem 2rem}
-.trust-strip-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:3rem}
-.trust-item{display:flex;align-items:center;gap:0.6rem;font-size:0.8rem;color:#64748B;font-weight:500}
-.trust-item svg{color:#94A3B8}
+    .nav-cta:hover {
+      opacity: 0.85
+    }
 
-/* ===== FOOTER ===== */
-footer{background:var(--ink, #0F172A)}
-.footer-grid{max-width:1060px;margin:0 auto;padding:4rem 2rem 2rem;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem}
-@media(max-width:700px){.footer-grid{grid-template-columns:1fr;gap:2rem}}
-.footer-mission h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.6rem;color:#fff;margin-bottom:0.75rem;line-height:1.2}
-.footer-mission p{font-size:0.88rem;color:rgba(255,255,255,0.35);line-height:1.7}
-.footer-links h4,.footer-contact h4{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);margin-bottom:1rem}
-.footer-links a,.footer-contact a:not(.footer-email){display:block;font-size:0.88rem;color:rgba(255,255,255,0.4);text-decoration:none;margin-bottom:0.5rem;transition:color 0.15s}
-.footer-links a:hover,.footer-contact a:hover{color:#fff}
-.footer-email{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.95rem;color:#F59E0B;text-decoration:none;transition:opacity 0.15s}
-.footer-email:hover{opacity:0.8}
-.footer-bottom{max-width:1060px;margin:0 auto;padding:1.5rem 2rem;border-top:1px solid rgba(255,255,255,0.06);font-size:0.8rem;color:rgba(255,255,255,0.2)}
+    /* ===== HEADER ===== */
+    .shop-header {
+      padding: 5rem 2rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-bottom: 1px solid #E2E8F0
+    }
 
-/* ===== WHATSAPP FLOAT ===== */
-.floating-wa{position:fixed;bottom:2rem;right:2rem;background:#25D366;color:#fff;padding:0.8rem 1.5rem;border-radius:50px;display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:0.95rem;box-shadow:0 4px 15px rgba(37,211,102,0.4);z-index:9999;transition:transform 0.2s,box-shadow 0.2s;font-family:'Plus Jakarta Sans',sans-serif}
-.floating-wa:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(37,211,102,0.5)}
-@media(max-width:600px){.floating-wa span{display:none}.floating-wa{padding:1rem;bottom:1.5rem;right:1.5rem}}
-</style>
+    .shop-header h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      letter-spacing: -0.035em;
+      color: #0F172A;
+      margin-bottom: 0.75rem
+    }
+
+    .shop-header p {
+      font-size: 1rem;
+      color: #64748B;
+      max-width: 480px;
+      line-height: 1.6;
+      font-weight: 400
+    }
+
+    /* ===== CATEGORY GRID ===== */
+    .category-section {
+      padding: 3rem 2rem 5rem;
+      max-width: 1200px;
+      margin: 0 auto
+    }
+
+    .category-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #94A3B8;
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem
+    }
+
+    .category-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #E2E8F0
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem
+    }
+
+    /* ===== PRODUCT CARD ===== */
+    .product-card {
+      background: #fff;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s
+    }
+
+    .product-card:hover {
+      border-color: #CBD5E1;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(15, 43, 91, 0.10)
+    }
+
+    .card-img {
+      background: #F8FAFC;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative
+    }
+
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s
+    }
+
+    .product-card:hover .card-img img {
+      transform: scale(1.03)
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: #F59E0B;
+      color: #0a0a0a;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px
+    }
+
+    .card-body {
+      padding: 1.5rem 1.5rem 1.75rem;
+      background: #fff
+    }
+
+    .card-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #0F172A;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em
+    }
+
+    .card-desc {
+      font-size: 0.88rem;
+      color: #64748B;
+      line-height: 1.65;
+      margin-bottom: 1.5rem
+    }
+
+    .card-footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem
+    }
+
+    .card-price {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: #0F172A
+    }
+
+    .card-price .mrp {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #CBD5E1;
+      text-decoration: line-through;
+      margin-left: 0.5rem
+    }
+
+    .card-arrow {
+      width: 36px;
+      height: 36px;
+      background: #F1F5F9;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94A3B8;
+      transition: background 0.2s, color 0.2s;
+      flex-shrink: 0
+    }
+
+    .product-card:hover .card-arrow {
+      background: #F59E0B;
+      color: #0a0a0a
+    }
+
+    /* ===== TRUST STRIP ===== */
+    .trust-strip {
+      background: #F8FAFC;
+      border-top: 1px solid #E2E8F0;
+      border-bottom: 1px solid #E2E8F0;
+      padding: 1.5rem 2rem
+    }
+
+    .trust-strip-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 3rem
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      color: #64748B;
+      font-weight: 500
+    }
+
+    .trust-item svg {
+      color: #94A3B8
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--ink, #0F172A)
+    }
+
+    .footer-grid {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 4rem 2rem 2rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem
+    }
+
+    @media(max-width:700px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem
+      }
+    }
+
+    .footer-mission h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 0.75rem;
+      line-height: 1.2
+    }
+
+    .footer-mission p {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.35);
+      line-height: 1.7
+    }
+
+    .footer-links h4,
+    .footer-contact h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 1rem
+    }
+
+    .footer-links a,
+    .footer-contact a:not(.footer-email) {
+      display: block;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      transition: color 0.15s
+    }
+
+    .footer-links a:hover,
+    .footer-contact a:hover {
+      color: #fff
+    }
+
+    .footer-email {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #F59E0B;
+      text-decoration: none;
+      transition: opacity 0.15s
+    }
+
+    .footer-email:hover {
+      opacity: 0.8
+    }
+
+    .footer-bottom {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.2)
+    }
+
+    /* ===== WHATSAPP FLOAT ===== */
+    .floating-wa {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #25D366;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      z-index: 9999;
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-family: 'Plus Jakarta Sans', sans-serif
+    }
+
+    .floating-wa:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5)
+    }
+
+    @media(max-width:600px) {
+      .floating-wa span {
+        display: none
+      }
+
+      .floating-wa {
+        padding: 1rem;
+        bottom: 1.5rem;
+        right: 1.5rem
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-logo" href="index.html"><span>Sun</span>craft</a>
-  <div class="nav-right">
-    <a class="nav-link" href="index.html">Home</a>
-    <a class="nav-link active" href="products.html">Shop</a>
-    <a class="nav-link" href="index.html#how">How It Works</a>
-    <a class="nav-link" href="index.html#faq">FAQ</a>
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html"><span>Sun</span>craft</a>
+    <div class="nav-right">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link active" href="products.html">Shop</a>
+      <a class="nav-link" href="index.html#faq">FAQ</a>
+      <a class="nav-link" href="about.html">About</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <div class="shop-header">
+    <h1>Our Products.</h1>
+    <p>Engineered for Vadodara's heat. One product, obsessively perfected. Click to see details.</p>
   </div>
-</nav>
 
-<!-- HEADER -->
-<div class="shop-header">
-  <h1>Our Products.</h1>
-  <p>Engineered for Vadodara's heat. One product, obsessively perfected. Click to see details.</p>
-</div>
-
-<!-- TRUST STRIP -->
-<div class="trust-strip">
-  <div class="trust-strip-inner">
-    <div class="trust-item">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      UV Rated Material
-    </div>
-    <div class="trust-item">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
-      10-Second Setup
-    </div>
-    <div class="trust-item">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-      89+ Orders
-    </div>
-    <div class="trust-item">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      Free Delivery in Vadodara
-    </div>
-  </div>
-</div>
-
-<!-- CATEGORY GRID -->
-<div class="category-section">
-  <div class="category-title">Windshield Protection</div>
-
-  <div class="product-grid">
-
-    <!-- FOLDABLE PANEL SUNSHADE -->
-    <a class="product-card" href="product-detail.html">
-      <div class="card-img">
-        <span class="card-badge">In Stock</span>
-        <img src="images/foldable-panel-shade/1.png" alt="Foldable Panel Sunshade">
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="trust-strip-inner">
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </svg>
+        UV Rated Material
       </div>
-      <div class="card-body">
-        <div class="card-name">Foldable Panel Sunshade</div>
-        <div class="card-desc">Blocks UV before it reaches your dashboard. Thick, padded, folds flat in your door pocket. Engineered for Indian summer heat.</div>
-        <div class="card-footer-row">
-          <div class="card-price">₹899 <span class="mrp">₹1,399</span></div>
-          <div class="card-arrow">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <polyline points="12,6 12,12 16,14" />
+        </svg>
+        10-Second Setup
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path
+            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+        89+ Orders
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+        Free Delivery in Vadodara
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY GRID -->
+  <div class="category-section">
+    <div class="category-title">Windshield Protection</div>
+
+    <div class="product-grid">
+
+      <!-- FOLDABLE PANEL SUNSHADE -->
+      <a class="product-card" href="product-detail.html">
+        <div class="card-img">
+          <span class="card-badge">In Stock</span>
+          <img src="images/foldable-panel-shade/1.png" alt="Foldable Panel Sunshade">
+        </div>
+        <div class="card-body">
+          <div class="card-name">Foldable Panel Sunshade</div>
+          <div class="card-desc">Blocks UV before it reaches your dashboard. Thick, padded, folds flat in your door
+            pocket. Engineered for Indian summer heat.</div>
+          <div class="card-footer-row">
+            <div class="card-price">₹899 <span class="mrp">₹1,399</span></div>
+            <div class="card-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </div>
           </div>
         </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-mission">
+        <h2>We aim to cover 1 Lakh+<br><span style="color:#F59E0B">Windshields in Vadodara.</span></h2>
+        <p>Heat exposure builds slowly through daily parking. Our mission is to protect every car in our city from
+          long-term sun damage.</p>
       </div>
-    </a>
-  </div>
-</div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="about.html">About</a>
+        <a href="terms.html">Terms</a>
+        <a href="index.html#form">Order Now</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p style="margin-bottom:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.35)">Questions or Bulk Orders?</p>
+        <a href="mailto:yashraulji18@gmail.com" class="footer-email">yashraulji18@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Suncraft. &nbsp;·&nbsp; Premium Windshield Heat Protection &nbsp;·&nbsp; Vadodara, Gujarat
+    </div>
+  </footer>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-mission">
-      <h2>We aim to cover 1 Lakh+<br><span style="color:#F59E0B">Windshields in Vadodara.</span></h2>
-      <p>Heat exposure builds slowly through daily parking. Our mission is to protect every car in our city from long-term sun damage.</p>
-    </div>
-    <div class="footer-links">
-      <h4>Navigation</h4>
-      <a href="index.html">Home</a>
-      <a href="products.html">Shop</a>
-      <a href="index.html#how">How It Works</a>
-      <a href="index.html#faq">FAQ</a>
-      <a href="index.html#form">Order Now</a>
-    </div>
-    <div class="footer-contact">
-      <h4>Contact Us</h4>
-      <p style="margin-bottom:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.35)">Questions or Bulk Orders?</p>
-      <a href="mailto:yashraulji18@gmail.com" class="footer-email">yashraulji18@gmail.com</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    © 2026 Suncraft. &nbsp;·&nbsp; Premium Windshield Heat Protection &nbsp;·&nbsp; Vadodara, Gujarat
-  </div>
-</footer>
-
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/918511245666?text=Hi, I'm interested in Suncraft. Please help me select the right model for my car." class="floating-wa" target="_blank">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.116 1.527 5.845L0 24l6.343-1.502A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.655-.492-5.193-1.353l-.371-.214-3.862.915.976-3.757-.236-.386A9.934 9.934 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-  <span>Chat on WhatsApp</span>
-</a>
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/918511245666?text=Hi, I'm interested in Suncraft. Please help me select the right model for my car."
+    class="floating-wa" target="_blank">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+      <path
+        d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.116 1.527 5.845L0 24l6.343-1.502A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.655-.492-5.193-1.353l-.371-.214-3.862.915.976-3.757-.236-.386A9.934 9.934 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+    </svg>
+    <span>Chat on WhatsApp</span>
+  </a>
 
 </body>
+
 </html>

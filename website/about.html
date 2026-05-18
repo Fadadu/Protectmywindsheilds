@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Suncraft</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@700;800&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #1b3a6b;
+      --navy-dark: #122a52;
+      --navy-light: #2a4f8a;
+      --white: #ffffff;
+      --off-white: #f7f8fc;
+      --orange: #f5a623;
+      --green: #25d366;
+      --text-dark: #111827;
+      --text-muted: #6b7280;
+      --card-bg: #eef2fb;
+      --card-border: #d4deee;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+    }
+
+    /* NAV */
+    nav {
+      background: var(--navy);
+      padding: 14px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: var(--white);
+      font-family: 'Fraunces', serif;
+      font-size: 18px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--navy);
+      padding: 90px 40px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(245, 166, 35, 0.15);
+      border: 1px solid rgba(245, 166, 35, 0.3);
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      max-width: 680px;
+      margin: 0 auto 20px;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 span {
+      color: var(--orange);
+    }
+
+    .hero p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 17px;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* STORY SECTION */
+    .story {
+      background: var(--white);
+      padding: 80px 40px;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 20px;
+    }
+
+    .story-block {
+      margin-bottom: 48px;
+    }
+
+    .story-block .num {
+      font-family: 'Fraunces', serif;
+      font-size: 64px;
+      font-weight: 800;
+      color: var(--card-border);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .story-block h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .story-block p {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #374151;
+      margin-bottom: 14px;
+    }
+
+    .story-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* HYPOTHESIS CALLOUT */
+    .callout {
+      background: var(--navy);
+      border-radius: 16px;
+      padding: 36px 40px;
+      margin: 48px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .callout::before {
+      content: '"';
+      font-family: 'Fraunces', serif;
+      font-size: 180px;
+      color: rgba(255, 255, 255, 0.05);
+      position: absolute;
+      top: -20px;
+      left: 20px;
+      line-height: 1;
+    }
+
+    .callout p {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.4;
+      position: relative;
+    }
+
+    .callout p span {
+      color: var(--orange);
+    }
+
+    /* WHAT WE SELL */
+    .products-section {
+      background: var(--off-white);
+      padding: 80px 40px;
+    }
+
+    .products-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 36px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .product-card .icon {
+      font-size: 32px;
+      margin-bottom: 14px;
+    }
+
+    .product-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    /* MISSION */
+    .mission {
+      background: var(--navy);
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .mission h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      color: var(--white);
+      max-width: 560px;
+      margin: 0 auto 20px;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    .mission h2 span {
+      color: var(--orange);
+    }
+
+    .mission p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 16px;
+      max-width: 440px;
+      margin: 0 auto 36px;
+      line-height: 1.65;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--orange);
+      color: #111;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .cta-btn:hover {
+      opacity: 0.88;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy-dark);
+      padding: 32px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--green);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-tag {
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .hero h1 {
+      animation: fadeUp 0.5s 0.1s ease both;
+    }
+
+    .hero p {
+      animation: fadeUp 0.5s 0.2s ease both;
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        padding: 14px 20px;
+      }
+
+      .hero {
+        padding: 60px 24px;
+      }
+
+      .story {
+        padding: 60px 24px;
+      }
+
+      .callout {
+        padding: 28px 24px;
+      }
+
+      .products-section {
+        padding: 60px 24px;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mission {
+        padding: 60px 24px;
+      }
+
+      footer {
+        padding: 24px 20px;
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">Suncraft</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-tag">Our Story</div>
+    <h1>Started with one<br><span>hot car</span> in Vadodara.</h1>
+    <p>One product. One city. Thirty seconds to set up.</p>
+  </section>
+
+  <section class="story">
+    <div class="section-label">How it started</div>
+
+    <div class="story-block">
+      <h2>Someone covered their windshield and walked away.</h2>
+      <p>That was it. Thirty seconds, maybe less. A small, unremarkable act that most people in Vadodara never bother
+        with.</p>
+      <p>And standing there in the afternoon heat — the kind that makes the air above the road shimmer like a mirage —
+        it was genuinely difficult to understand why.</p>
+      <p>Every car in this city bakes for hours. Dashboards split. Steering wheels become untouchable. You climb in
+        after work and the seat scorches through your clothes. This happens every single day, to every single person,
+        and almost nobody does the one thing that actually stops it.</p>
+      <p>A sunshade. That's it. Thirty seconds.</p>
+    </div>
+
+    <div class="callout">
+      <p>Vadodara sits at <span>50 degrees</span> in summer. Your car absorbs all of it, quietly, every afternoon you
+        leave it outside. The damage is slow enough that you stop noticing it — until you can't ignore it anymore.</p>
+    </div>
+
+    <div class="story-block">
+      <h2>So we made one worth using.</h2>
+      <p>The Suncraft foldable sunshade is the only thing between your windshield and six hours of direct Indian sun. It
+        takes ten seconds to set up. It folds flat into your door pocket. And it works — the interior stays cooler, the
+        dashboard stays intact, and getting back into your car stops feeling like a punishment.</p>
+      <p>There's no complicated installation. No measuring. You unfold it, prop it against your visors, and leave.
+        That's the whole thing.</p>
+      <p>Free delivery anywhere in Vadodara. Order online or message us on WhatsApp and we'll sort it out.</p>
+    </div>
+  </section>
+
+  <section class="mission">
+    <h2>We want to cover <span>1 lakh windshields</span> in Vadodara.</h2>
+    <p>The heat isn't going anywhere. But at least your car doesn't have to absorb all of it.</p>
+    <a href="index.html#form" class="cta-btn">Order Now — Free Delivery</a>
+  </section>
+
+  <footer>
+    <p>© 2026 Suncraft · Vadodara, Gujarat</p>
+    <div>
+      <a href="terms.html" style="color: #94a3b8; text-decoration: none; margin-right: 16px;">Terms</a>
+      <a href="https://wa.me/918511245666?text=Hi, I'm interested in Suncraft." target="_blank"
+        style="color: #94a3b8; text-decoration: none;">Chat on WhatsApp</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>

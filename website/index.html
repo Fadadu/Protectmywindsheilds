@@ -7,7 +7,9 @@
   <title>Suncraft | Keep Your Car Cool | Shield Your Windshield</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" crossorigin="anonymous">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet" crossorigin="anonymous">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="stylesheet" href="style.css" crossorigin="anonymous">
   <style>
@@ -87,6 +89,7 @@
       <a class="nav-link" href="index.html">Home</a>
       <a class="nav-link" href="products.html">Shop</a>
       <a class="nav-link" href="#faq" onclick="closeMenu()">FAQ</a>
+      <a class="nav-link" href="about.html">About</a>
     </div>
   </nav>
 
@@ -283,7 +286,7 @@
   </section>
 
 
-  
+
 
 
 
@@ -294,30 +297,43 @@
       <h2 class="section-h">Questions We Get Asked.</h2>
       <div class="faq-list">
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">Does a foldable sunshade actually work? <span class="arrow">▼</span></button>
-          <div class="faq-a">Yes. By reflecting sunlight before it enters the vehicle, it can significantly lower the cabin temperature and prevent your dashboard, steering wheel, and leather seats from cracking or fading under Vadodara's sun.</div>
+          <button class="faq-q" onclick="toggleFaq(this)">Does a foldable sunshade actually work? <span
+              class="arrow">▼</span></button>
+          <div class="faq-a">Yes. By reflecting sunlight before it enters the vehicle, it can significantly lower the
+            cabin temperature and prevent your dashboard, steering wheel, and leather seats from cracking or fading
+            under Vadodara's sun.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">Why the foldable panel design instead of an umbrella style? <span class="arrow">▼</span></button>
-          <div class="faq-a">Umbrella styles often have fragile mechanisms that can break or scratch your dashboard. Our foldable panel design is durable, uses heavy-duty thermal blocks, and folds completely flat to slip right into your door pocket in seconds.</div>
+          <button class="faq-q" onclick="toggleFaq(this)">Why the foldable panel design instead of an umbrella style?
+            <span class="arrow">▼</span></button>
+          <div class="faq-a">Umbrella styles often have fragile mechanisms that can break or scratch your dashboard. Our
+            foldable panel design is durable, uses heavy-duty thermal blocks, and folds completely flat to slip right
+            into your door pocket in seconds.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">Will it fit my car perfectly? <span class="arrow">▼</span></button>
-          <div class="faq-a">Instead of a generic "one-size-fits-all", we've categorized the shades by Car Class (Hatchback, Sedan, SUV). Just pick your car model from the dropdown, and we'll send the exact size designed to fit your windshield without sagging.</div>
+          <button class="faq-q" onclick="toggleFaq(this)">Will it fit my car perfectly? <span
+              class="arrow">▼</span></button>
+          <div class="faq-a">Instead of a generic "one-size-fits-all", we've categorized the shades by Car Class
+            (Hatchback, Sedan, SUV). Just pick your car model from the dropdown, and we'll send the exact size designed
+            to fit your windshield without sagging.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">Is it a hassle to use every day? <span class="arrow">▼</span></button>
-          <div class="faq-a">Not at all. It takes less than 10 seconds to unfold and prop up using your sun visors. It's quicker than picking a song on Spotify.</div>
+          <button class="faq-q" onclick="toggleFaq(this)">Is it a hassle to use every day? <span
+              class="arrow">▼</span></button>
+          <div class="faq-a">Not at all. It takes less than 10 seconds to unfold and prop up using your sun visors. It's
+            quicker than picking a song on Spotify.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">I have tinted windows; do I still need this? <span class="arrow">▼</span></button>
-          <div class="faq-a">Yes. The windshield is your car's biggest "heat hole." Even with tint, a physical thermal shield is the only way to keep your steering wheel and seats touchable in the afternoon.</div>
+          <button class="faq-q" onclick="toggleFaq(this)">I have tinted windows; do I still need this? <span
+              class="arrow">▼</span></button>
+          <div class="faq-a">Yes. The windshield is your car's biggest "heat hole." Even with tint, a physical thermal
+            shield is the only way to keep your steering wheel and seats touchable in the afternoon.</div>
         </div>
       </div>
     </div>
   </section>
 
-  
+
 
   <section class="order-section" id="form">
     <div class="form-wrap" id="main-form">
@@ -390,7 +406,8 @@
               <select class="field-input" id="car-model" onchange="onCarModelChange()">
                 <option value="">— Select Model —</option>
               </select>
-              <div style="font-size:0.75rem; color:var(--amber); margin-top:0.4rem; font-weight:600; display:none;" id="luxury-hint">+ Includes Premium Leather Pouch & Microfiber</div>
+              <div style="font-size:0.75rem; color:var(--amber); margin-top:0.4rem; font-weight:600; display:none;"
+                id="luxury-hint">+ Includes Premium Leather Pouch & Microfiber</div>
             </div>
           </div>
         </div>
@@ -532,7 +549,8 @@
         <div class="payment-modal-title">Sign In to Suncrafts</div>
         <div class="payment-modal-sub">Sign in to track your orders and checkout faster.</div>
         <div class="payment-modal-actions">
-          <button class="payment-btn payment-btn-primary" type="button" onclick="mockGoogleLogin()">Continue with Google</button>
+          <button class="payment-btn payment-btn-primary" type="button" onclick="mockGoogleLogin()">Continue with
+            Google</button>
           <button class="payment-btn payment-btn-secondary" type="button" onclick="closeAuthModal()">Cancel</button>
         </div>
       </div>
@@ -551,6 +569,8 @@
         <a href="index.html">Home</a>
         <a href="products.html">Shop</a>
         <a href="#faq">FAQ</a>
+        <a href="about.html">About</a>
+        <a href="terms.html">Terms</a>
         <a href="#form">Order Now</a>
       </div>
       <div class="footer-contact">

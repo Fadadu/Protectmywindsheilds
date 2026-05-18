@@ -299,15 +299,15 @@ function showSuccess(order, paymentMode) {
   rows.forEach(r => {
     const row = document.createElement('div');
     row.className = 'success-detail-row';
-    
+
     const label = document.createElement('span');
     label.className = 'dr-label';
     label.textContent = r.l;
-    
+
     const val = document.createElement('span');
     val.className = 'dr-val';
     val.textContent = r.v;
-    
+
     row.appendChild(label);
     row.appendChild(val);
     summaryContainer.appendChild(row);
@@ -364,7 +364,7 @@ window.addEventListener('load', function () {
     window.history.replaceState('', document.title, window.location.pathname + window.location.search);
     window.scrollTo(0, 0);
   }
-  
+
   // Auto-select the foldable product
   const onlyProduct = document.querySelector('.product-tile[data-product="inside"]');
   if (onlyProduct) {
@@ -389,31 +389,31 @@ function toggleFaq(btn) {
   if (!isOpen) {
     btn.classList.add('open');
     ans.style.display = 'block';
-    if(window.posthog) posthog.capture('faq_viewed', { question: btn.innerText.replace('▼', '').trim() });
+    if (window.posthog) posthog.capture('faq_viewed', { question: btn.innerText.replace('▼', '').trim() });
   }
 }
 
 // --- Auth Modal Logic ---
 function openAuthModal() {
   const m = document.getElementById('auth-modal');
-  if(m) { m.classList.add('open'); m.setAttribute('aria-hidden', 'false'); }
+  if (m) { m.classList.add('open'); m.setAttribute('aria-hidden', 'false'); }
 }
 function closeAuthModal() {
   const m = document.getElementById('auth-modal');
-  if(m) { m.classList.remove('open'); m.setAttribute('aria-hidden', 'true'); }
+  if (m) { m.classList.remove('open'); m.setAttribute('aria-hidden', 'true'); }
 }
 function mockGoogleLogin() {
   closeAuthModal();
   alert('Successfully signed in with Google!');
   const authBtn = document.getElementById('auth-btn');
-  if(authBtn) {
+  if (authBtn) {
     authBtn.textContent = 'SC Account';
     authBtn.style.background = 'var(--white)';
     authBtn.style.color = 'var(--sky)';
   }
 }
 function toggleAuth(e) {
-  if(e) e.preventDefault();
+  if (e) e.preventDefault();
   openAuthModal();
 }
 

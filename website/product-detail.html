@@ -1,296 +1,912 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Foldable Panel Sunshade | Suncraft</title>
-<meta name="description" content="The Suncraft Foldable Panel Sunshade — blocks UV, reduces interior heat in 10 seconds. Order for ₹899 in Vadodara.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:#fff;color:#0F172A;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foldable Panel Sunshade | Suncraft</title>
+  <meta name="description"
+    content="The Suncraft Foldable Panel Sunshade — blocks UV, reduces interior heat in 10 seconds. Order for ₹899 in Vadodara.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
 
-/* NAV */
-nav{background:#fff;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:1px solid #E2E8F0;box-shadow:0 1px 12px rgba(15,43,91,0.06)}
-.nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.2rem;color:#0F2B5B;text-decoration:none;letter-spacing:-0.02em}
-.nav-logo span{color:#F59E0B}
-.nav-right{display:flex;align-items:center;gap:1.75rem}
-.nav-link{font-size:0.85rem;font-weight:500;color:#64748B;text-decoration:none;transition:color 0.15s}
-.nav-link:hover{color:#0F2B5B}
-.nav-cta{background:#059669;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.85rem;padding:0.55rem 1.25rem;border-radius:6px;text-decoration:none;transition:opacity 0.15s}
-.nav-cta:hover{opacity:0.85}
+    body {
+      background: #fff;
+      color: #0F172A;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased
+    }
 
-/* BREADCRUMB */
-.breadcrumb{padding:1.25rem 2rem;max-width:1200px;margin:0 auto;font-size:0.8rem;color:#94A3B8;display:flex;align-items:center;gap:0.5rem}
-.breadcrumb a{color:#94A3B8;text-decoration:none;transition:color 0.15s}
-.breadcrumb a:hover{color:#0F2B5B}
-.breadcrumb-sep{color:#CBD5E1}
+    /* NAV */
+    nav {
+      background: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      border-bottom: 1px solid #E2E8F0;
+      box-shadow: 0 1px 12px rgba(15, 43, 91, 0.06)
+    }
 
-/* PRODUCT LAYOUT */
-.product-page{padding:1rem 2rem 5rem;max-width:1200px;margin:0 auto}
-.product-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-@media(max-width:900px){.product-grid{grid-template-columns:1fr;gap:2.5rem}}
+    .nav-logo {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #0F2B5B;
+      text-decoration: none;
+      letter-spacing: -0.02em
+    }
 
-/* GALLERY */
-.gallery{position:sticky;top:100px}
-.gallery-main{background:#F8FAFC;border:1px solid #E2E8F0;border-radius:16px;overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
-.gallery-main img{width:100%;height:100%;object-fit:cover}
-.gallery-thumbs{display:flex;gap:0.75rem;margin-top:1rem;overflow-x:auto;padding-bottom:4px}
-.gallery-thumb{width:76px;height:58px;border-radius:8px;border:2px solid #E2E8F0;overflow:hidden;cursor:pointer;flex-shrink:0;transition:border-color 0.15s}
-.gallery-thumb:hover{border-color:#94A3B8}
-.gallery-thumb.active{border-color:#F59E0B}
-.gallery-thumb img{width:100%;height:100%;object-fit:cover}
+    .nav-logo span {
+      color: #F59E0B
+    }
 
-/* PRODUCT INFO */
-.product-info{padding-top:0.5rem}
-.p-label{display:inline-block;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.3);color:#92400E;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:20px;margin-bottom:1.25rem}
-h1{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.03em;color:#0F172A;margin-bottom:0.75rem;line-height:1.1}
-.tagline{font-size:1rem;color:#64748B;line-height:1.6;margin-bottom:1.75rem}
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem
+    }
 
-.rating-row{display:flex;align-items:center;gap:0.75rem;padding-bottom:1.75rem;margin-bottom:1.75rem;border-bottom:1px solid #E2E8F0}
-.stars{color:#F59E0B;font-size:1rem;letter-spacing:2px}
-.rating-text{font-size:0.85rem;color:#94A3B8;font-weight:500}
+    .nav-link {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #64748B;
+      text-decoration: none;
+      transition: color 0.15s
+    }
 
-.price-block{margin-bottom:1.5rem}
-.price-row{display:flex;align-items:baseline;gap:1rem;margin-bottom:0.5rem}
-.price{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:2.75rem;color:#0F172A;letter-spacing:-0.03em}
-.mrp{font-size:1.2rem;color:#CBD5E1;text-decoration:line-through;font-weight:400}
-.price-note{font-size:0.8rem;color:#94A3B8}
+    .nav-link:hover {
+      color: #0F2B5B
+    }
 
-.stock-chip{display:inline-flex;align-items:center;gap:0.5rem;background:#FFFBEB;border:1px solid #FDE68A;border-radius:8px;padding:0.7rem 1rem;font-size:0.85rem;color:#92400E;margin-bottom:1.75rem;font-weight:500}
-.stock-chip .dot{width:8px;height:8px;background:#F59E0B;border-radius:50%;flex-shrink:0;animation:pulse 1.5s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+    .nav-cta {
+      background: #059669;
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.55rem 1.25rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity 0.15s
+    }
 
-.btn-wa{display:flex;align-items:center;justify-content:center;gap:0.75rem;background:#25D366;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.05rem;padding:1.1rem;border-radius:12px;text-decoration:none;transition:opacity 0.15s,transform 0.15s;margin-bottom:0.75rem}
-.btn-wa:hover{opacity:0.9;transform:translateY(-1px)}
-.btn-wa svg{fill:currentColor;flex-shrink:0}
-.btn-secondary{display:flex;align-items:center;justify-content:center;gap:0.5rem;background:#F8FAFC;color:#64748B;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:0.9rem;padding:0.9rem;border-radius:12px;text-decoration:none;border:1px solid #E2E8F0;transition:border-color 0.15s,color 0.15s}
-.btn-secondary:hover{border-color:#94A3B8;color:#0F172A}
+    .nav-cta:hover {
+      opacity: 0.85
+    }
 
-/* FEATURES GRID */
-.features{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:2.5rem;border:1px solid #E2E8F0;border-radius:12px;overflow:hidden}
-.feat{padding:1.25rem;border-right:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;background:#fff}
-.feat:nth-child(2n){border-right:none}
-.feat:nth-last-child(-n+2){border-bottom:none}
-.feat-icon{font-size:1.25rem;margin-bottom:0.5rem}
-.feat-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.88rem;color:#0F172A;margin-bottom:0.25rem}
-.feat-desc{font-size:0.78rem;color:#64748B;line-height:1.5}
+    /* BREADCRUMB */
+    .breadcrumb {
+      padding: 1.25rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      font-size: 0.8rem;
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem
+    }
 
-/* SPECS TABLE */
-.specs-section{margin-top:4rem;padding-top:3rem;border-top:1px solid #E2E8F0}
-.section-label{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:#94A3B8;margin-bottom:1.5rem}
-.specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid #E2E8F0;border-radius:12px;overflow:hidden}
-.spec-row{display:flex;justify-content:space-between;padding:1rem 1.25rem;border-bottom:1px solid #E2E8F0;gap:1rem;background:#fff}
-.specs-grid .spec-row:last-child{border-bottom:none}
-.spec-label{font-size:0.85rem;color:#64748B;font-weight:500}
-.spec-value{font-size:0.85rem;color:#0F172A;font-weight:600;text-align:right}
+    .breadcrumb a {
+      color: #94A3B8;
+      text-decoration: none;
+      transition: color 0.15s
+    }
 
-/* FOOTER */
-footer{background:#0F172A;margin-top:5rem}
-.footer-grid{max-width:1060px;margin:0 auto;padding:4rem 2rem 2rem;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem}
-@media(max-width:700px){.footer-grid{grid-template-columns:1fr;gap:2rem}}
-.footer-mission h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.6rem;color:#fff;margin-bottom:0.75rem;line-height:1.2}
-.footer-mission p{font-size:0.88rem;color:rgba(255,255,255,0.35);line-height:1.7}
-.footer-links h4,.footer-contact h4{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);margin-bottom:1rem}
-.footer-links a,.footer-contact a:not(.footer-email){display:block;font-size:0.88rem;color:rgba(255,255,255,0.4);text-decoration:none;margin-bottom:0.5rem;transition:color 0.15s}
-.footer-links a:hover,.footer-contact a:hover{color:#fff}
-.footer-email{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.95rem;color:#F59E0B;text-decoration:none;transition:opacity 0.15s}
-.footer-email:hover{opacity:0.8}
-.footer-bottom{max-width:1060px;margin:0 auto;padding:1.5rem 2rem;border-top:1px solid rgba(255,255,255,0.06);font-size:0.8rem;color:rgba(255,255,255,0.2)}
-/* VEHICLE LIST */
-.vehicles-section{margin-top:4rem;padding-top:3rem;border-top:1px solid #E2E8F0}
-.vehicle-cat-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:2rem}
-.vehicle-cat h5{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.8rem;color:#0F172A;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem}
-.vehicle-cat h5::before{content:'';width:4px;height:4px;background:#F59E0B;border-radius:50%}
-.vehicle-list{list-style:none;display:flex;flex-wrap:wrap;gap:0.5rem}
-.vehicle-item{font-size:0.75rem;color:#64748B;background:#F1F5F9;padding:0.25rem 0.6rem;border-radius:4px;white-space:nowrap}
+    .breadcrumb a:hover {
+      color: #0F2B5B
+    }
 
-/* WA FLOAT */
-.floating-wa{position:fixed;bottom:2rem;right:2rem;background:#25D366;color:#fff;padding:0.8rem 1.5rem;border-radius:50px;display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:0.95rem;box-shadow:0 4px 15px rgba(37,211,102,0.4);z-index:9999;transition:transform 0.2s,box-shadow 0.2s;font-family:'Plus Jakarta Sans',sans-serif}
-.floating-wa:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(37,211,102,0.5)}
-@media(max-width:600px){.floating-wa span{display:none}.floating-wa{padding:1rem;bottom:1.5rem;right:1.5rem}}
-</style>
+    .breadcrumb-sep {
+      color: #CBD5E1
+    }
+
+    /* PRODUCT LAYOUT */
+    .product-page {
+      padding: 1rem 2rem 5rem;
+      max-width: 1200px;
+      margin: 0 auto
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start
+    }
+
+    @media(max-width:900px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem
+      }
+    }
+
+    /* GALLERY */
+    .gallery {
+      position: sticky;
+      top: 100px
+    }
+
+    .gallery-main {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .gallery-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .gallery-thumbs {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      overflow-x: auto;
+      padding-bottom: 4px
+    }
+
+    .gallery-thumb {
+      width: 76px;
+      height: 58px;
+      border-radius: 8px;
+      border: 2px solid #E2E8F0;
+      overflow: hidden;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: border-color 0.15s
+    }
+
+    .gallery-thumb:hover {
+      border-color: #94A3B8
+    }
+
+    .gallery-thumb.active {
+      border-color: #F59E0B
+    }
+
+    .gallery-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    /* PRODUCT INFO */
+    .product-info {
+      padding-top: 0.5rem
+    }
+
+    .p-label {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: #92400E;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.25rem
+    }
+
+    h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.03em;
+      color: #0F172A;
+      margin-bottom: 0.75rem;
+      line-height: 1.1
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: #64748B;
+      line-height: 1.6;
+      margin-bottom: 1.75rem
+    }
+
+    .rating-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding-bottom: 1.75rem;
+      margin-bottom: 1.75rem;
+      border-bottom: 1px solid #E2E8F0
+    }
+
+    .stars {
+      color: #F59E0B;
+      font-size: 1rem;
+      letter-spacing: 2px
+    }
+
+    .rating-text {
+      font-size: 0.85rem;
+      color: #94A3B8;
+      font-weight: 500
+    }
+
+    .price-block {
+      margin-bottom: 1.5rem
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 0.5rem
+    }
+
+    .price {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 2.75rem;
+      color: #0F172A;
+      letter-spacing: -0.03em
+    }
+
+    .mrp {
+      font-size: 1.2rem;
+      color: #CBD5E1;
+      text-decoration: line-through;
+      font-weight: 400
+    }
+
+    .price-note {
+      font-size: 0.8rem;
+      color: #94A3B8
+    }
+
+    .stock-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-radius: 8px;
+      padding: 0.7rem 1rem;
+      font-size: 0.85rem;
+      color: #92400E;
+      margin-bottom: 1.75rem;
+      font-weight: 500
+    }
+
+    .stock-chip .dot {
+      width: 8px;
+      height: 8px;
+      background: #F59E0B;
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: pulse 1.5s infinite
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: 0.4
+      }
+    }
+
+    .btn-wa {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background: #25D366;
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 1.1rem;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: opacity 0.15s, transform 0.15s;
+      margin-bottom: 0.75rem
+    }
+
+    .btn-wa:hover {
+      opacity: 0.9;
+      transform: translateY(-1px)
+    }
+
+    .btn-wa svg {
+      fill: currentColor;
+      flex-shrink: 0
+    }
+
+    .btn-secondary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: #F8FAFC;
+      color: #64748B;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.9rem;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 1px solid #E2E8F0;
+      transition: border-color 0.15s, color 0.15s
+    }
+
+    .btn-secondary:hover {
+      border-color: #94A3B8;
+      color: #0F172A
+    }
+
+    /* FEATURES GRID */
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-top: 2.5rem;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      overflow: hidden
+    }
+
+    .feat {
+      padding: 1.25rem;
+      border-right: 1px solid #E2E8F0;
+      border-bottom: 1px solid #E2E8F0;
+      background: #fff
+    }
+
+    .feat:nth-child(2n) {
+      border-right: none
+    }
+
+    .feat:nth-last-child(-n+2) {
+      border-bottom: none
+    }
+
+    .feat-icon {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem
+    }
+
+    .feat-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #0F172A;
+      margin-bottom: 0.25rem
+    }
+
+    .feat-desc {
+      font-size: 0.78rem;
+      color: #64748B;
+      line-height: 1.5
+    }
+
+    /* SPECS TABLE */
+    .specs-section {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid #E2E8F0
+    }
+
+    .section-label {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #94A3B8;
+      margin-bottom: 1.5rem
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      overflow: hidden
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid #E2E8F0;
+      gap: 1rem;
+      background: #fff
+    }
+
+    .specs-grid .spec-row:last-child {
+      border-bottom: none
+    }
+
+    .spec-label {
+      font-size: 0.85rem;
+      color: #64748B;
+      font-weight: 500
+    }
+
+    .spec-value {
+      font-size: 0.85rem;
+      color: #0F172A;
+      font-weight: 600;
+      text-align: right
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0F172A;
+      margin-top: 5rem
+    }
+
+    .footer-grid {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 4rem 2rem 2rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem
+    }
+
+    @media(max-width:700px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem
+      }
+    }
+
+    .footer-mission h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 0.75rem;
+      line-height: 1.2
+    }
+
+    .footer-mission p {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.35);
+      line-height: 1.7
+    }
+
+    .footer-links h4,
+    .footer-contact h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 1rem
+    }
+
+    .footer-links a,
+    .footer-contact a:not(.footer-email) {
+      display: block;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      transition: color 0.15s
+    }
+
+    .footer-links a:hover,
+    .footer-contact a:hover {
+      color: #fff
+    }
+
+    .footer-email {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #F59E0B;
+      text-decoration: none;
+      transition: opacity 0.15s
+    }
+
+    .footer-email:hover {
+      opacity: 0.8
+    }
+
+    .footer-bottom {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.2)
+    }
+
+    /* VEHICLE LIST */
+    .vehicles-section {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid #E2E8F0
+    }
+
+    .vehicle-cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem
+    }
+
+    .vehicle-cat h5 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: #0F172A;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem
+    }
+
+    .vehicle-cat h5::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: #F59E0B;
+      border-radius: 50%
+    }
+
+    .vehicle-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem
+    }
+
+    .vehicle-item {
+      font-size: 0.75rem;
+      color: #64748B;
+      background: #F1F5F9;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      white-space: nowrap
+    }
+
+    /* WA FLOAT */
+    .floating-wa {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #25D366;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      z-index: 9999;
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-family: 'Plus Jakarta Sans', sans-serif
+    }
+
+    .floating-wa:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5)
+    }
+
+    @media(max-width:600px) {
+      .floating-wa span {
+        display: none
+      }
+
+      .floating-wa {
+        padding: 1rem;
+        bottom: 1.5rem;
+        right: 1.5rem
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-logo" href="index.html"><span>Sun</span>craft</a>
-  <div class="nav-right">
-    <a class="nav-link" href="index.html">Home</a>
-    <a class="nav-link" href="products.html">Shop</a>
-    <a class="nav-link" href="index.html#how">How It Works</a>
-    <a class="nav-link" href="index.html#faq">FAQ</a>
-  </div>
-</nav>
-
-<!-- BREADCRUMB -->
-<div class="breadcrumb">
-  <a href="index.html">Home</a>
-  <span class="breadcrumb-sep">/</span>
-  <a href="products.html">Shop</a>
-  <span class="breadcrumb-sep">/</span>
-  Foldable Panel Sunshade
-</div>
-
-<div class="product-page">
-  <div class="product-grid">
-
-    <!-- GALLERY -->
-    <div class="gallery">
-      <div class="gallery-main">
-        <img id="mainImg" src="images/foldable-panel-shade/1.png" alt="Foldable Panel Sunshade">
-      </div>
-      <div class="gallery-thumbs">
-        <div class="gallery-thumb active" onclick="changeImg(this,'images/foldable-panel-shade/1.png')"><img src="images/foldable-panel-shade/1.png" alt="1"></div>
-        <div class="gallery-thumb" onclick="changeImg(this,'images/foldable-panel-shade/2.png')"><img src="images/foldable-panel-shade/2.png" alt="2"></div>
-        <div class="gallery-thumb" onclick="changeImg(this,'images/foldable-panel-shade/3.png')"><img src="images/foldable-panel-shade/3.png" alt="3"></div>
-        <div class="gallery-thumb" onclick="changeImg(this,'images/foldable-panel-shade/4.png')"><img src="images/foldable-panel-shade/4.png" alt="4"></div>
-        <div class="gallery-thumb" onclick="changeImg(this,'images/foldable-panel-shade/5.png')"><img src="images/foldable-panel-shade/5.png" alt="5"></div>
-        <div class="gallery-thumb" onclick="changeImg(this,'images/foldable-panel-shade/6.png')"><img src="images/foldable-panel-shade/6.png" alt="6"></div>
-        <div class="gallery-thumb" onclick="changeImg(this,'images/foldable-panel-shade/7.png')"><img src="images/foldable-panel-shade/7.png" alt="7"></div>
-      </div>
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html"><span>Sun</span>craft</a>
+    <div class="nav-right">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="products.html">Shop</a>
+      <a class="nav-link" href="index.html#faq">FAQ</a>
+      <a class="nav-link" href="about.html">About</a>
     </div>
+  </nav>
 
-    <!-- INFO -->
-    <div class="product-info">
-      <span class="p-label">In Stock</span>
-      <h1>Foldable Panel Sunshade</h1>
-      <p class="tagline">Blocks UV before it enters. Padded, thick, and folds flat into your door pocket in under 10 seconds.</p>
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">/</span>
+    <a href="products.html">Shop</a>
+    <span class="breadcrumb-sep">/</span>
+    Foldable Panel Sunshade
+  </div>
 
-      <div class="rating-row">
-        <span class="stars">★★★★★</span>
-        <span class="rating-text">4.6 · 89 Verified Orders</span>
-      </div>
+  <div class="product-page">
+    <div class="product-grid">
 
-      <div class="price-block">
-        <div class="price-row">
-          <span class="price">₹899</span>
-          <span class="mrp">₹1,399</span>
+      <!-- GALLERY -->
+      <div class="gallery">
+        <div class="gallery-main">
+          <img id="mainImg" src="images/foldable-panel-shade/1.png" alt="Foldable Panel Sunshade">
         </div>
-        <div class="price-note">Price at delivery · Free shipping in Vadodara</div>
+        <div class="gallery-thumbs">
+          <div class="gallery-thumb active" onclick="changeImg(this,'images/foldable-panel-shade/1.png')"><img
+              src="images/foldable-panel-shade/1.png" alt="1"></div>
+          <div class="gallery-thumb" onclick="changeImg(this,'images/foldable-panel-shade/2.png')"><img
+              src="images/foldable-panel-shade/2.png" alt="2"></div>
+          <div class="gallery-thumb" onclick="changeImg(this,'images/foldable-panel-shade/3.png')"><img
+              src="images/foldable-panel-shade/3.png" alt="3"></div>
+          <div class="gallery-thumb" onclick="changeImg(this,'images/foldable-panel-shade/4.png')"><img
+              src="images/foldable-panel-shade/4.png" alt="4"></div>
+          <div class="gallery-thumb" onclick="changeImg(this,'images/foldable-panel-shade/5.png')"><img
+              src="images/foldable-panel-shade/5.png" alt="5"></div>
+          <div class="gallery-thumb" onclick="changeImg(this,'images/foldable-panel-shade/6.png')"><img
+              src="images/foldable-panel-shade/6.png" alt="6"></div>
+          <div class="gallery-thumb" onclick="changeImg(this,'images/foldable-panel-shade/7.png')"><img
+              src="images/foldable-panel-shade/7.png" alt="7"></div>
+        </div>
       </div>
 
-      <div class="stock-chip">
-        <span class="dot"></span>
-        Sold out — Order now to secure your spot in the next batch.
-      </div>
+      <!-- INFO -->
+      <div class="product-info">
+        <span class="p-label">In Stock</span>
+        <h1>Foldable Panel Sunshade</h1>
+        <p class="tagline">Blocks UV before it enters. Padded, thick, and folds flat into your door pocket in under 10
+          seconds.</p>
 
-      <div class="preorder-section" style="padding:0; margin-bottom:2rem;">
-        <div class="fields">
-          <div class="field-group">
-            <label class="field-label">Car Class</label>
-            <select class="field-input" id="car-type" onchange="onCarTypeChange()">
-              <option value="">— Select Class —</option>
-              <option value="hatchback">Hatchback</option>
-              <option value="sedan">Sedan</option>
-              <option value="suv">SUV / MUV</option>
-              <option value="luxury">Luxury &amp; Premium</option>
-            </select>
+        <div class="rating-row">
+          <span class="stars">★★★★★</span>
+          <span class="rating-text">4.6 · 89 Verified Orders</span>
+        </div>
+
+        <div class="price-block">
+          <div class="price-row">
+            <span class="price">₹899</span>
+            <span class="mrp">₹1,399</span>
           </div>
-          <div class="field-group" id="model-wrap">
-            <label class="field-label">Car Model</label>
-            <select class="field-input" id="car-model" onchange="onCarModelChange()">
-              <option value="">— Select Model —</option>
-            </select>
-            <div style="font-size:0.75rem;color:#92400E;font-weight:600;display:none" id="luxury-hint">+ Includes Premium Leather Pouch &amp; Microfiber</div>
+          <div class="price-note">Price at delivery · Free shipping in Vadodara</div>
+        </div>
+
+        <div class="stock-chip">
+          <span class="dot"></span>
+          Sold out — Order now to secure your spot in the next batch.
+        </div>
+
+        <div class="preorder-section" style="padding:0; margin-bottom:2rem;">
+          <div class="fields">
+            <div class="field-group">
+              <label class="field-label">Car Class</label>
+              <select class="field-input" id="car-type" onchange="onCarTypeChange()">
+                <option value="">— Select Class —</option>
+                <option value="hatchback">Hatchback</option>
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV / MUV</option>
+                <option value="luxury">Luxury &amp; Premium</option>
+              </select>
+            </div>
+            <div class="field-group" id="model-wrap">
+              <label class="field-label">Car Model</label>
+              <select class="field-input" id="car-model" onchange="onCarModelChange()">
+                <option value="">— Select Model —</option>
+              </select>
+              <div style="font-size:0.75rem;color:#92400E;font-weight:600;display:none" id="luxury-hint">+ Includes
+                Premium Leather Pouch &amp; Microfiber</div>
+            </div>
+          </div>
+        </div>
+
+        <a class="btn-wa" id="wa-detail-btn"
+          href="https://wa.me/918511245666?text=Hi, I'm interested in the Suncraft Foldable Panel Sunshade. Please share details for my car model."
+          target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
+          Order on WhatsApp
+        </a>
+        <div style="font-size: 0.75rem; color: #94A3B8; text-align: center; margin-bottom: 1.5rem;">
+          Return Policy: 7-day easy returns if the fit isn't perfect for your car.
+        </div>
+
+        <!-- FEATURES -->
+        <div class="features">
+          <div class="feat">
+            <div class="feat-icon">🛡️</div>
+            <div class="feat-title">99% UV Blocked</div>
+            <div class="feat-desc">Heavy-duty thermal film stops UV at the glass</div>
+          </div>
+          <div class="feat">
+            <div class="feat-icon">⚡</div>
+            <div class="feat-title">10-Second Setup</div>
+            <div class="feat-desc">No clips, no suction cups. Fits snugly against your windshield</div>
+          </div>
+          <div class="feat">
+            <div class="feat-icon">🌡️</div>
+            <div class="feat-title">Noticeably Cooler</div>
+            <div class="feat-desc">Dashboard, steering wheel, and seats stay cool</div>
+          </div>
+          <div class="feat">
+            <div class="feat-icon">📦</div>
+            <div class="feat-title">Folds Flat</div>
+            <div class="feat-desc">Compact fold stores in your door pocket or back seat</div>
           </div>
         </div>
       </div>
 
-      <a class="btn-wa" id="wa-detail-btn" href="https://wa.me/918511245666?text=Hi, I'm interested in the Suncraft Foldable Panel Sunshade. Please share details for my car model." target="_blank">
-        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Order on WhatsApp
-      </a>
-      <div style="font-size: 0.75rem; color: #94A3B8; text-align: center; margin-bottom: 1.5rem;">
-        Return Policy: 7-day easy returns if the fit isn't perfect for your car.
-      </div>
+    </div>
 
-      <!-- FEATURES -->
-      <div class="features">
-        <div class="feat">
-          <div class="feat-icon">🛡️</div>
-          <div class="feat-title">99% UV Blocked</div>
-          <div class="feat-desc">Heavy-duty thermal film stops UV at the glass</div>
+    <!-- SPECS -->
+    <div class="specs-section">
+      <div class="section-label">Product Specifications</div>
+      <div class="specs-grid">
+        <div class="spec-row"><span class="spec-label">Product Type</span><span class="spec-value">Interior
+            Sunshade</span></div>
+        <div class="spec-row"><span class="spec-label">Placement</span><span class="spec-value">Inside the cabin</span>
         </div>
-        <div class="feat">
-          <div class="feat-icon">⚡</div>
-          <div class="feat-title">10-Second Setup</div>
-          <div class="feat-desc">No clips, no suction cups. Fits snugly against your windshield</div>
+        <div class="spec-row"><span class="spec-label">Material</span><span class="spec-value">Heavy-duty thermal
+            block</span></div>
+        <div class="spec-row"><span class="spec-label">Setup Time</span><span class="spec-value">~10 seconds</span>
         </div>
-        <div class="feat">
-          <div class="feat-icon">🌡️</div>
-          <div class="feat-title">Noticeably Cooler</div>
-          <div class="feat-desc">Dashboard, steering wheel, and seats stay cool</div>
-        </div>
-        <div class="feat">
-          <div class="feat-icon">📦</div>
-          <div class="feat-title">Folds Flat</div>
-          <div class="feat-desc">Compact fold stores in your door pocket or back seat</div>
-        </div>
+        <div class="spec-row"><span class="spec-label">Storage</span><span class="spec-value">Folds flat, door
+            pocket</span></div>
+        <div class="spec-row"><span class="spec-label">Fitment</span><span class="spec-value">Confirmed per car
+            model</span></div>
       </div>
     </div>
 
+
   </div>
 
-  <!-- SPECS -->
-  <div class="specs-section">
-    <div class="section-label">Product Specifications</div>
-    <div class="specs-grid">
-      <div class="spec-row"><span class="spec-label">Product Type</span><span class="spec-value">Interior Sunshade</span></div>
-      <div class="spec-row"><span class="spec-label">Placement</span><span class="spec-value">Inside the cabin</span></div>
-      <div class="spec-row"><span class="spec-label">Material</span><span class="spec-value">Heavy-duty thermal block</span></div>
-      <div class="spec-row"><span class="spec-label">Setup Time</span><span class="spec-value">~10 seconds</span></div>
-      <div class="spec-row"><span class="spec-label">Storage</span><span class="spec-value">Folds flat, door pocket</span></div>
-      <div class="spec-row"><span class="spec-label">Fitment</span><span class="spec-value">Confirmed per car model</span></div>
+  <!-- REVIEWS SECTION -->
+  <section class="reviews" style="background:var(--off); padding: 5rem 0; overflow:hidden;">
+    <div class="container" style="max-width:1200px; padding:0 1.5rem; text-align:center;">
+      <span class="section-tag" style="background:rgba(245, 158, 11, 0.15); color:var(--amber-dark);">Real
+        Results</span>
+      <h2 class="section-h" style="max-width:800px; margin: 0 auto 3rem; font-size:clamp(1.8rem, 4vw, 2.6rem);">
+        It takes less time to install than it does to pick a song on Spotify. Quick, easy, and effective.
+      </h2>
     </div>
-  </div>
 
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (2).png" alt="Customer Review"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (3).png" alt="Customer Review"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (4).png" alt="Customer Review"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (5).png" alt="Customer Review"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (6).png" alt="Customer Review"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (7).png" alt="Customer Review"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (8).png" alt="Customer Review"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (9).png" alt="Customer Review"></div>
 
-</div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (2).png" alt="Customer Review"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (3).png" alt="Customer Review"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (4).png" alt="Customer Review"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (5).png" alt="Customer Review"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (6).png" alt="Customer Review"
+            loading="lazy"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (7).png" alt="Customer Review"
+            loading="lazy"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (8).png" alt="Customer Review"
+            loading="lazy"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (9).png" alt="Customer Review"
+            loading="lazy"></div>
+      </div>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-mission">
-      <h2>We aim to cover 1 Lakh+<br><span style="color:#F59E0B">Windshields in Vadodara.</span></h2>
-      <p>Heat exposure builds slowly through daily parking. Our mission is to protect every car in our city from long-term sun damage.</p>
+      <div class="marquee-track reverse" style="margin-top:1.5rem;">
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (14).png" alt="Customer Review"
+            loading="lazy"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (15).png" alt="Customer Review"
+            loading="lazy"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (16).png" alt="Customer Review"
+            loading="lazy"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (17).png" alt="Customer Review"
+            loading="lazy"></div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (18).png" alt="Customer Review">
+        </div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (19).png" alt="Customer Review">
+        </div>
+
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (14).png" alt="Customer Review">
+        </div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (15).png" alt="Customer Review">
+        </div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (16).png" alt="Customer Review">
+        </div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (17).png" alt="Customer Review">
+        </div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (18).png" alt="Customer Review">
+        </div>
+        <div class="review-card"><img src="images/reviews/PhotoshopExtension_Image (19).png" alt="Customer Review">
+        </div>
+      </div>
     </div>
-    <div class="footer-links">
-      <h4>Navigation</h4>
-      <a href="index.html">Home</a>
-      <a href="products.html">Shop</a>
-      <a href="index.html#how">How It Works</a>
-      <a href="index.html#faq">FAQ</a>
-      <a href="index.html#form">Order Now</a>
-    </div>
-    <div class="footer-contact">
-      <h4>Contact Us</h4>
-      <p style="margin-bottom:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.35)">Questions or Bulk Orders?</p>
-      <a href="mailto:yashraulji18@gmail.com" class="footer-email">yashraulji18@gmail.com</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    © 2026 Suncraft. &nbsp;·&nbsp; Premium Windshield Heat Protection &nbsp;·&nbsp; Vadodara, Gujarat
-  </div>
-</footer>
+  </section>
 
-<!-- WA FLOAT -->
-<a href="https://wa.me/918511245666?text=Hi, I'm interested in Suncraft. Please help me select the right model for my car." class="floating-wa" target="_blank">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.116 1.527 5.845L0 24l6.343-1.502A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.655-.492-5.193-1.353l-.371-.214-3.862.915.976-3.757-.236-.386A9.934 9.934 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-  <span>Chat on WhatsApp</span>
-</a>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-mission">
+        <h2>We aim to cover 1 Lakh+<br><span style="color:#F59E0B">Windshields in Vadodara.</span></h2>
+        <p>Heat exposure builds slowly through daily parking. Our mission is to protect every car in our city from
+          long-term sun damage.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="about.html">About</a>
+        <a href="terms.html">Terms</a>
+        <a href="index.html#form">Order Now</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p style="margin-bottom:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.35)">Questions or Bulk Orders?</p>
+        <a href="mailto:yashraulji18@gmail.com" class="footer-email">yashraulji18@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Suncraft. &nbsp;·&nbsp; Premium Windshield Heat Protection &nbsp;·&nbsp; Vadodara, Gujarat
+    </div>
+  </footer>
 
-<script src="car-data.js"></script>
-<script>
-function changeImg(el, src) {
-  document.getElementById('mainImg').src = src;
-  document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-}
-</script>
+  <!-- WA FLOAT -->
+  <a href="https://wa.me/918511245666?text=Hi, I'm interested in Suncraft. Please help me select the right model for my car."
+    class="floating-wa" target="_blank">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+      <path
+        d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.116 1.527 5.845L0 24l6.343-1.502A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.655-.492-5.193-1.353l-.371-.214-3.862.915.976-3.757-.236-.386A9.934 9.934 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+    </svg>
+    <span>Chat on WhatsApp</span>
+  </a>
+
+  <script src="car-data.js"></script>
+  <script>
+    function changeImg(el, src) {
+      document.getElementById('mainImg').src = src;
+      document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+    }
+  </script>
 </body>
+
 </html>

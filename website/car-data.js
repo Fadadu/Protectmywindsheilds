@@ -126,3 +126,19 @@ function updateDetailWhatsAppLink() {
   }
   btn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 }
+
+function initCarSelectors() {
+  const typeEl = document.getElementById('car-type');
+  const modelEl = document.getElementById('car-model');
+
+  if (typeEl) typeEl.addEventListener('change', onCarTypeChange);
+  if (modelEl) modelEl.addEventListener('change', onCarModelChange);
+
+  if (typeEl && typeEl.value) onCarTypeChange();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCarSelectors);
+} else {
+  initCarSelectors();
+}
